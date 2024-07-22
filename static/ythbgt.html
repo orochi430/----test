@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jweixin-1.6.0.js"></script>
+  </head>
+  <body>
+    <!-- <iframe src="" ></iframe> -->
+  </body>
+
+  <script>
+    Date.prototype.format = function (fmt) {
+      var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        S: this.getMilliseconds() //毫秒
+      }
+      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length))
+
+      for (var k in o) if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length))
+      return fmt
+    }
+    function checkSystem() {
+      let u = window.navigator.userAgent,
+        app = window.navigator.appVersion
+      let isAndroid = u.indexOf("Android") > -1 || u.indexOf("Linux") > -1 //g
+      let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || u.indexOf("iOS") //ios终端
+      if (isAndroid) {
+        return "android"
+      }
+      if (isIOS) {
+        return "ios"
+      }
+    }
+    function getRootPath() {
+      var strFullPath = window.document.location.href
+      var strPath = window.document.location.pathname
+      var pos = strFullPath.indexOf(strPath)
+      var prePath = strFullPath.substring(0, pos)
+      var postPath = strPath.substring(0, strPath.substr(1).indexOf("/") + 1)
+      return prePath + postPath + "/"
+    }
+    function shGovShuke(file, form, callback) {
+      $.ajax({
+        type: "GET",
+        url: `./configWx.json`,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        success: function (res) {
+          console.log(res)
+          let shukeConfig = res.commonForm.shuke
+          let rootPath = getRootPath()
+          let loginToken = token
+          const down_url =
+            rootPath +
+            `fn/office/defaultPreview?fileId=${file.id}&x-auth-token=${loginToken}` +
+            (file.originalAttachName ? `&initDataSource=1&originalAttachName=${file.originalAttachName}` : "")
+          const backUrl = rootPath + `fn/mobileFlow/sendBack?pid=${form.pId}&pnid=${form.pnId}&wfId=${form.flowId}&x-auth-token=${loginToken}`
+          const save_url =
+            rootPath +
+            `fn/mobileOffice/upload?fileId=${file.uploadFileId || file.id}&moduleId=${form.moduleId}&pnId=${form.pnId}&nodeName=${form.nodeName}&fileType=${
+              file.fileType || 1
+            }&infoId=${form.info_id}&extension=${file.title.substr(file.title.lastIndexOf(".") + 1)}&x-auth-token=${loginToken}`
+          const send_url =
+            form.type == "toRead"
+              ? rootPath + `ctrl/p2433Common/readed?pk=${form.info_id}&distribId=${form.distribId}&moduleId=${form.moduleId}&nrId=${file.id}&x-auth-token=${loginToken}`
+              : ""
+          const afterReading_url = rootPath + `fn/mobileToReadOperation/readed?infoIds=${form.info_id}&distribIds=${form.distribId}&x-auth-token=${loginToken}`
+          const uploadLogUrl = `http://116.236.111.158:28089/DeviceLogs/uploadLog?userId=${userId}`
+          let write_photo = rootPath + "fn/getimage/downloadImage?userid=" + userId
+          let can_edit = file.isHandleWrite //20221130修改--有签批权限的时候就置为true
+          let can_afterReading = file.isAfterReading
+          let externalStorage = shukeConfig.externalStorage ? shukeConfig.externalStorage : false
+          let screenshots = shukeSecret != undefined ? shukeSecret : !!shukeConfig.screenshots
+          let foldingScreen = shukeConfig.foldingScreen ? shukeConfig.foldingScreen : ""
+          let penPad = shukeConfig.penPad ? shukeConfig.penPad : ""
+          let project = shukeConfig.project ? shukeConfig.project : ""
+          let opinions = []
+          let btnList = [
+            { title: "发送", tag: "send" },
+            // { title: "退回", tag: "tuihui" },
+            { title: "暂存", tag: "zancun" },
+            { title: "手写", tag: "shouxie" },
+            { title: "文字", tag: "wenzi" },
+            { title: "撤回", tag: "chehui" },
+            { title: "恢复", tag: "huifu" },
+            { title: "擦除", tag: "cachu" },
+            { title: "笔写", tag: "bixie" },
+            { title: "笔锋调节", tag: "bftj" },
+            { title: "页码", tag: "yema" }
+          ]
+          // if (form.type == "toRead" || form.canBack === false) btnList = btnList.filter(item => item.tag != "tuihui")
+          if (!file.hasWenzi) btnList = btnList.filter(item => item.tag != "wenzi")
+          let obj = {
+            uploadLogUrl: uploadLogUrl,
+            downUrl: down_url,
+            backUrl: backUrl,
+            sendUrl: send_url,
+            writePhoto: write_photo,
+            externalStorage: externalStorage, // 文件是否放在外部存储，默认内部存储
+            saveUrl: save_url,
+            handTip: "",
+            fileName: file.title,
+            title: file.title.substr(0, file.title.lastIndexOf(".")),
+            navTab: file.navTab || [],
+            userName: userName,
+            foldingScreen: foldingScreen, //折叠屏设备适配，传设备型号，多个用英文逗号隔开
+            penPad: penPad, //笔写设备型号适配，传设备型号，多个用英文逗号隔开
+            screenshots: screenshots, //是否允许截屏，录屏
+            canEdit: can_edit,
+            project: project,
+            pid: form.pId,
+            pnid: form.pnId,
+            fileId: file.id,
+            opinions: opinions, //常用意见，数组格式
+            nodeOpinion: "", //签批建议，采用按钮填充的意见文本
+            copyRight: shukeKey || shukeConfig.keyCode,
+            choicePenType: 0,
+            isForcePenMode: false,
+            buttonState: {
+              signFontSize: shukeConfig.buttonState?.signFontSize || false,
+              rectWrite: shukeConfig.buttonState?.rectWrite || false
+            },
+            secretData: {
+              //署名相关，signKey：授权key,signSecret：授权signSecret
+              signKey: shukeConfig.secretData?.signKey,
+              signSecret: shukeConfig.secretData?.signSecret
+            },
+            btnList: btnList,
+            afterReading: {
+              showBtn: can_afterReading,
+              opinionInput: false,
+              afterReadingUrl: afterReading_url
+            },
+            unModifyInsertName: false, // 未签批的时候是否自动署名
+            showCollapse: false, // 是否显示收起按钮
+            isForceUpload: true, // 控制是否退出上传文件的参数
+            openToPage: file.openToPage,
+            changeNetFramework: true, // 针对下载超时的问题，失败了换一个网络框架进行请求
+            textSignSetting: { showTextSignName: true, signType: "Text", signFontSize: 16, signTimeFormat: "M月d日", signFontColor: "ff0000", name: "" } //文字签批落款设置
+          }
+          console.log(obj)
+          try {
+            if (checkSystem() == "ios") {
+              throw new Error('ios')
+            } else {
+              wx.invoke(
+                "ext_sySignSdk_startSign",
+                {
+                  data: obj
+                },
+                res => {
+                  if (res.result == "true") {
+                    console.log(res)
+                    callback(JSON.parse(res.data))
+                    // }
+                  }
+                }
+              )
+            }
+          } catch (error) {
+            location.replace(`../index.html#/autoLoginToUrl/${token}/${urlQuery.state}/abc`)
+          }
+        }
+      })
+    }
+    function strToObj(url) {
+      debugger
+      let obj = {}
+      let arr = url.split("&")
+      if (arr.length > 0) {
+        arr.forEach(item => {
+          let index = item.indexOf("=")
+          let key = item.substr(0, index)
+          let value = item.substr(index + 1)
+          obj[key] = value || ""
+        })
+      }
+      return obj
+    }
+    function decode(input) {
+      var _utf8_decode = function (utftext) {
+        var string = ""
+        var i = 0
+        var c = 0,
+          c1 = 0,
+          c2 = 0,
+          c3 = 0
+        while (i < utftext.length) {
+          c = utftext.charCodeAt(i)
+          if (c < 128) {
+            string += String.fromCharCode(c)
+            i++
+          } else if (c > 191 && c < 224) {
+            c2 = utftext.charCodeAt(i + 1)
+            string += String.fromCharCode(((c & 31) << 6) | (c2 & 63))
+            i += 2
+          } else {
+            c2 = utftext.charCodeAt(i + 1)
+            c3 = utftext.charCodeAt(i + 2)
+            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63))
+            i += 3
+          }
+        }
+        return string
+      }
+      var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+      if (input == null) return null
+      var output = ""
+      var chr1, chr2, chr3
+      var enc1, enc2, enc3, enc4
+      var i = 0
+      input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "")
+      while (i < input.length) {
+        enc1 = _keyStr.indexOf(input.charAt(i++))
+        enc2 = _keyStr.indexOf(input.charAt(i++))
+        enc3 = _keyStr.indexOf(input.charAt(i++))
+        enc4 = _keyStr.indexOf(input.charAt(i++))
+        chr1 = (enc1 << 2) | (enc2 >> 4)
+        chr2 = ((enc2 & 15) << 4) | (enc3 >> 2)
+        chr3 = ((enc3 & 3) << 6) | enc4
+        output = output + String.fromCharCode(chr1)
+        if (enc3 != 64) {
+          output = output + String.fromCharCode(chr2)
+        }
+        if (enc4 != 64) {
+          output = output + String.fromCharCode(chr3)
+        }
+      }
+      output = _utf8_decode(output)
+      return output
+    }
+    function checkSystem() {
+      let u = window.navigator.userAgent,
+        app = window.navigator.appVersion
+      let isAndroid = u.indexOf("Android") > -1 || u.indexOf("Linux") > -1 //g
+      let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || u.indexOf("iOS") //ios终端
+      if (isAndroid) {
+        return "android"
+      }
+      if (isIOS) {
+        return "ios"
+      }
+    }
+    let urlQuery = strToObj(location.href.split("?")[1])
+    let token = urlQuery.token
+    let path = decode(urlQuery.state)
+    let vueRouterPath = path.split("?")[0]
+    let vueRouterParams = path.split("?")[1]
+    let moduleId = vueRouterPath.split("/")[2]
+    let pk = vueRouterPath.split("/")[3]
+    let distribId = strToObj(vueRouterParams).distribId
+    let userId = ""
+    let userName = ""
+    let roleIds = ""
+    let shukeKey = ""
+    let shukeSecret = false
+    $.ajax({
+      type: "GET",
+      url: getRootPath() + `fn/common/getConfig?type=wechat`,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        "X-Auth-Token": token
+      },
+      success: function (res) {
+        userId = res.userId
+        userName = res.userName
+        roleIds = res.roleIds
+        shukeKey = res.setting['SYS-MOBILE-ATTACH-0009']
+        shukeSecret = res.setting['SYS-MOBILE-ATTACH-0010'] > 0
+        debugger
+        let corpId = res.corpId,
+          noncestr = res.noncestr,
+          timestamp = res.timestamp,
+          signature = res.signature
+        wx.ready(function () {
+          console.log("autoLoginToUrl", "wx", "ready")
+          // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+          wx.checkJsApi({
+            jsApiList: ["previewFile", "request3rdApp", "openUrl", "onMenuShareWechat", "onMenuShareAppMessage", "openChatWithMsg", "request3rdApp", "scanQRCode"], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+            success: function (res) {
+              // 以键值对的形式返回，可用的api值true，不可用为false
+              // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+              console.log("autoLoginToUrl", "checkJsApi-res", res)
+            }
+          })
+        })
+        wx.error(function (res) {
+          console.log("autoLoginToUrl", "wx", "error", res)
+          // config信息验证失败会执行error函数，如签名过期导致验证失败，
+          //具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+        })
+        wx.config({
+          beta: true, // 调用wx.invoke形式的接口值时，该值必须为true。
+          debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+          appId: corpId, // 必填，粤政易的cropID
+          timestamp: timestamp, // 必填，生成签名的时间戳
+          nonceStr: noncestr, // 必填，生成签名的随机串
+          signature: signature, // 必填，签名，见附录1
+          jsApiList: ["previewFile", "request3rdApp", "openUrl", "onMenuShareWechat", "onMenuShareAppMessage", "openChatWithMsg", "request3rdApp", "scanQRCode"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        })
+        linkTo()
+      }
+    })
+    function linkTo() {
+      $.ajax({
+        type: "POST",
+        url: getRootPath() + "fn/p2433MergeCommon/check/instructions",
+        data: { pk: pk, distribId: distribId },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          "X-Auth-Token": token
+        },
+        success: function (res) {
+          console.log(res)
+          if (res.code == 200 && res.data && res.data.nrId) {
+            let data = res.data
+            let type = data.fileName.substr(data.fileName.lastIndexOf(".") + 1)
+            let file = {
+              id: data.nrId,
+              title: type != "ofd" && type != "pdf" ? data.fileName.substr(0, data.fileName.lastIndexOf(".")) + ".pdf" : data.fileName,
+              isHandleWrite: data.isNeed,
+              isAfterReading: !data.isNeed,
+              openToPage: data.pagination || 0
+            }
+            let formData = {
+              info_id: pk,
+              moduleId: moduleId,
+              nodeId: "",
+              distribId: distribId,
+              type: "toRead"
+            }
+            if (res.data.isRead) {
+              // 阅毕跳转
+              if (type == 'pdf' || type == 'ofd') { // 底座下载
+                $.ajax({
+                  type: "GET",
+                  url: getRootPath() + "fn/fileToken/get",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                    "X-Auth-Token": token
+                  },
+                  success: function (response) {
+                    if (response.data) {
+                      if (checkSystem() == 'ios') {
+                        location.replace(getRootPath() + `fn/fileToPdf/download?fileId=${data.nrId}&token=${response.data}&userId=${userId}`)
+                      } else {
+                        location.href = getRootPath() + `fn/fileToPdf/download?fileId=${data.nrId}&token=${response.data}&userId=${userId}`
+                      }
+                      // setTimeout(() => {
+                      //   wx.closeWindow()
+                      // }, 200)
+                    }
+                  }
+                })
+              // if (roleIds.split(',').includes('2311172018130fnkyxXmN9djeSEcqmn') && (type == 'pdf' || type == 'ofd')) {
+              //   // 领导权限用数股预览
+              //   file.isHandleWrite = false
+              //   file.isAfterReading = false
+              //   shGovShuke(file, formData, shukeRes => {
+              //     wx.closeWindow()
+              //   })
+              } else {
+                location.href = getRootPath() + `fn/office/openMobileOffice?fileId=${data.nrId}&moduleId=${moduleId}&x-auth-token=${token}`
+              }
+            } else {
+              try {
+                shGovShuke(file, formData, shukeRes => {
+                  console.log(shukeRes)
+                  if (shukeRes.openTime) {
+                    $.ajax({
+                      type: "POST",
+                      url: getRootPath() + "fn/approvalFileInformation/save",
+                      data: {
+                        infoId: pk,
+                        fileId: data.nrId,
+                        startTime: new Date(Number(shukeRes.openTime)).format("yyyy-MM-DD hh:mm:ss"),
+                        endTime: new Date(Number(shukeRes.closeTime)).format("yyyy-MM-DD hh:mm:ss"),
+                        pagination: shukeRes.currentPage,
+                        readingTime: Math.floor((shukeRes.closeTime - shukeRes.openTime) / 1000)
+                      },
+                      headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                        "X-Auth-Token": token
+                      },
+                      success: function (res) {
+                        wx.closeWindow()
+                      }
+                    })
+                  } else {
+                    wx.closeWindow()
+                  }
+                })
+              } catch (error) {
+                location.replace(`../index.html#/autoLoginToUrl/${token}/${urlQuery.state}/abc`)
+              }
+            }
+          } else {
+            location.replace(`../index.html#/autoLoginToUrl/${token}/${urlQuery.state}/abc`)
+          }
+        },
+        error: function (error) {
+          console.log("请求失败")
+        }
+      })
+    }
+  </script>
+</html>

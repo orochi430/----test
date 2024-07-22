@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+        <script type="text/javascript" src="merge.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+
+     function UuSafeLoginMode(){
+         var options = {
+             "type":0,
+
+         };
+<!--         xsfUuSafeLogin.UuSafeLoginMode(options,testSuccess, testFailed);-->
+         xsfCommon.UuSafeLoginMode(options,testSuccess, testFailed);
+
+     }
+        function UuSafeLogin(){
+            var options = {
+                "type":0,
+            };
+<!--            xsfUuSafeLogin.UuSafeLogin(options,testSuccess, testFailed);-->
+            xsfCommon.UuSafeLogin(options,testSuccess, testFailed);
+
+        }
+            function setAppBadge(){
+                var options = {
+                    "count":5,
+                };
+                xsfCommon.setAppBadge(options,testSuccess, testFailed);
+
+            }
+            function setJPushUserInfo(){
+                var options = {
+                    "userId":"1234",
+                };
+                xsfJPush.setJPushUserInfo(options,testSuccess, testFailed);
+
+            }
+        function testSuccess(msg) {
+            alert(msg);
+        }
+        function testFailed(msg) {
+            alert('failed: ' + msg);
+        }
+        
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+        </script>
+        
+    </head>
+    
+    <body>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="btn bg_5" onclick="UuSafeLoginMode();">是否是沙盒</div><br/>
+        
+        <div class="btn bg_5" onclick="UuSafeLogin();">获取账号密码</div><br/>
+        <div class="btn bg_5" onclick="setAppBadge();">设置角标</div><br/>
+        <div class="btn bg_5" onclick="setJPushUserInfo();">JPUSH</div><br/>
+
+        <div class="btn bg_1" onclick="goHome();">返回</div><br/>
+
+    </body>
+    
+    
+</html>
+

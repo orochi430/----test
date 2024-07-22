@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+ 
+<!-- <script type="text/javascript" charset="utf-8" src="native.js"></script>-->
+<script type="text/javascript" src="merge.js"></script>
+  <script src="js/BASE64.js"></script>
+  <script src="js/md5.js"></script>
+ <script type="text/javascript" charset="utf-8">
+
+
+    //
+    var ref;
+    document.addEventListener("deviceready", onDeviceReady, false);
+    //
+    function onDeviceReady() {
+        //alert('onDeviceReady');
+        
+    }
+        var ref;
+        function openURL1(url){
+            ref = xsfWindow.open(url,"");
+        }
+        function openURL(url){
+            //alert(url);toolbar=no
+            var target = "_blank";
+            var options = "titleBar=yes,title=部门邮件，enableviewportscale=yes";
+        
+            //ref = window.open(url, target, options);
+           // ref = xsfWindow.open(url,"部门邮件",false);
+           // ref = xsfWindow.open(url,"部门邮件",true);
+<!--            ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });-->
+<!--            ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });-->
+<!--            ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });-->
+<!--            ref.addEventListener('exit', function(event) { alert(event.type); });-->
+<!--            -->
+<!--            setTimeout(function() {-->
+<!--                       ref.close();-->
+<!--                       }, 5000);-->
+        }
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+        
+        function openApp(){
+            var pubkey = "1771828823";
+            var time = new Date().getTime();
+            var key = time + pubkey;
+            console.log("key = " + key);
+            key = hex_md5(key);
+            console.log("md5 key = " + key);
+ 
+ 
+            var paramObject = {
+                userName:'0206' ,
+                flag:'5468' ,
+                time : time ,
+                Key : key ,
+                mobile : "18500914617"
+            };
+           
+            var jsonStr2=JSON.stringify(paramObject);
+            
+            console.log("paramObject.toString = " +jsonStr2);
+          
+           var data =  Base64.encode(jsonStr2);
+            xsf.startApp("NewcapecWanXiao://?"+data, "" , function successCallback(result){
+                         alert( result );
+                         } , function errorCallback(result){
+                         alert( result );
+                         });
+        }
+        function openApp1(paramObject){
+            xsf.startApp(paramObject,"" , function successCallback(result){
+                         alert( result );
+                         } , function errorCallback(result){
+                         alert( result );
+                         });
+        }
+ 
+ //打开第三方App
+        function openChaoXing() {
+           xsfThirdApp.openApp(successFunction,failFunction,["mobilelib://mobilelib/login?unitid=1595&username=ygx&password=ygx69988","应用名字"])
+     
+ }
+       function successFunction(success){
+     document.getElementById("ios").style.background = success;
+     alert(success);
+ }
+ 
+      function failFunction(error){
+     alert(error);
+ }
+    </script>
+  </head>
+  <body>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="btn bg_4" onclick="openChaoXing();">打开第三方App</div><br/>
+      <div class = "btn bg_2" onclick = "openURL('http://weixin.rmgpw.org.cn/CollegeAppMySql/Html/index_wx.html#/autoLogin/18510167610/ssss');">（测试党校视频）</div><br/>
+      <div class = "btn bg_1" onclick = "openApp1('mqqapi://');">openAPP（比如打开QQ）</div><br/>
+        <div class = "btn bg_1" onclick = "openApp();">打开完美校园</div><br/>
+        
+      <div class = "btn bg_2" onclick = "openURL('http://113.106.111.50:8088/IPadsfb/formbuilder/downloadfile_yd.aspx?mid=984361&info_id=947725');">（打开网页）</div><br/>
+      <div class = "btn bg_3" onclick = "openURL('http://yyk.99.com.cn/paihang/nanyang/fuke/');">openBaidu（打开普通网页比如百度）</div><br/>
+      <div class = "btn bg_4" onclick = "openURL1('http://115.236.160.136:8080/ezweb/action?commonFormProxyAction=getFormDetail&user_id=200198&domain=&type=FILEQUERY.ASPX&formNo=&info_id=171726&pid=0&pnid=&WF_ID=&moduleId=DZGG&formId=&hash=&queryType=html&IsView=1&hd=0');">测试</div><br/>
+      <div class = "btn bg_1" onclick= "goHome();">返回</div><br/>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+{
+  "gw": {
+    "data": [{
+      "dataValue": {
+        "bt": "已按要求做好相关工作,请毅松、志强、联姘同志阅示",
+        "fw": "文件种类",
+        "lz": "来自章三（环节）",
+        "date": "4天",
+        "coment": "05-04到05-08",
+        "ss": "已按要求做好相关工作，请毅松、志强、联萍同志阅示"
+      },
+      "buttons": {
+        "commonButton": [{
+          "icon": "iconguanzhu",
+          "action": "gz",
+          "name": "关注"
+        },{
+          "icon": "iconzhiding",
+          "action": "zd",
+          "name": "置顶"
+        }],
+        "mainButtons": [{
+          "action": "th",
+          "name": "退回"
+        },{
+          "action": "fs",
+          "name": "发送"
+        }]
+      }
+    }],
+    "columns": [{
+      "showCategory": "mainTitle",
+      "showMetaColumn": "bt"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "fw",
+      "icon": "iconwenjianleixing"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "lz",
+      "icon": "iconshijian",
+      "color": "#3296FA"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "date",
+      "icon": "iconriqi",
+      "color": "#76C64F"
+    },{
+      "showCategory": "content",
+      "showMetaColumn": "ss",
+      "icon": "iconyijian",
+      "showRows": 2
+    }]
+  },
+  "hy": {
+    "data": [{
+      "dataValue": {
+        "bt": "已按要求做好相关工作,请毅松、志强、联姘同志阅示",
+        "fw": "文件种类",
+        "lz": "未开始",
+        "date": "4天",
+        "coment": "05-04到05-08",
+        "ss": "综合楼A308教室"
+      },
+      "buttons": {
+        "commonButton": [{
+          "icon": "iconguanzhu",
+          "action": "gz",
+          "name": "关注"
+        },{
+          "icon": "iconzhiding",
+          "action": "zd",
+          "name": "置顶"
+        },{
+          "icon": "iconriqi",
+          "action": "qd",
+          "name": "签到"
+        }],
+        "mainButtons": [{
+          "action": "th",
+          "name": "退回"
+        },{
+          "action": "fs",
+          "name": "发送"
+        }]
+      }
+    }],
+    "columns": [{
+      "showCategory": "mainTitle",
+      "showMetaColumn": "bt"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "fw",
+      "icon": "iconwenjianleixing"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "lz",
+      "icon": "iconzhuangtai",
+      "color": "#3296FA"
+    },{
+      "showCategory": "subTitle",
+      "showMetaColumn": "date",
+      "icon": "iconriqi",
+      "color": "#76C64F"
+    },{
+      "showCategory": "content",
+      "showMetaColumn": "coment",
+      "icon": "iconshijian",
+      "showRows": 1
+    },{
+      "showCategory": "content",
+      "showMetaColumn": "ss",
+      "icon": "icondingwei",
+      "showRows": 1
+    }]
+  }
+}

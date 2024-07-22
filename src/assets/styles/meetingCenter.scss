@@ -1,0 +1,164 @@
+// 会议中心
+.ds-meeting-center{
+  padding-top: 12px;
+  @include font_4();
+  *{
+    box-sizing: border-box;
+  }
+  .center-loading{
+    padding-top: 40px;
+    text-align: center;
+  }
+  .__meeting-room{
+    margin-bottom: 12px;
+    padding: 13.5px 15px 0;
+    height: 171px;
+    background-color: #fff;
+    .__title{
+      @include font_1();
+      border-left: 5px solid #000;
+      @include border-left-theme("normal");
+      height: 19px;
+      line-height: 19px;
+      padding-left: 6px;
+      margin-bottom: 13.5px;
+    }
+    .__data{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid #E6E6E6;
+      &-item{
+        width: 33.33%;
+        text-align: center;
+        padding: 0 0 13px;
+        position: relative;
+        &::before{
+          content: ' ';
+          width: 1px;
+          height: 27.5px;
+          background-color: #E6E6E6;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -17.75px;
+        }
+        &:first-child::before{
+          display: none;
+        }
+        &-num{
+          @include font_0();
+          line-height: 30px;
+        }
+        &-name{
+          @include font_4();
+          color: #333;
+          line-height: 28px;
+        }
+      }
+    }
+    .__footer{
+      text-align: right;
+      padding-top: 11.5px;
+      .van-button{
+        width: 75px;
+        height: 30px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .van-tabs__nav{
+    height: 44px;
+    padding: 0;
+    .van-tab{
+      color: #666 !important;
+      @include font_3(true);
+    }
+    .van-tab--active{
+      // color: #333 !important;
+    }
+    .van-tabs__line{
+      bottom: 0;
+      height: 2px;
+    }
+  }
+  //.list-box{
+  //  padding: 15px;
+  //  .ds-card-footer{
+  //    height: 1.2rem;
+  //    padding: 0 10px;
+  //  }
+  //  ._header{
+  //    @include bold();
+  //    line-height: 1.4em;
+  //  }
+  //  .footer{
+  //    display: flex;
+  //    justify-content: space-between;
+  //    align-items: center;
+  //    height: 100%;
+  //    &-left{
+  //      display: flex;
+  //      flex-direction: row;
+  //      color: #666;
+  //      &-bt{
+  //        @include font_6();
+  //        text-align: center;
+  //        width: 43px;
+  //        height: 48px;
+  //        .iconfont{
+  //          @include font_1();
+  //        }
+  //        .iconguanzhu2,
+  //        .iconzhiding2{
+  //          color: #F1B902;
+  //        }
+  //      }
+  //    }
+  //    &-right{
+  //      display: flex;
+  //      flex-direction: row-reverse;
+  //      .van-button{
+  //        display: flex;
+  //        min-width: 60px !important;
+  //        height: 30px !important;
+  //        margin-left: 10px !important;
+  //        padding: 0 5px !important;
+  //        border-radius: 2px !important;
+  //        &:first-child{
+  //          background-color: #3296FA;
+  //          color: #fff;
+  //          border-color: #3296FA;
+  //        }
+  //      }
+  //    }
+  //  }
+  //  .col-3{
+  //    display: flex;
+  //    flex-direction: row;
+  //    justify-content: space-between;
+  //    .col-it{
+  //      width: 33%;
+  //      &:last-child{
+  //        width: 20%;
+  //      }
+  //    }
+  //  }
+  //  .col-2{
+  //    display: flex;
+  //    flex-direction: row;
+  //    .col-it{
+  //      width: 40%;
+  //    }
+  //  }
+  //  .col-1{
+  //    display: flex;
+  //  }
+  //  .col-it{
+  //    @include font_6();
+  //    color: #666;
+  //    line-height: 1.4em;
+  //    margin: .2em 0;
+  //  }
+  //}
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[31537],{14233:function(n,u,a){a.r(u);var e=a(25108),a={initHandle:function(u,n,a){a.$bus.on("blurBus",function(n){e.log(n),"C-ERP-CW-ZJSQ-0002"!=n.metaData.metaId||isNaN(Number(n.value))||a.$set(u.main,"C-ERP-CW-ZJSQ-0001",{value:dsf.util.amountWords(Number(n.value))})})}};u.default=a}}]);

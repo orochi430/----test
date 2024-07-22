@@ -1,0 +1,116 @@
+/*分栏信息（移动端）*/
+.control_mobile_fl span {
+  color: #2271b3 !important;
+  font-size: 16px !important;
+}
+
+/*意见显示标题*/
+.controlOpinionView_label .control_label span {
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+/*意见显示内容*/
+.controlOpinionView .opinionBox .opinionText,
+.controlOpinionView .opinionBox .opinionTime {
+  color: #000 !important;
+  font-size: 18px !important;
+}
+/*意见输入标题*/
+.controlEditOpinion_label .control_label span {
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+}
+/*意见输入内容*/
+.controlEditOpinion
+  .input-box
+  .van-field
+  .van-cell__value
+  .van-field__body
+  .van-field__control {
+  color: #000 !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+/*元数据标题*/
+.control_label span {
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+/*文本框元数据内容*/
+.controlTextBox .van-field .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}
+
+/*文本域元数据内容*/
+.controlTextarea .van-field .van-field__control {
+  color: #000 !important;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+/*文本域元数据内容居中*/
+.formTitle .readonly-font div {
+  text-align: center !important;
+}
+/*文本域元数据内容居中*/
+.formTitle .textareaBox .van-field__control {
+  text-align: center !important;
+}
+/*文本域元数据内容居中*/
+.controlTextarea .textareaBox .van-field__control {
+  text-align: center !important;
+}
+
+/*单选框元数据内容*/
+.controlRadio .van-field .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}
+/* 文号元数据内容 */
+.controlFileCode .van-field .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}
+
+/*复选框元数据内容*/
+.van-col .controlCheckBoxWrap .van-field span {
+  color: #000 !important;
+  font-size: 18px;
+}
+
+/*下拉框元数据内容*/
+.controlCheckBox .van-field__value .van-field__body .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}
+
+/*日期时间元数据内容*/
+.controlDateTimeBox
+  .van-field
+  .van-field__value
+  .van-field__body
+  .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}
+
+/*代码选择元数据标题*/
+.controlCode_label .control_label span,
+.controlUser_label .control_label span {
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/*代码选择元数据内容*/
+.controlUser .van-field .van-field__value .van-field__body .van-field__control {
+  color: #000 !important;
+  font-size: 18px;
+}

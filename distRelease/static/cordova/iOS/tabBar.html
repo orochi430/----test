@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+<!--    <script type="text/javascript" charset="utf-8" src="native.js"></script>-->
+<script type="text/javascript" src="merge.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    var ref;
+    document.addEventListener("deviceready", onDeviceReady, false);
+    
+    function onDeviceReady() {
+    	xsfSplashscreen.hide();
+    }
+    
+    function addTabBar(){
+        
+        data = {
+            "tabType":"1",
+            "title": "",
+            "align": "bottom",
+            "tabItems": [
+                         {
+                         
+                         "type": "MessagesCenterViewController",
+                         "url": "",
+                         "title": "消息",
+                         "imageName":"news",
+                         "selectedImageName":"news-click",
+                         "params":{"url":""}
+                        
+                         },
+                         {
+                         
+                         "type": "LTSCalendarViewController",
+                         "url": "",
+                         "title": "日程",
+                         "imageName":"schedule",
+                         "selectedImageName":"schedule-click",
+                         "params":{"url":""}
+                         },
+                         {
+                         
+                         "type": "YJDiscoverTableViewController",
+                         "url": "",
+                         "title": "工作",
+                         "imageName":"",
+                         "selectedImageName":"",
+                         "params":{"url":""}
+                         },
+                         {
+                         
+                         "type": "ShowContactsListViewController",
+                         "url": "",
+                         "title": "通讯录",
+                         "imageName":"AddressBook",
+                         "selectedImageName":"AddressBook-click",
+                         "params":{"url":""}
+                         },
+                         {
+                         
+                         "type": "UserInfoCenterViewController",
+                         "url": "",
+                         "title": "我的",
+                         "imageName":"me",
+                         "selectedImageName":"me-click",
+                         "params":{"url":""}
+                         }
+                         ],
+                         "actions": []
+        };
+       
+    	xsfTabBar.addTabBar(data,onSuccess, onError);
+	}
+    
+ 
+    function onSuccess(data){
+    	console.log(data.message + " - " + data.data);
+    }
+    function goHome()
+    {
+        window.location.href = "index.html";
+    }
+    function onError(e){
+    	console.log(e.message + " - " + data.data);
+    }
+    </script>
+  </head>
+<body>
+    <br/>
+    <br/>
+	<div class="btn_container">
+		<div class="btn bg_1" onclick="addTabBar()">addTabBar()添加TabBar</div><br/>
+	
+        <div class = "btn bg_2" onclick = "goHome();">返回</div><br/>
+	</div>
+</body>
+</html>

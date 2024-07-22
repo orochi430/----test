@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="92px" height="92px" viewBox="0 0 92 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>加</title>
+    <defs>
+        <circle id="path-1" cx="42" cy="42" r="42"></circle>
+        <filter x="-8.3%" y="-6.0%" width="116.7%" height="116.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="16.2团队文件-分享" transform="translate(-634.000000, -1311.000000)">
+            <g id="加" transform="translate(638.000000, 1313.000000)">
+                <g id="形状结合">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#0089FE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M61.9430494,39.5362065 L44.0569172,39.5362065 L44.0569172,22.056998 C44.0569172,20.9209781 43.1359973,20 41.9999666,20 C40.8639359,20 39.9428823,20.9210449 39.9428823,22.056998 L39.9428823,39.5362065 L22.0570174,39.5362065 C20.9209868,39.5362065 20,40.4571846 20,41.5930709 C20,42.7291577 21.4066759,45.1428571 22.5426397,45.1428571 L39.9428823,45.1428571 L39.9429492,61.9429351 C39.9429492,63.0778859 40.8640027,64 42.0000335,64 C43.1360642,64 44.0569841,63.0778859 44.0569841,61.9429351 L44.0569172,45.1428571 L62.4286716,45.1428571 C63.5647023,45.1428571 64,42.7291577 64,41.5930709 C64,40.4571846 63.0790801,39.5362065 61.9430494,39.5362065 Z" id="路径" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

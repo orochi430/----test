@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+            <title>xsfOrgUserPicker</title>
+            <link rel="stylesheet" href="css/style_box_demo.css" type="text/css" />
+            <script type="text/javascript" charset="utf-8" src="external/jquery.js"></script>
+<!--            <script type="text/javascript" src="native.js"></script>-->
+<script type="text/javascript" src="merge.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                
+                var ref;
+                document.addEventListener("deviceready", onDeviceReady, false);
+                
+                function onDeviceReady() {
+                    xsfSplashscreen.hide();
+                }
+            
+            function getDataAction(){
+                
+                //117.184.89.78:7080
+                $.ajax({
+                       type : 'GET',
+                       url : "http://192.168.1.222:8080/ezweb/action?userContactActionAngular=1&action=getDepart&rootDeptId=643800",
+                       data : "",
+                       dataType: "text",
+                       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                       success : function (data, status) {
+                       xsfOrgPicker.pick(data, onSuccess, onError);
+                       
+                       },
+                       error: function(data , status){
+                       alert("操作失败:服务器异常" + data.statusText);
+                       }
+                       });
+            }
+            
+            function orgPicker()
+            {
+                //getDataAction();
+                var parameter = {"controlId" : 2,"type" : "depart", "url" : "/action?userContactActionAngular=1&action=getDepart&rootDeptId=643800" };
+                var jParameter = JSON.stringify(parameter);
+                xsfOrgPicker.pick(jParameter, onSuccess, onError);
+            }
+            function onSuccess(success){
+                alert("success.message");
+                document.getElementById('successData').innerHTML = "<p>"+success.message + " - " + success.data+"</p>";
+                console.log(success.message + " - " + success.data);
+            }
+            
+            function onError(e){
+                console.log(e.message + " - " + e.data);
+            }
+            function pickUsersTransferChat()
+            {
+                var parameter = {
+                    "url" : "",
+                    "userId" : "73005232",
+                    "userName":"王鹏可",
+                    "rootDeptId":"643800",
+                    "password":"111111"
+                    
+                };
+                var jParameter = JSON.stringify(parameter);
+                xsfOrgPicker.pickUsersTransferChat(jParameter,onSuccess,onError);
+            }
+            function goHome()
+            {
+                window.location.href = "index.html";
+            }
+            </script>
+            </head>
+    <body>
+        <div class="btn_container">
+            <br/>
+            <br/>
+            <br/>
+            
+            <div class="btn bg_1" onclick="orgPicker();">xsfOrgPicker.pick(data,Parameter)选择部门</div>
+            <div class="btn bg_3" onclick="pickUsersTransferChat();">pickUsersTransforChat选择人员（调用聊天通讯录）</div>
+            <div class = "btn bg_2" onclick = "goHome();">返回</div><br/>
+            <div class="btn bg_6" id="successData"></div><br/><br/>
+        </div>
+    </body>
+</html>

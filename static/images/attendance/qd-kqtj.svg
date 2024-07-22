@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="签到打卡" transform="translate(-175.000000, -734.000000)">
+            <g id="编组" transform="translate(175.000000, 734.000000)">
+                <rect id="矩形" fill-opacity="0.01" fill="#999999" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+                <path d="M8.55507,3.682857 C7.455,4.1389995 6.465045,4.807029 5.636037,5.6360325 C4.007361,7.264695 3,9.514695 3,12 C3,16.970565 7.029435,21 12,21 L12,21 C14.48526,21 16.73526,19.99263 18.363945,18.363945 C19.19298,17.534955 19.861005,16.544955 20.317125,15.44493" id="路径" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12,12 L21,12 C21,7.029435 16.970565,3 12,3 L12,12 Z" id="路径" stroke="#999999" stroke-width="1.5" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[53199],{53589:function(e,n,u){u.r(n);u={initHandle:function(e,n,u){u.$route.query.appid&&(u.$set(e.main,"S-APP-APPLY-0010",{value:u.$route.query.appid}),u.$set(e.main,"S-APP-APPLY-0009",{value:u.$route.query.appName}))}};n.default=u}}]);

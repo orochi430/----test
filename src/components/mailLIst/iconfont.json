@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5388006",
+      "name": "树状图_o",
+      "font_class": "shuzhuangtu_o",
+      "unicode": "ebb3",
+      "unicode_decimal": 60339
+    }
+  ]
+}

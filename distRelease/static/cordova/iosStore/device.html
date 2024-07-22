@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+<script type="text/javascript" charset="utf-8">
+	//debugger;
+    document.addEventListener("deviceready", onDeviceReady, false);
+    ///
+    function onDeviceReady() {
+        
+
+    }
+function getDeviceInfo()
+{
+    //alert('onDeviceReady');
+    //alert('platform:' + device.platform);
+    //alert('version:' + device.version);
+    //alert('uuid:' + device.uuid);
+    //alert('model:' + device.model);
+    var element = document.getElementById('device');
+    element.innerHTML = 'platform: ' + device.platform  + '<br />' +
+    'version: '  + device.version  + '<br />' +
+    'uuid: '     + device.uuid     + '<br />' +
+    'model: '    + device.model    + '<br />' +
+    'nettype: '     + device.netType     + '<br />' +
+    'wifiname: '     + device.wifiName     + '<br />' +
+    'wifiBSSID: '     + device.wifiBSSID     + '<br />' +
+
+    'ip: '     + device.IP     + '<br />' ;
+}
+    function pushNewHtmlVC(){
+        $NavVC.pushNewHtmlVC({"title":"1965915","url":"http://xueyuan.sddx.gov.cn/AppDown/main.html"},function(arg){
+            //返回了
+            alert("返回了");
+            navigator.notification.alert("111返回了");
+        },function(arg){
+        });
+
+    }
+    function pushNewHtmlVC2(){
+        $NavVC.pushNewHtmlVC({"title":"百度","url":"https://www.baidu.com","webType":"1","show_title_bar":"false","orientation":"0","colorString":"ffffff","show_loading":"ture","light_bar":"ture","backType":"finish"},function(arg){
+            //返回了
+            alert("返回了");
+        },function(arg){
+        });
+    }
+    function pushNewHtmlVC3(){
+        $NavVC.pushNewHtmlVC({"title":"wenjian","url":"http://101.230.72.4:18082/fcscloud/view/preview/BsZ3fsYV1jNQHGFIuxnN-BZcpMKJoQIdD-7WQdug_ALps51ErcrNcCBSmQsd48-iOvWrVIhvTd_XbR-QYGSSeoDCfDB09PYz3w2GGs6QHNvyXLVxgd_cjBjdc_kOJCUhu975aIGjYy3cOA8ASEtd-C0Ab3rnplAmv-sWZv3paSU6US60M_jPRDps5nBqzwGaallTpCqOXm0oU-U2S7CPGOre_RZ0BGB9zdQxURT9z2Awnq1_cp-YimBoAQM7WKEWONJacs1XrraIZ_IFNesMXMIPsCjiUqecXi2R0hrIs0ZwoGddLX-GfeA1szrTnchEgzogb1rCQ4NODqiuSrJu3rVOVYChn9biRg_7heatdlqOym-rqq8MCCcp-I-nZomShpi2ra7B7EfhLffszqPqUq3vWZzoAILVa7FP5v1QB-hnrD7kfzGBQjv20Cx6eet63DHTd8Wf9jbMkwlP4OmX8JLRR9Wdc07ncn__2jP6xUmND8T-jqcuOx0TIIFcyKdkNp2WhsO5en5r-0B2zHrdlEONx6y63I89klfnlxy17-G87Oufrjwxn0xQ5VCFIRoXYO1KhWBPqEaqOtskiiZuCJdiTMtU_6tSBM_iUl__1GcHfmmLOFI95kif2Rt26F4kyizTw8t2pvQUjFjQZwN5IY68J9NsRhmIDE8XVTQbCqfAGKHl7DgUUwU_rPm7gtsw7WORF_Bz91qtcBpfEj8TqAKcUEJaVSjlleM5ScxoASCxVIhX7Qgj-Rux1g0dK3qNz4inPaHcaJTn6glSKAeGivAVQ_E73a5RZPqdKesaw5deXgXwlNqMK6j-4velvC4QHDGtUSlcIKmjs0M3rPu21taAfM-Me-t6dJfGxt6xtKg-AV-XCNbTbA==/","webType":"1","show_title_bar":"false","orientation":"0","colorString":"ffffff","show_loading":"ture","light_bar":"ture","backType":"finish"},function(arg){
+            //返回了
+            alert("返回了");
+        },function(arg){
+        });
+
+    }
+     //type =1 文件
+     function download1() {
+         $MFile.download({"remoteFileAddr":"http://192.168.5.76:8080/upload/files/20211201/5c1f40b3547e465f9ebeaa1fc1c967d0.docx","target":"/www/11111.docx","type":"1"},function(arg){
+             alert("成功");
+         },function(arg){
+             alert("失败");
+         });
+     }
+     //type =2 照片
+     function download2() {
+         $MFile.download({"remoteFileAddr":"https://img1.baidu.com/it/u=169797304,1868983917&fm=253&fmt=auto&app=138&f=JPG?w=500&h=888","type":"2"},function(arg){
+             alert("成功");
+             navigator.notification.alert("111成功");
+
+         },function(arg){
+             alert("失败");
+         });
+     }
+    function openApp(){
+        windowApp.openApp({"appUrl":"zydxAppJump://type=1&ACCOUNT=d3898822-4ed8-4a5a-b2df-95d87b1a1c3c","appDownUrl":"https://www.pgyer.com/3o0n"},function(arg){
+            alert("openapp");
+        },function(arg){
+        });
+
+    }
+    function getversion(){
+        
+        $Version.getCurrentVersion({},function(arg){
+            alert("getversion"+arg);
+        },function(arg){
+            alert("error"+arg);
+
+        });
+
+    }
+    function makecall(){
+       PhoneCall.call({"phone":"15737925158"},function(arg){
+       },function(arg){
+       });
+
+    }
+    function makecallstyleB(){
+        $iaction.dosth({"action":"makecall","phonenumber":"15737925158"},function(arg){
+       },function(arg){
+       });
+    }
+    function makecallstyleC(){
+        cordova.InAppBrowser.open('tel:12345678', '_system');
+    }
+    function sendsmsB(){
+        cordova.InAppBrowser.open('sms:12345678', '_system');
+    }
+    function sendsms(){
+        $iaction.dosth({"action":"sendsms","phonenumber":"15737925158"},function(arg){
+           alert("getversion"+arg);
+       },function(arg){
+           alert("error"+arg);
+       });
+    }
+    
+    
+    function getAppVersionB(){
+        $iaction.dosth({"action":"getAppVersion"},function(s){
+            navigator.notification.alert(s);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+    }
+    
+    function getlocation(){
+        $GPS.getLocation({},function(s){
+                   alert(s);
+                   navigator.notification.alert(s);
+
+        },function(e){
+                   alert(e);
+        });
+    }
+    
+    
+    function getlocationStyleB(){
+        $iaction.dosth({"action":"getBaiduLocation"},function(s){
+                   alert(s);
+                   navigator.notification.alert(s);
+
+        },function(e){
+                   alert(e);
+        });
+    }
+    function JUPSHSetAlias(){
+        $Jpush.setJPushUserInfo({"userId":"123"},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+    
+    function getapnsDeviceToken(){
+        $iaction.dosth({"action":"apnsDeviceTokenstr"},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+    function getapnsDeviceTokenB(){
+        $iaction.dosth({"action":"apnsdeviceTokenbsae64"},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+    function setbadgenumber(){
+        $iaction.dosth({"action":"setbadge","badgeNumber":"5"},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+    
+    function setStatusBar(){
+        try{
+            window.StatusBar.backgroundColorByHexString("#0000ff");
+            window.StatusBar.backgroundColorByName("green");//方法正确但没起效
+
+        }catch(e){
+            navigator.notification.alert(e);
+
+        }
+    }
+    function changeStatusBarColor(){
+        $iaction.dosth({"action":"changeStatusBarColor","color":"#2e6633"},function(s){
+            navigator.notification.alert(e);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+           
+    }
+    function changeStatusBarTextColorwhite(){
+        $iaction.dosth({"action":"changeStatusBarTextColor","isDark":"false"},function(s){
+            navigator.notification.alert(e);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+           
+    }
+    function changeStatusBarTextColorblack(){
+        $iaction.dosth({"action":"changeStatusBarTextColor","isDark":"ture"},function(s){
+            navigator.notification.alert(e);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+           
+    }
+    function hidenStatusBar(){
+        $iaction.dosth({"action":"hidenStatusBar"},function(s){
+            navigator.notification.alert(e);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+           
+    }
+    function showStatusBar(){
+        $iaction.dosth({"action":"showStatusBar"},function(s){
+            navigator.notification.alert(e);
+        },function(e){
+            navigator.notification.alert(e);
+        });
+           
+    }
+    function executejiance(){
+        $iaction.execute("$Object.doMethod",{param1:"test1",param2:101},function (s) {            
+            navigator.notification.alert(s);
+            navigator.notification.alert(s[code]);
+
+        },function (e) {
+            navigator.notification.alert(e);
+        }
+        );
+    }
+    function executejiance2(){
+        $iaction.execute("$Object.doMethod",function (s) {
+            navigator.notification.alert(s);
+            navigator.notification.alert(s[code]);
+
+        },function (e) {
+            navigator.notification.alert(e);
+        }
+        );
+    }
+    function executejiance3(){
+        $iaction.execute({param1:"test1",param2:101},function (s) {
+            navigator.notification.alert(s);
+            navigator.notification.alert(s[code]);
+
+        },function (e) {
+            navigator.notification.alert(e);
+        }
+        );
+    }
+    function openScanner(){
+        $Scanner.open({},function(s){
+            navigator.notification.alert(s);
+        },function(s){
+            navigator.notification.alert(s);
+        });
+           
+    }
+    
+</script>
+  </head>
+  <body>
+
+    <br/>
+    <br/>
+    <p id="device">设备信息...</p>
+    <div class="btn bg_1" onclick = "getDeviceInfo();">getDeviceInfo获得设备信息</div>
+    <div class="btn bg_1" onclick = "pushNewHtmlVC();">打开网页</div>
+    <br/>
+    <div class="btn bg_1" onclick = "pushNewHtmlVC2();">打开百度</div>   <br/>
+    <div class="btn bg_1" onclick = "pushNewHtmlVC3();">打开文件</div>   <br/>
+
+    <div class="btn bg_1" onclick = "openApp();">打开app</div>   <br/>
+    <div class="btn bg_1" onclick = "download1();">download文件</div>   <br/>
+    <div class="btn bg_1" onclick = "download2();">download照片</div>   <br/>
+
+    <div class="btn bg_1" onclick = "getversion();">版本号</div>   <br/>
+    <div class="btn bg_1" onclick = "makecall();"> 拨打电话</div>   <br/>
+    
+    <div class="btn bg_1" onclick = "makecallstyleB();"> 拨打电话B</div>   <br/>
+    <div class="btn bg_1" onclick = "makecallstyleC();"> 拨打电话C</div>   <br/>
+
+    <div class="btn bg_1" onclick = "sendsms();"> 发短信</div>   <br/>
+
+    <div class="btn bg_1" onclick = "getAppVersionB();">版本号B</div>   <br/>
+
+    <div class="btn bg_1" onclick = "getlocation();">位置信息</div>   <br/>
+    <div class="btn bg_1" onclick = "getlocationStyleB();">位置信息B</div>   <br/>
+    <div class="btn bg_1" onclick = "JUPSHSetAlias();">Jpush设置别名</div>   <br/>
+
+    <div class="btn bg_1" onclick = "getapnsDeviceToken();">apnsDeviceToken传递</div>   <br/>
+    <div class="btn bg_1" onclick = "setbadgenumber();">设置角标</div>   <br/>
+    <div class="btn bg_1" onclick = "setStatusBar();">设置StatusBar颜色</div>   <br/>
+    <div class="btn bg_1" onclick = "changeStatusBarColor();">设置StatusBar颜色B</div>   <br/>
+    <div class="btn bg_1" onclick = "openScanner();">打开扫一扫</div>   <br/>
+    
+    <div class="btn bg_1" onclick = "changeStatusBarTextColorwhite();">设置StatusBar字体颜色白</div>   <br/>
+    <div class="btn bg_1" onclick = "changeStatusBarTextColorblack();">设置StatusBar字体颜色黑</div>   <br/>
+    <div class="btn bg_1" onclick = "hidenStatusBar();">页面到顶</div>   <br/>
+    <div class="btn bg_1" onclick = "showStatusBar();">预留StatusBar区域</div>   <br/>
+
+    
+    
+    <div class="btn bg_1" onclick = "executejiance();">模式检测</div>   <br/>
+    <div class="btn bg_1" onclick = "executejiance2();">模式检测2</div>   <br/>
+    <div class="btn bg_1" onclick = "executejiance3();">模式检测3</div>   <br/>
+
+    <div class="btn bg_1" onclick = "goHome();">返回</div>
+    <script type = "text/javascript">
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+    </script>
+  </body>
+</html>

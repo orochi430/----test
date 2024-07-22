@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[77905],{74897:function(e,n,t){t.r(n);t={sendAfter:function(e,n,t){dsf.http.post("fn/swBachReceipt/udate",{pk:t.pk,edate:e.main["S-PROCESS-0019"].value}).then(function(e){"success"==e.data.type&&t.backSucces(1)})}};n.default=t}}]);

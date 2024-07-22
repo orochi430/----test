@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+        <script type="text/javascript" src="merge.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+
+<!--frame  位置-->
+<!--type：1  折线图  2 柱状图  3 饼状图-->
+<!--ymax  y轴最大值-->
+<!--xtitles  x轴下面的标题-->
+<!--dataSource  数据源组-->
+<!--{-->
+<!--    piePercentValue  数值-->
+<!--    text    关联名-->
+<!--    color  颜色-->
+<!--    project   关联项目名-->
+<!--     plots   点集合-->
+<!--     isShowPoint   显示点-->
+<!--}-->
+     
+
+            function createchartline() {
+                
+                var options = {
+                    "frame" : [0,204,375,200],
+                    "type":1,
+                    "ymax":1000,
+                    "isShowPoint":1,
+                    "xtitles" :["1", "2", "3", "4", "5", "6", "7", "8" , "9", "10", "11", "12"],
+                    "dataSource" :[
+                                   {
+                                   "piePercentValue": "",
+                                   "text":"",
+                                   "color": [200, 0, 135],
+                                   "project":"1组",
+                                   "plots":["200", "800", "500", "300", "1000", "600", "100", "300" , "500", "600", "700", "800"]
+                                   },
+                                   {
+                                   "piePercentValue": "",
+                                   "text":"",
+                                   "color": [10, 50, 205],
+                                   "project":"2组",
+                                   "plots":["700", "300", "400", "500", "300", "500", "700", "800" , "900", "800", "400", "600"]
+                                   },
+                                   {
+                                   "piePercentValue": "",
+                                   "text":"",
+                                   "color": [0, 40, 135],
+                                   "project":"3组",
+                                   "plots":["800", "300", "600", "900", "600", "700", "600", "500" , "400", "300", "900", "600"]
+                                   }
+                                   ]
+                };
+
+                xsfChartUtility.showChartView(options,testSuccess, testFailed);
+            }
+        function createchartbar() {
+            
+            var options = {
+                "frame" : [0,204,375,200],
+                "type":2,
+                "ymax":1000,
+                "isShowPoint":1,
+                "xtitles" :["1", "2", "3", "4", "5", "6", "7", "8" , "9", "10", "11", "12"],
+                "dataSource" :[
+                               {
+                               "piePercentValue": "",
+                               "text":"",
+                               "color": [200, 0, 135],
+                               "project":"1组",
+                               "plots":["200", "800", "500", "300", "1000", "600", "100", "300" , "500", "600", "700", "800"]
+                               },
+                               {
+                               "piePercentValue": "",
+                               "text":"",
+                               "color": [10, 50, 205],
+                               "project":"2组",
+                               "plots":["700", "300", "400", "500", "300", "500", "700", "800" , "900", "800", "400", "600"]
+                               },
+                               {
+                               "piePercentValue": "",
+                               "text":"",
+                               "color": [0, 40, 135],
+                               "project":"3组",
+                               "plots":["800", "300", "600", "900", "600", "700", "600", "500" , "400", "300", "900", "600"]
+                               }
+                               ]
+            };
+            
+            xsfChartUtility.showChartView(options,testSuccess, testFailed);
+        }
+        function createchartpie() {
+            
+            var options = {
+                "frame" : [0,204,375,250],
+                "type":3,
+                "ymax":0,
+                "isShowPoint":1,
+                "xtitles" :[],
+                "dataSource" :[
+                               {
+                               "piePercentValue": "10",
+                               "text":"1组",
+                               "color": [200, 0, 135],
+                               "project":"",
+                               "plots":[]
+                               },
+                               {
+                               "piePercentValue": "20",
+                               "text":"2组",
+                               "color": [10, 50, 205],
+                               "project":"",
+                               "plots":[]
+                               },
+                               {
+                               "piePercentValue": "20",
+                               "text":"3组",
+                               "color": [0, 40, 135],
+                               "project":"",
+                               "plots":[]
+                               }
+                               ]
+            };
+            
+            xsfChartUtility.showChartView(options,testSuccess, testFailed);
+
+        }
+        function getWiFiinformation() {
+            
+            xsfChartUtility.getWifiInformation(testSuccess, testFailed);
+            
+        }
+        function getHealthData() {
+            
+            xsfChartUtility.getHealthData(testSuccess, testFailed);
+            
+        }
+        function testSuccess(msg) {
+            alert(msg);
+        }
+        function testFailed(msg) {
+            alert('failed: ' + msg);
+        }
+        
+        function goHome()
+        {
+            xsfChartUtility.remove(testSuccess, testFailed);
+            window.location.href = "index.html";
+        }
+        </script>
+        
+    </head>
+    
+    <body>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="btn bg_5" onclick="createchartline();">生成折线图表</div><br/>
+        <div class="btn bg_5" onclick="createchartbar();">生成柱状图表</div><br/>
+        <div class="btn bg_5" onclick="createchartpie();">生成饼状图表</div><br/>
+        <div class="btn bg_5" onclick="getWiFiinformation();">获取Wi-Fi信息</div><br/>
+        <div class="btn bg_5" onclick="getHealthData();">获取步数信息</div><br/>
+
+        <div class="btn bg_1" onclick="goHome();">返回</div><br/>
+
+    </body>
+    
+    
+</html>
+

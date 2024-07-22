@@ -1,0 +1,3104 @@
+[{
+  "text": "江西省",
+  "children": [{
+    "text": "全部",
+    "price": [{
+        "grade": 0,
+        "price": "300"
+      },
+      {
+        "grade": 1,
+        "price": "300"
+      },
+      {
+        "grade": 2,
+        "price": "300"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "北京",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "1100"
+      },
+      {
+        "grade": 1,
+        "price": "650"
+      },
+      {
+        "grade": 2,
+        "price": "500"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "天津",
+  "children": [{
+      "text": "宁河区",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "河北",
+  "children": [{
+      "text": "张家口市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "675"
+        },
+        {
+          "grade": 2,
+          "price": "525"
+        }
+      ],
+      "hotMouth": [7, 8, 9, 11, 12, 1, 2, 3]
+    },
+    {
+      "text": "秦皇岛市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "680"
+        },
+        {
+          "grade": 2,
+          "price": "500"
+        }
+      ],
+      "hotMouth": [7, 8]
+    },
+    {
+      "text": "石家庄市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "廊坊市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "承德市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1000"
+        },
+        {
+          "grade": 1,
+          "price": "580"
+        },
+        {
+          "grade": 2,
+          "price": "580"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "保定市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+
+  ]
+},
+{
+  "text": "山西",
+  "children": [{
+      "text": "太原市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "大同市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "晋城市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "临汾市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "阳泉市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "长治市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "晋中市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "400"
+        },
+        {
+          "grade": 2,
+          "price": "240"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "内蒙古",
+  "children": [{
+      "text": "呼和浩特",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "二连浩特市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1000"
+        },
+        {
+          "grade": 1,
+          "price": "580"
+        },
+        {
+          "grade": 2,
+          "price": "400"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "额济纳旗",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "690"
+        },
+        {
+          "grade": 2,
+          "price": "480"
+        }
+      ],
+      "hotMouth": [9, 10]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1600"
+        },
+        {
+          "grade": 1,
+          "price": "690"
+        },
+        {
+          "grade": 2,
+          "price": "480"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    }
+  ]
+},
+{
+  "text": "辽宁",
+  "children": [{
+      "text": "沈阳",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "大连",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "800"
+      },
+      {
+        "grade": 1,
+        "price": "490"
+      },
+      {
+        "grade": 2,
+        "price": "350"
+      }
+    ],
+    "hotPrice": [{
+        "grade": 0,
+        "price": "960"
+      },
+      {
+        "grade": 1,
+        "price": "590"
+      },
+      {
+        "grade": 2,
+        "price": "420"
+      }
+    ],
+    "hotMouth": [7, 8, 9]
+  }]
+},
+{
+  "text": "吉林",
+  "children": [{
+      "text": "长春市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "吉林市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "540"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "延边州",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "540"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "长白山管理区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "540"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "400"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "黑龙江",
+  "children": [{
+      "text": "哈尔滨市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "540"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "540"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotMouth": [6, 7, 8]
+    }
+  ]
+},
+{
+  "text": "上海",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "1100"
+      },
+      {
+        "grade": 1,
+        "price": "600"
+      },
+      {
+        "grade": 2,
+        "price": "500"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "江苏",
+  "children": [{
+      "text": "南京市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "苏州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "无锡市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "常州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "镇江市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "360"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "浙江",
+  "children": [{
+      "text": "杭州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "400"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "490"
+        },
+        {
+          "grade": 2,
+          "price": "340"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "宁波",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "800"
+      },
+      {
+        "grade": 1,
+        "price": "450"
+      },
+      {
+        "grade": 2,
+        "price": "350"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "安徽",
+  "children": [{
+    "text": "全省",
+    "price": [{
+        "grade": 0,
+        "price": "800"
+      },
+      {
+        "grade": 1,
+        "price": "460"
+      },
+      {
+        "grade": 2,
+        "price": "350"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "福建",
+  "children": [{
+      "text": "福州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "泉州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "平潭综合实验区",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "厦门",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "900"
+      },
+      {
+        "grade": 1,
+        "price": "500"
+      },
+      {
+        "grade": 2,
+        "price": "400"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "山东",
+  "children": [{
+      "text": "济南市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "淄博市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "枣庄市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "东营市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "烟台市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "570"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "济宁市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "泰安市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "威海市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "570"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "日照市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "960"
+        },
+        {
+          "grade": 1,
+          "price": "570"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [7, 8, 9]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "360"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "青岛",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "800"
+      },
+      {
+        "grade": 1,
+        "price": "490"
+      },
+      {
+        "grade": 2,
+        "price": "380"
+      }
+    ],
+    "hotPrice": [{
+        "grade": 0,
+        "price": "960"
+      },
+      {
+        "grade": 1,
+        "price": "590"
+      },
+      {
+        "grade": 2,
+        "price": "450"
+      }
+    ],
+    "hotMouth": [7, 8, 9]
+  }]
+},
+{
+  "text": "河南",
+  "children": [{
+      "text": "洛阳市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "720"
+        },
+        {
+          "grade": 2,
+          "price": "500"
+        }
+      ],
+      "hotMouth": [4, 5]
+    },
+    {
+      "text": "郑州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "湖北",
+  "children": [{
+      "text": "武汉市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "湖南",
+  "children": [{
+      "text": "长沙市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "广东",
+  "children": [{
+      "text": "广州市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "珠海市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "佛山市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "东莞市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "中山市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "江门市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "550"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "850"
+        },
+        {
+          "grade": 1,
+          "price": "530"
+        },
+        {
+          "grade": 2,
+          "price": "420"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "深圳",
+  "children": [{
+    "text": "全市",
+    "price": [{
+        "grade": 0,
+        "price": "900"
+      },
+      {
+        "grade": 1,
+        "price": "500"
+      },
+      {
+        "grade": 2,
+        "price": "400"
+      }
+    ],
+    "hotPrice": [],
+    "hotMouth": []
+  }]
+},
+{
+  "text": "广西",
+  "children": [{
+      "text": "南宁市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "桂林市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "610"
+        },
+        {
+          "grade": 2,
+          "price": "430"
+        }
+      ],
+      "hotMouth": [1, 2, 7, 8, 9]
+    },
+    {
+      "text": "北海市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "610"
+        },
+        {
+          "grade": 2,
+          "price": "430"
+        }
+      ],
+      "hotMouth": [1, 2, 7, 8, 9]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "610"
+        },
+        {
+          "grade": 2,
+          "price": "430"
+        }
+      ],
+      "hotMouth": [1, 2, 7, 8, 9]
+    }
+  ]
+},
+{
+  "text": "海南",
+  "children": [{
+      "text": "海口市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2]
+    },
+    {
+      "text": "文昌市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2]
+    },
+    {
+      "text": "澄迈县",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2]
+    },
+    {
+      "text": "琼海市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2, 3]
+    },
+    {
+      "text": "万宁市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2, 3]
+    },
+    {
+      "text": "陵水县",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2, 3]
+    },
+    {
+      "text": "保亭县",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1040"
+        },
+        {
+          "grade": 1,
+          "price": "650"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [11, 12, 1, 2, 3]
+    },
+    {
+      "text": "三亚市",
+      "price": [{
+          "grade": 0,
+          "price": "1000"
+        },
+        {
+          "grade": 1,
+          "price": "600"
+        },
+        {
+          "grade": 2,
+          "price": "400"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "720"
+        },
+        {
+          "grade": 2,
+          "price": "480"
+        }
+      ],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "重庆",
+  "children": [{
+      "text": "9个中心城区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "370"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "北部新区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "370"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "770"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "四川",
+  "children": [{
+      "text": "成都市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "370"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "阿坝州",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "甘孜州",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "绵阳市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "乐山市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "雅安市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "宜宾市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "凉山州",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "德阳市",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "遂宁市",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "巴中市",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "贵州",
+  "children": [{
+      "text": "贵阳市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "370"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "750"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "云南",
+  "children": [{
+      "text": "昆明市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "大理州",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "丽江市",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "迪庆州",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "西双版纳州",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "380"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "西藏",
+  "children": [{
+      "text": "拉萨市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "750"
+        },
+        {
+          "grade": 2,
+          "price": "530"
+        }
+      ],
+      "hotMouth": [6, 7, 8, 9]
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "500"
+        },
+        {
+          "grade": 1,
+          "price": "400"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotMouth": [6, 7, 8, 9]
+    }
+  ]
+},
+{
+  "text": "陕西",
+  "children": [{
+      "text": "西安市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "460"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "榆林市",
+      "price": [{
+          "grade": 0,
+          "price": "680"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "延安市",
+      "price": [{
+          "grade": 0,
+          "price": "680"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "杨凌区",
+      "price": [{
+          "grade": 0,
+          "price": "680"
+        },
+        {
+          "grade": 1,
+          "price": "320"
+        },
+        {
+          "grade": 2,
+          "price": "260"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "咸阳市",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "320"
+        },
+        {
+          "grade": 2,
+          "price": "260"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "宝鸡市",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "320"
+        },
+        {
+          "grade": 2,
+          "price": "260"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "渭南市",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "300"
+        },
+        {
+          "grade": 2,
+          "price": "260"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "韩城市",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "300"
+        },
+        {
+          "grade": 2,
+          "price": "260"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "300"
+        },
+        {
+          "grade": 2,
+          "price": "230"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "甘肃",
+  "children": [{
+      "text": "兰州市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "700"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "310"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "青海",
+  "children": [{
+      "text": "西宁市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "500"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "1200"
+        },
+        {
+          "grade": 1,
+          "price": "750"
+        },
+        {
+          "grade": 2,
+          "price": "530"
+        }
+      ],
+      "hotMouth": [6, 7, 8, 9]
+    },
+    {
+      "text": "玉树州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "525"
+        },
+        {
+          "grade": 2,
+          "price": "450"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    },
+    {
+      "text": "果洛州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "海北州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "250"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "525"
+        },
+        {
+          "grade": 2,
+          "price": "375"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    },
+    {
+      "text": "黄南州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "250"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "525"
+        },
+        {
+          "grade": 2,
+          "price": "375"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    },
+    {
+      "text": "海东市",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "250"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "375"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    },
+    {
+      "text": "海南州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "350"
+        },
+        {
+          "grade": 2,
+          "price": "250"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "375"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    },
+    {
+      "text": "海西州",
+      "price": [{
+          "grade": 0,
+          "price": "600"
+        },
+        {
+          "grade": 1,
+          "price": "300"
+        },
+        {
+          "grade": 2,
+          "price": "200"
+        }
+      ],
+      "hotPrice": [{
+          "grade": 0,
+          "price": "900"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotMouth": [5, 6, 7, 8, 9]
+    }
+  ]
+},
+{
+  "text": "宁夏",
+  "children": [{
+      "text": "银川市",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "470"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "430"
+        },
+        {
+          "grade": 2,
+          "price": "330"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+},
+{
+  "text": "新疆",
+  "children": [{
+      "text": "乌鲁木齐",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "350"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "克州",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "320"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "喀什地区",
+      "price": [{
+          "grade": 0,
+          "price": "780"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "阿克苏地区",
+      "price": [{
+          "grade": 0,
+          "price": "700"
+        },
+        {
+          "grade": 1,
+          "price": "450"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "塔城地区",
+      "price": [{
+          "grade": 0,
+          "price": "700"
+        },
+        {
+          "grade": 1,
+          "price": "400"
+        },
+        {
+          "grade": 2,
+          "price": "300"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    },
+    {
+      "text": "其他地区",
+      "price": [{
+          "grade": 0,
+          "price": "800"
+        },
+        {
+          "grade": 1,
+          "price": "480"
+        },
+        {
+          "grade": 2,
+          "price": "340"
+        }
+      ],
+      "hotPrice": [],
+      "hotMouth": []
+    }
+  ]
+}
+]

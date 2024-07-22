@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[88501],{11006:function(n,e,i){i.r(e);i={link:function(n,e,i,c,t){window.location.href="tel:".concat(t["ZB_DUTYTELEPHONE_SUB.C-ZB-DUTYTELEPHONE-0002"])}};e.default=i}}]);

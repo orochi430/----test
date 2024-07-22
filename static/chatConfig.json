@@ -1,0 +1,161 @@
+{
+  "dbtj":{
+    "categoory":"dbtj",
+    "config":{
+      "title": "督办统计",
+      "tabs":[
+        {
+          "tabTitle":"签收情况",
+          "tabConfig":{
+            "seachData":[
+              {
+                
+                "type":"date",
+                "dataSourece":["全部","1","2","3"],
+                "dataFromUrl":""
+              }
+            ],
+            "chatType": "line",
+            "chatObject": {
+              "title": {
+                "text": "极坐标双数值轴",
+                "show": false
+              },
+              "legend": {
+                "data": ["pie"]
+              },
+              "polar": {
+                "center": ["50%", "54%"]
+              },
+              "tooltip": {
+                "trigger": "axis",
+                "axisPointer": {
+                  "type": "cross"
+                }
+              },
+              "angleAxis": {
+                "type": "value",
+                "startAngle": 0
+              },
+              "radiusAxis": {
+                "min": 0
+              },
+              "series": [
+                {
+                  "coordinateSystem": "polar",
+                  "name": "pie",
+                  "type": "pie",
+                  "showSymbol": false,
+                  "data": []
+                }
+              ],
+              "animationDuration": 2000
+            },
+            "dataFromUrl":"fn/mobileToDoAndRead/getToDoAndReadList2",
+            "dataParams":{"start": 1,"page": 1,"limit": 15,"fileType": "ToRead","showTotal": true},
+            "tableConfig":{
+              "columns":[
+                        {
+                          "columnTitle":"办理单位",
+                          "columnKey":"bldw"
+                        },
+                        {
+                          "columnTitle":"总文件数",
+                          "columnKey":"zwjs"
+                        },
+                        {
+                          "columnTitle":"已反馈",
+                          "columnKey":"yfk"
+                        },
+                        {
+                          "columnTitle":"超期反馈",
+                          "columnKey":"cqfk"
+                        },
+                        {
+                          "columnTitle":"未反馈",
+                          "columnKey":"wfk"
+                        }
+              ]}
+          }
+        },
+        {
+          "tabTitle":"反馈情况",
+          "tabConfig":{
+            "seachData":[
+              {
+                
+                "type":"date",
+                "dataSourece":["全部","1","2","3"],
+                "dataFromUrl":""
+              }
+            ],
+            "chatType": "line",
+            "chatObject": {
+              "title": {
+                "show": false
+              },
+              "tooltip": {
+                "trigger": "item",
+                "formatter": "{a} <br/>{b} : {c} ({d}%)"
+              },
+              "color": ["#ED7D31", "#5B9BD5", "#A5A5A5"],
+              "legend": {
+                "show": true,
+                "orient": "vertical",
+                "left": 16,
+                "bottom": "bottom",
+                "data": ["已反馈", "超期反馈", "未反馈"]
+              },
+              "series": [{
+                "name": "督查件处理情况",
+                "type": "pie",
+                "radius": "80%",
+                "center": ["50%", "45%"],
+                "data": [  ],
+                "itemStyle": {
+                  "normal": {
+                    "label": {
+                      "show": true,
+                      "position": "inner",
+                      "formatter":"formatter",
+                      "textStyle": {
+                        "color": "#000",
+                        "fontSize": 15
+                      }
+                    }
+                  }
+                }
+              }]
+          },
+            "dataFromUrl":"fn/mobileToDoAndRead/getToDoAndReadList2",
+            "dataParams":{"start": 1,"page": 1,"limit": 15,"fileType": "ToRead","showTotal": true},
+            "tableConfig":{
+              "columns":[
+                        {
+                          "columnTitle":"办理单位",
+                          "columnKey":"bldw"
+                        },
+                        {
+                          "columnTitle":"总文件数",
+                          "columnKey":"zwjs"
+                        },
+                        {
+                          "columnTitle":"已反馈",
+                          "columnKey":"yfk"
+                        },
+                        {
+                          "columnTitle":"超期反馈",
+                          "columnKey":"cqfk"
+                        },
+                        {
+                          "columnTitle":"未反馈",
+                          "columnKey":"wfk"
+                        }
+              ]}
+          }
+        }
+      ]
+    }
+  }
+
+}

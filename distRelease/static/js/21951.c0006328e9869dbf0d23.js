@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[21951],{80143:function(n,i,e){e.r(i);e(90541);e={link:function(n,i,e,o,t){o.$router.push({path:"/commonForm/".concat(i,"/").concat(e),query:{formId:"220418151942nKCXHWhi1zKFnwKKiM0",listId:"210511165554balbxw4TwoCHhq2E4VE",method:"viewList",ismobile:1}})}};i.default=e}}]);

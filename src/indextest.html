@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <title>移动办公</title>
+    <style>
+        .init-div {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            margin-top: -20px;
+            top: 50%;
+            left: 0;
+            font-size: 16px;
+            color: #7f7a7a;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+</body>
+<script src="http://g.alicdn.com/gdt/jsapi/1.9.4/index.js"></script>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    dd.ready(function () {
+        alert("ddready");
+        dd.getAuthCode().then(result => {
+            alert(result.code);
+
+
+            $.ajax({
+                type: 'POST',
+                url: '../fn/govDing/login',
+                data:{code: result.code},
+                success: function(loginData){
+                    let username=loginData.data.data.name;
+                    let ran= Math.round(Math.random())+1; 
+                    window.location.href="http://localhost/ceshi1/greetingCard/template/newYear"+ran+"/template.html?username="+username;
+                },
+            });
+
+        
+
+            
+        })
+            .catch(err => {
+                alert(err);
+            })
+    })
+</script>
+
+</html>

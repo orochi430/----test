@@ -1,0 +1,239 @@
+/**
+InputView
+*/
+/*chrome浏览器重置*/
+input,button,select,textarea {
+	outline: none
+}
+
+.inputview {
+	border-top: 1px solid #BBB;
+	width: 100%;
+	height: 45px;
+	/*position: fixed;*/
+	top: 100%;
+	/*margin-top: -45px;*/
+	background: #F1F1F1;
+	text-shadow:none;
+	z-index: 10;
+}
+
+.inputview-bar {
+	padding: 0 0 5px 0;
+}
+
+.inputview-input {
+	padding: 0 10px;
+	display: block;
+	height: 40px;
+	vertical-align: bottom;
+	/*margin-right: 90px;*/
+	margin-right: 50px;
+}
+
+.inputview-input textarea {
+	overflow: hidden;
+	border: 0;
+	background: transparent;
+	border-bottom: 2px solid #4DC226;
+	width: 100%;
+	height: 90%;
+	resize: none;
+}
+
+.inputview-bar-op {
+	float: right;
+	/*width: 90px;*/
+	width: 50px;
+	-webkit-user-select: none;
+}
+
+.inputview-morebtn,.inputview-send {
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+}
+
+.inputview-morebtn:active,.inputview-send:active,
+.inputview-tmpl-item:active,.inputview-tmpl-add:active  {
+	background-color: #33B5E5;
+	color:#FFF;
+}
+
+.inputview-morebtn {
+
+}
+.inputview-morebtn-plus{
+	background: url("../images/inputview/inputview_add.png") no-repeat center center;
+	background-size: 75% 75%;
+}
+.inputview-morebtn-keyboard{
+	background: url("../images/inputview/inputview_write.png") no-repeat center center;
+	background-size: 75% 75%;
+}
+
+.inputview-send {
+	background: url("../images/inputview/inputview_send.png") no-repeat
+		center center;
+	background-size: 75% 75%;
+}
+
+.inputview-more {
+	display: block;
+	height: 190px;
+}
+
+.inputview-more-templates,.inputview-more-operations {
+	height: 150px;
+	background-color: #FFF;
+}
+.inputview-more-templates{
+	overflow-y: scroll;
+	-webkit-user-select: none;
+}
+
+.inputview-tmpl-item,.inputview-tmpl-add {
+	display: inline-block;
+	width: 80px;
+	height: 80%;
+	background-color: #F1F1F1;
+	text-align: center;
+	margin: 10px  5px;
+	padding: 5px;
+	-webkit-user-select: none;
+}
+
+.inputview-tmpl-add {
+	background: #F1F1F1
+		url("../images/inputview/inputview_template_add.png") no-repeat center
+		center;
+	background-size: 50% 50%;
+}
+
+.inputview-op-item {
+	display: inline-block;
+	margin: 10px;
+}
+
+.inputview-op-item-title {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.inputview-op-attachment {
+	display: inline-block;
+	width: 54px;
+	height: 54px;
+	background:
+		url("../images/inputview/inputview_operation_attachment.png")
+		no-repeat center center;
+	background-size: contain;
+}
+
+.inputview-tabs-templates,.inputview-tabs-operations {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+.inputview-tabs-templates {
+	background: url("../images/inputview/inputview_pen_gray.png") no-repeat
+		center center;
+	background-size: 30px 30px;
+}
+
+.inputview-tabs-operations {
+	background: url("../images/inputview/inputview_more_gray.png") no-repeat
+		center center;
+	background-size: 30px 30px;
+}
+
+/**tabs**/
+.tabs {
+	/*margin-top: 5px;*/
+	
+}
+
+.tabs>ul {
+	padding-left: 0;
+	clear: both;
+	margin: 0;
+	overflow: hidden;
+}
+
+.tabs>ul li {
+	list-style: none;
+	float: left;
+	cursor: pointer;
+	font-size: 1em;
+	overflow: hidden;
+	text-align: center;
+	width: 76px;
+}
+
+.tabs>div {
+	clear: both;
+}
+
+.tab_selected {
+	background-color: #FFF;
+}
+
+.panel_hide {
+	display: none;
+}
+
+.panel_show {
+	display: block;
+}
+
+
+.soa-nav{
+	overflow:hidden;/*解决内部有float元素时，高度为0*/
+	z-index : 1 !important;
+}
+.soa-nav ul{
+	z-index : 1 !important;
+	overflow:hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: block;
+	border: 0;
+	max-width: 100%;
+	overflow: visible;
+}
+.soa-nav a{
+	z-index : 1 !important;
+	background-color:#F6F6F6 !important;
+	border-bottom: 3px solid #F6F6F6 !important;
+	border: none;
+	text-decoration:none;
+	width:100%;
+	text-align: center;
+	display: block;
+	padding: .5em 0;
+	color: #333 !important;
+}
+.soa-nav a:hover{
+	border-bottom-color: #F6F6F6 !important;
+}
+a.soa-nav-active{
+	border-bottom: 3px solid #FF8B1A !important;
+	background-color: #FFF !important;
+	color: #FF8B1A !important;
+	text-shadow: none !important;
+}
+a.soa-nav-active:hover{
+	border-bottom-color: #FF8B1A !important;
+}
+
+/**Angular Ionic 相关样式**/
+.asf-ion-bar{
+	padding: 0 !important;
+	height: 45px;
+}
+

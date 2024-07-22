@@ -1,0 +1,30 @@
+@font-face {
+  /* 细 */
+  font-family: 'Alibaba-PuHuiTi-Light';
+  src: url('Alibaba-PuHuiTi-Light.ttf');
+}
+
+@font-face {
+  /* 标准,默认 */
+  font-family: 'Alibaba-PuHuiTi-Regular';
+  src: url('Alibaba-PuHuiTi-Regular.ttf');
+}
+
+@font-face {
+  /* 半粗 */
+  font-family: 'Alibaba-PuHuiTi-Medium';
+  src: url('Alibaba-PuHuiTi-Medium.ttf');
+}
+
+@font-face {
+  /* 全粗 */
+  font-family: 'Alibaba-PuHuiTi-Bold';
+  src: url('Alibaba-PuHuiTi-Bold.ttf');
+}
+
+@font-face {
+  /* 特粗 */
+  font-family: 'Alibaba-PuHuiTi-Heavy';
+  src: url('Alibaba-PuHuiTi-Heavy.ttf');
+}
+

@@ -1,0 +1,218 @@
+/**
+.asf-label 替换 .myform-label 
+*/
+/*-------------------错误提醒样式----------------*/
+/*全局*/
+.ui-page{
+	position: static !important;
+}
+.ui-content{
+	padding: 5px;
+}
+/*内容中不显示省略号*/
+.ui-listview>li p{ 
+	white-space: normal !important;
+	word-break: break-all;
+	word-wrap: break-word;
+	/*width: 78%;*/ /*2015-04-07公告显示有问题: 暂时注释掉*/
+}
+/**
+红色表单边框
+*/
+/* .ui-listview-inset>.ui-li-static{
+	border-color:#FF0000 !important;
+} */
+/*Override of jQuery Mobile*/
+.ui-listview .myform-label , 
+.ui-listview .asf-label{
+	text-align:center !important;
+	/*margin-top:0 !important;*/
+	margin-bottom:0 !important;
+	vertical-align:middle;
+	
+	word-break:break-all;
+　word-wrap:break-word;
+	white-space: normal;
+	
+	opacity: 0.7 !important; /*默认灰色*/
+}
+/*适用于两栏显示的asf-label*/
+.ui-listview .asf-label-b{
+	text-align:right !important;
+	margin-bottom:0 !important;
+	vertical-align:middle;
+	
+	word-break:break-all;
+　word-wrap:break-word;
+	white-space: normal;
+	
+	opacity: 0.7 !important; /*默认灰色*/
+
+	width: 40%;
+	margin: .5em 4% 0 0 !important;
+
+	display: inline-block !important;
+}
+
+/*控件只读和不可编辑*/
+.ui-listview .asf-readonly , 
+.ui-listview .asf-not-editable{
+	display: inline-block;
+	vertical-align:middle;
+	
+	word-break:break-all; 
+	word-wrap:break-word;
+	white-space:normal;
+	width: 78%;
+}
+
+/*控件disable*/
+.ui-state-disabled{
+	opacity: 0.8 !important;
+}	
+
+@media (min-width: 28em){
+	.ui-listview .asf-readonly, 
+	.ui-listview .asf-not-editable{
+		margin-top: 0.5em;
+	}
+}
+@media (max-width: 28em){
+	.ui-listview .myform-label, 
+	.ui-listview .asf-label{
+		min-width: 4em !important;
+		width: 20% !important;
+		display: inline-block !important;
+		float:none !important;
+		text-align: center !important;
+		vertical-align: middle;
+	}
+	.ui-listview .ui-field-contain>label~[class*=ui-]{
+		display: inline-block !important;
+		float:none !important;
+		vertical-align: middle;
+	}
+	/*
+	文本域与文本框不对齐，去掉max-width:70%;
+	.ui-listview textarea{
+		max-width:70%;
+	}*/
+	.ui-listview .asf-readonly,
+	.ui-listview .asf-not-editable{
+		width: 70%;
+	}
+	.ui-listview .ui-input-text{
+		width: 78%; 
+	}
+}
+
+.ui-btn-icon-right:after {/*去掉列表箭头*/
+	display:none;
+}
+
+.ui-select .ui-btn>span:not(.ui-li-count){/*下拉框项为半角空格时，下拉框高度不够*/
+	min-height: 1.3em;
+}
+
+.ui-checkbox,.ui-radio{/*在大屏情况下，复选框前面多出一个原生复选框*/
+	clear:both;
+}
+
+/** 多行文本框在配置文件设置高度，在表单需要相应的调整，而不是固定的高度 */
+.ui-listview textarea.asf-textarea-autoheight{
+	height: auto !important;
+}
+
+
+/**空格:
+	<LI class=ui-field-contain><LABEL class="asf-label">标<span class="asf-space2"></span>题</LABEL> {BT}</LI>
+*/
+.asf-space1{
+	width:1em;
+	display: inline-block;
+}
+.asf-space2{
+	width:2em;
+	display: inline-block;
+}
+.asf-space3{
+	width:3em;
+	display: inline-block;
+}
+/**用户选择、代码选择*/
+.ui-listview .userSelect,
+.ui-listview .codeSelect{
+	clear : both;
+}
+.ui-listview .userSelect .ui-input-text,
+.ui-listview .codeSelect .ui-input-text{
+	width: 100%;
+}
+/*-------------------asf-iconinput : 左边输入框，右边图片按钮----------------*/
+/*
+<div class="asf-right-block">
+        <div class="asf-iconinput-inputblock">
+        	<input data-inline='true' id="scanId" x='{"outer":"","action":"1","isHiddenNoValid":true,"caption":"内部会签单位","XPath":"INNER_SIGN","TableName":"FW","isNullAble":true,"dbType":"STRING"}' data-mini='false' id='text_DS_Panel_16'  value='' />
+        </div>
+        <div class="asf-iconinput-iconblock">
+        	<img style="width:48px;height:48px;" src="http://192.168.1.75:8080/ezweb/modules/mobile/resources/image/scan.png" onclick="scanDevice()" value="扫一扫" />
+        </div>
+</div>
+*/
+.asf-iconinput-inputblock , 
+.asf-iconinput-iconblock{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+}
+.asf-iconinput-inputblock{
+	clear: left;
+	width:75%;
+}
+.asf-iconinput-iconblock{
+	width:25%;
+	text-align:center;
+}
+.asf-right-block{
+	width:78%;
+	min-height: 1em;
+	float: right;
+	text-align:left;
+}
+@media (max-width: 28em){
+	.asf-right-block{
+		width:70%;
+	}	
+}
+/*-------------------错误提醒样式----------------*/
+.valid_warn_container{
+	width:78%;
+	min-height: 1em;
+	float: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.valid_warn {
+	color: #ff6e0f;
+	font-size: 12px;
+	line-height: 1.8em;
+	display: inline;
+	vertical-align: 3px;
+	display:inline-block; 
+	*display:inline; 
+	zoom:1
+}
+.valid_warn_icon {
+	width: 16px;
+	height: 16px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	background: url(../images/alert.gif) no-repeat left top;
+	display: inline-block;
+	margin-left: 10px;
+	display:inline-block; *display:inline; zoom:1
+}
+/*-------------------错误提醒样式 END------------------*/

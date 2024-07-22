@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[10458],{80793:function(n,u,a){a.r(u);var e=a(25108),a={initHandle:function(u,n,a){a.$bus.on("blurBus",function(n){e.log(n),"C-QJSCCSQ-0013"!=n.metaData.metaId||isNaN(Number(n.value))||a.$set(u.main,"C-QJSCCSQ-0014",{value:dsf.util.amountWords(Number(n.value))})})}};u.default=a}}]);

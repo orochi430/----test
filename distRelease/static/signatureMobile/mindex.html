@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <title>signatureMobile</title>
+    <link rel="stylesheet" href="./dist/style/signatureMobile.min.css">
+    <script src="./touchmove.js"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: '楷体';
+            src: url(./dist/style/font/simkai.ttf);
+        }
+        @font-face {
+            font-family: '宋体';
+            src: url(./dist/style/font/simsun.ttc);
+        }
+        @font-face {
+            font-family: '仿宋';
+            src: url(./dist/style/font/simfang.ttf);
+        }
+        @font-face {
+            font-family: '隶书';
+            src: url(./dist/style/font/SIMLI.TTF);
+        }
+        .page{
+            width: 80%;
+            height: 500px;
+            margin: 20px auto;
+            background-color: #F1F1F1;
+        }
+        .signature-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+        <button class="over">完成</button>
+        <a class="show_signature">显示插件</a>
+        <img />
+        <img />
+        <div class="pagebox">
+            <div class="page">
+            
+            </div>
+        </div>
+    <script src="./vconsole.js"></script>
+    <script src="./dist/SignatureMobile.min.js"></script>
+    <script src="./dist/demoData.js"></script>
+    <script src="./demoData.js"></script>
+    <script>
+        var vConsole = new VConsole();
+        var ms;
+        document.querySelector('.over').onclick = function () {
+            console.log(ms.getAllData())
+        }
+        parent.window.scalenumber = 1;
+
+        // function renderDom () {
+        //     let dom = document.createElement('div')
+        //     dom.className = 'signbtn'
+        //     dom.style = 'position: fixed; left: 0; bottom: 200px; z-index:99999999';
+        //     let str = `<button style="font-size:20px" class="add">添加</button>
+        //     <button style="font-size:20px" class="reduc">减少</button>`
+        //     dom.innerHTML = str;
+        //     document.body.appendChild(dom)
+        // }
+        // renderDom()
+        // document.querySelector('.add').addEventListener('click', function () {
+        //     (parent.window.scalenumber <= 2) ? parent.window.scalenumber += 0.1 : 2
+        //     let num = Number(parent.window.scalenumber.toFixed(1));
+        //     document.querySelectorAll('.page').forEach(item => {
+        //         item.style.transform = `scale(${num}, ${num})`
+        //     })
+        //     console.log(parent.window.scalenumber)
+        // })
+        // document.querySelector('.reduc').addEventListener('click', function () {
+        //     (parent.window.scalenumber <= 1) ? 1 : parent.window.scalenumber -= 0.1
+        //     let num = Number(parent.window.scalenumber.toFixed(1));
+        //     document.querySelectorAll('.page').forEach(item => {
+        //         item.style.transform = `scale(${num}, ${num})`
+        //     })
+        //     console.log(parent.window.scalenumber)
+        // })
+        // document.querySelector(".pagebox").style.touchAction = 'none'
+        // function handleClick (val) {
+        //     if (val === 1) {
+        //         (scalenumber <= 2) ? scalenumber += 0.1 : 2
+        //     } else {
+        //         (scalenumber <= 1) ? 1 : scalenumber -= 0.1
+        //     }
+        //     let num = Number(scalenumber.toFixed(1));
+        //     document.querySelectorAll('.page').forEach(item => {
+        //         item.style.transform = `scale(${num}, ${num})`
+        //     })
+        // }
+        //显示插件
+        //因为竖屏的时候顶部和底部会占用一定的高度，导致下面的底稿被遮住了
+        //所以进入签批的时候建议留出顶部与底部的距离，顶部工具栏height: 14.8vw;底部工具栏height: 11.26vh;
+        document.querySelector(".show_signature").addEventListener("click",function(){
+            ms.show();
+        })
+        
+        new TouchMoveScale({
+            touchDom: document.querySelector('.pagebox'),
+            transformDom: document.querySelector('.pagebox'),
+            transformData: {
+                x: 0,
+                y: 0,
+                scale: 1
+            },
+            minScale: 1,
+            maxScale: 5
+        })
+        //参数1：载体dom，目前只支持传null，传null会直接把dom插到body根目录，使用fiexd定位
+        //参数2：是否横屏，true:横屏模式，false：竖屏模式
+        //参数3：手写签批配置项，暂时为{}即可，无需传其他参数
+        //参数4：画板载体集合，只适用于竖屏
+        //参数5：是否开启遮罩，只适用于竖屏，暂无效
+        ms = new SignatureMobile(null, false,{},document.querySelectorAll(".page"),false);
+        
+        //设置要隐藏的工具栏，使用索引方式，从0开始
+        ms.hiddenToolIndexList=[4];
+        //历史记录的增页必须要初始化之后才能进行手动添加页面
+        //historyNodeSignaturePngList 请参考demoData.js
+        for (let index = 0; index < historyNodeSignaturePngList.length; index++) {
+            const element = historyNodeSignaturePngList[index];
+            const signatureList = element.signatureList||[];
+            signatureList.forEach(item => {
+                if (item.packetContent) {
+                    item.data = item.packetContent
+                }
+            })
+            for (let j = 0; j < signatureList.length; j++) {
+                const element1 = signatureList[j];
+                //已经追加过的增页不要再追加，这里只需要追加空白增页即可
+                if(element1.addPageId&&document.querySelectorAll(".addpage-"+element1.addPageId).length==0){
+                    //是增页，执行增页代码
+                    var newPageDiv = document.createElement("div");
+                    //(addpage-增页ID)的这个className比较重要，用于数据包对应到具体的增页中，而不是按照增页顺序来
+                    newPageDiv.className = "page addpage-"+element1.addPageId;
+                    // document.body.prepend(newPageDiv);
+                    //调用增页
+                    //参数1：页dom
+                    //参数2：是否启用遮罩，暂时无用
+                    //参数3：要加载初始化进入画板的图片base64，没有传空即可
+                    //参数4：增页ID
+                    // ms.newChildBoard(newPageDiv,false,"",element1.addPageId);
+                }
+            }
+            //这里要调用数据包初始化api（只加载历史的）
+            console.log(signatureList, 99)
+            
+            // signatureList.map(item => item.data = item.packetContent)
+            // ms.rendererHistoryData(signatureList)
+        }
+        //当前签批显示的元素起始索引
+        ms.currentElementDataStartZIndex = 999;
+        //显示插件
+        ms.show();
+        //增加了使用具体像素转换，可以传宽度和高度，不传会自动获取宽高
+        //参数1：width:number|null
+        //参数2：height:number|null
+        ms.setContainerWH();
+        //隐藏插件
+        // ms.hide();
+        //设置默认选中的tab，设置index(签批：1，文字：2，签名：3)
+        ms.currentTabIndex = -1
+        //常用意见新增事件（返回{content}）
+        ms.opinionAddHandler = function(object){
+            alert(JSON.stringify(object))
+        }
+        //常用意见编辑事件（返回{id,content}）
+        ms.opinionEditHandler = function(object){
+            alert("修改"+JSON.stringify(object))
+        }
+        //常用意见删除事件（返回{id,content}）
+        ms.opinionDelHandler = function(object){
+            alert("删除"+JSON.stringify(object))
+        }
+        /**
+         * 完成点击回调事件
+         * 返回以下格式：
+         * {
+                tabIndex:最后一次选择的tabindex（手写：1，文字：2，签名：3）,
+                signature:{
+                    PNG:手写的png格式图片,
+                    JPG:手写的jpg格式图片,
+                    isEmpty:手写是否为空,
+                    data:手写的所有步骤图片数据集合,
+                    extractPNG:"返回有效区域的图片"
+                },
+                opinion:{
+                    content:文字,
+                    style:文字对应的样式,
+                },
+                autograph:{
+                    mode:选择的签名模式（1：签名，2：签名+日期，3：日期）,
+                    data:{
+                        imgData:autographType为非canvas情况下的展示图片签名数据,
+                        dateStr:autographType为非canvas情况下的展示日期签名数据,
+                        canvasImgData:autographType为canvas情况下的展示的图片和日期生成的图片数据,
+                        extractPNG:"返回有效区域的图片"
+                    }
+                }
+            }
+            如果为竖屏的返回以下格式：
+            [
+                {
+                    PNG:手写的png格式图片,
+                    JPG:手写的jpg格式图片,
+                    isEmpty:手写是否为空,
+                    data:手写的所有步骤图片数据集合
+                },
+                ...
+            ]
+         */
+        ms.completeHandle = function(object){
+            console.log(object)
+            try {
+                document.getElementsByTagName("img")[0].src=object.signature.extractPNG;
+                document.getElementsByTagName("img")[1].src=object.autograph.data.canvasImgData;
+            } catch (error) {
+                
+            }
+            // alert(JSON.stringify(object.opinion))
+        }
+        //返回点击回调事件（返回{e:MouseEvent}）
+        ms.backHandle = function(object){
+
+        }
+        //增页点击回调事件（返回{e:MouseEvent}）
+        ms.addsheetsHandle = function(object){
+            // alert("点击了增页")
+            //newChildBoard
+            var newPageDiv = document.createElement("div");
+            newPageDiv.className = "page";
+            //删除按钮
+            var delBtn = document.createElement("a");
+            delBtn.innerText="删除增页";
+            //设置层级使删除按钮在绘画板上面，方便点击到，真实情况可能在每页的外面
+            delBtn.style.zIndex="999999";
+            //因为canvas使用的是absolute定位，并且定位index层级顺序也是baseZIndex自己定义的，可以自由决定
+            delBtn.style.position="absolute";
+            delBtn.addEventListener("click",function(){
+                //调用删除增页方法
+                ms.deleteChildBoard(newPageDiv);
+                //删除自身页数
+                newPageDiv.remove();
+            })
+            newPageDiv.appendChild(delBtn);
+            document.body.prepend(newPageDiv);
+            //调用增页
+            //参数1：页dom
+            //参数2：是否启用遮罩，暂时无用
+            //参数3：要加载初始化进入画板的图片base64，没有传空即可
+            //参数4：增页ID
+            ms.newChildBoard(newPageDiv,false,"","pageId123");
+        }
+        //批注记录点击回调事件（返回{e:MouseEvent}）
+        ms.recordHandle = function(object){
+            alert("点击了批注记录")
+        }
+        //设置常用意见列表
+        ms.opinionList = [
+            {
+                id:"1",
+                content:"常用意见示例1"
+            },
+            {
+                id:"2",
+                content:"常用意见示例1常用意见示例1常用意见示例1"
+            },
+            {
+                id:"3",
+                content:"常用意见示例1常用意见示例1常用意见示例1常用意见示例1常用意见示例1"
+            },
+            {
+                id:"4",
+                content:"常用意见示例1"
+            }
+        ]
+        //签名图片 autographImage请参考demoData.js
+        ms.autographImage = autographImage;
+        //签名当天日期
+        ms.autographDate = "1991-10-09";
+        //签名日期的文字大小和字体等
+        ms.autographDateFont = "18px STKaiti";
+        //签名展示模式（canvas则是使用canvas绘制，其他则是使用图片+文本拼接）
+        ms.autographType="canvas";
+        //多画板签批情况下的层级
+        ms.baseZIndex = 99999;
+        //当前所有画板的对象（竖屏才支持）
+        var sourceSignaturePool = ms.sourceSignaturePool;
+        if(sourceSignaturePool&&sourceSignaturePool.length>0){
+            //这个方法可以用来回显图片到每页里面，比如再次修改签批的时候可以用到此项
+            //参数1：当前页的画板对象
+            //参数2：要加载的签批图片base64，只支持base64
+            var imgbase64=imgbase64;
+            //【此方法在这个版本下不适用，这里适合初始化笔记或图片到画板中】
+            // ms.signatureLoadImage(sourceSignaturePool[0].signature,imgbase64);
+        }
+        //用于回显当前人可编辑的数据包
+        // ms.initCurrentData(currentNodeSignaturePngList[0].signatureList);
+    </script>
+</body>
+
+</html>

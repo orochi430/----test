@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[73007],{22942:function(n,e,i){i.r(e);i(90541);i={handle:function(n,e){},initHandle:function(n,e,i){},link:function(n,e,i,u){u.$router.push({path:"/previewPage",query:{pk:i,moduleId:e}})}};e.default=i}}]);

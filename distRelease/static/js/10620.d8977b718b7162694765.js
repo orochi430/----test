@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[10620],{24990:function(a,e,l){l.r(e);l={dataFilter:function(a,e){a.forEach(function(a){a.dataValue.allowMobile&&1!=a.dataValue.allowMobile&&(e.$set(a.dataValue,"titleStyle",{color:"#d3d3d3"}),e.$set(a.dataValue,"subtitleStyle",{color:"#d3d3d3"}))})}};e.default=l}}]);

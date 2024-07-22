@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[45095],{56948:function(n,e,t){t.r(e);t={link:function(n,e,t,i,a){i.$router.push({path:"/commonForm/".concat(e,"/").concat(t),query:{validateByList:1,listId:"portalView",method:"view"}})}};e.default=t}}]);

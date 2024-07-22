@@ -1,0 +1,3010 @@
+{
+    "staticJson": {
+        "enable": false,
+        "filterRequest": [
+            "fn/common/getConfig"
+        ],
+        "description": "本地静态Json数据功能；filterRequest：启用时的例外请求"
+    },
+    "yanshi": {
+        "voiceAssistantStartTime": "2023-05-06 14:00",
+        "voiceAssistantEndTime": "2023-05-06 16:00",
+        "voiceAssistantWeekDay": "周六",
+        "voiceAssistantText": "我要添加日程，周六下午2点到4点召开部门会议",
+        "menus": [
+            {
+                "img": "static/images/platform/scan.png",
+                "name": "扫码",
+                "action": "scan"
+            },
+            {
+                "img": "static/images/platform/news.png",
+                "name": "新闻",
+                "action": "go",
+                "url": "/DreamWeb/ctrl/website/api/siteJump.html?siteId=1",
+                "params": {
+                    "jumpBack": 0
+                }
+            },
+            {
+                "img": "static/images/platform/potency.png",
+                "name": "效能",
+                "action": "go",
+                "url": "/DreamWeb/p1000/idm/index.html#/preview/230428134605wGcKgXwpwTxRJUIUT7D"
+            },
+            {
+                "img": "static/images/platform/qr.png",
+                "name": "亮码",
+                "action": "qrCode",
+                "url": ""
+            }
+        ]
+    },
+    "login": {
+        "fontSizeMultiple": "5",
+        "title": "",
+        "applicationName": "",
+        "applicationIcon": "zhenghua.png",
+        "openVpnLogin": false,
+        "devicelogin": false,
+        "loginSaveUUID": false,
+        "defaultUrl": "",
+        "isShowIcon": false,
+        "isShowSmsLogin": false,
+        "isShowMobile": false,
+        "defaultLoginType": "user",
+        "isShowChangeType": true,
+        "tokenAutologin": false,
+        "specialLoginUrl": "",
+        "isSpecialLogin": false,
+        "customLogOutUrl": "",
+        "specialLoginParams": "`myLogName:${logname},myPassWord:${password},myIMEI:${deviceId}`",
+        "specialLoginParamsPhone": "`userName:${logname},password:${password},logName:${mobile}`",
+        "isHiddenLoading": true,
+        "registerXY": false,
+        "onlyUsePadForm":false,
+        "description": "applicationName：应用名称，代替默认的移动办公，specialLoginUrl：项目特殊登录接口地址（参数与通用接口一致）；isSpecialLogin：是否使用平台特殊登录接口；specialLoginParams：平台特殊登录接口参数写法：`myLogName:${logname},myPassWord:${password},myIMEI:${deviceId}`，customLogOutUrl：401自定义跳转url,fontSizeMultiple:全局字体大小倍数，标准为5,onlyUsePadForm:是否只使用PAD表单来渲染,"
+    },
+    "homePage": {
+        "componentsReplace": [
+            {
+                "index": 5,
+                "sourceComponents": "ScheduleReminderComponents",
+                "replaceToComponents": "ShangGovBanjianComponents"
+            },
+            {
+                "index": 6,
+                "sourceComponents": "NoteComponents",
+                "replaceToComponents": "ShangGovChaoshiComponents"
+            }
+        ],
+        "schedule": {
+            "default": {
+                "tabItems": [
+                    {
+                        "tabname": "个人日程",
+                        "type": "date",
+                        "getDataType": "day",
+                        "url": "fn/scheduleList/queryMobileData",
+                        "params": {
+                            "MODULE_ID": "180719094152MnF6C2hEPtqIvhjJIxo",
+                            "type": "personal"
+                        },
+                        "isShowAddIcon": true
+                    },
+                    {
+                        "tabname": "领导日程",
+                        "privilege": "单位领导日程维护",
+                        "active": 0,
+                        "tabItems": [
+                            {
+                                "tabname": "按日期",
+                                "type": "date",
+                                "getDataType": "day",
+                                "url": "fn/ldrc/unit/getMobileWeekData",
+                                "params": {
+                                    "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                                    "type": "leader"
+                                }
+                            },
+                            {
+                                "tabname": "按领导",
+                                "type": "leader",
+                                "url": "fn/ldrc/unit/getMobileLeaders",
+                                "dataUrl": "fn/ldrc/unit/getMobileWeekData",
+                                "params": {
+                                    "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                                    "type": "leader"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tabname": "部门日程",
+                        "privilege": "",
+                        "active": 0,
+                        "tabItems": [
+                            {
+                                "tabname": "按日期",
+                                "type": "date",
+                                "getDataType": "day",
+                                "url": "fn/ldrc/org/getMobileWeekData",
+                                "params": {
+                                    "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                                    "type": "leader"
+                                }
+                            },
+                            {
+                                "tabname": "按领导",
+                                "type": "leader",
+                                "url": "/fn/ldrc/org/getMobileLeaders",
+                                "dataUrl": "fn/ldrc/org/getMobileWeekData",
+                                "params": {
+                                    "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                                    "type": "leader"
+                                }
+                            }
+                        ],
+                        "isShowAddIcon": false
+                    },
+                    {
+                        "tabname": "他人日程",
+                        "privilege": "",
+                        "active": 0,
+                        "tabItems": [
+                            {
+                                "tabname": "按日期",
+                                "type": "date",
+                                "getDataType": "day",
+                                "url": "/fn/scheduleList/queryMobileData",
+                                "params": {
+                                    "type": "other"
+                                }
+                            },
+                            {
+                                "tabname": "按人",
+                                "type": "leader",
+                                "url": "/fn/scheduleList/queryMobileShare",
+                                "dataUrl": "/fn/scheduleList/queryMobileData"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "customs": {
+                "tabItems": [
+                    {
+                        "tabname": "个人日程",
+                        "type": "date",
+                        "url": "fn/scheduleList/queryMobileData",
+                        "params": {
+                            "MODULE_ID": "180719094152MnF6C2hEPtqIvhjJIxo",
+                            "type": "personal"
+                        },
+                        "isShowAddIcon": true
+                    }
+                ]
+            },
+            "leader": {
+                "tabItems": [
+                    {
+                        "tabname": "按日期",
+                        "type": "date",
+                        "getDataType": "day",
+                        "url": "fn/ldrc/unit/getMobileWeekData",
+                        "params": {
+                            "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                            "type": "leader"
+                        }
+                    },
+                    {
+                        "tabname": "按领导",
+                        "type": "leader",
+                        "url": "/fn/ldrc/unit/getMobileLeaders",
+                        "dataUrl": "fn/ldrc/unit/getMobileWeekData",
+                        "params": {
+                            "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                            "type": "leader"
+                        }
+                    }
+                ]
+            },
+            "orgLeader": {
+                "tabItems": [
+                    {
+                        "tabname": "按日期",
+                        "type": "date",
+                        "getDataType": "day",
+                        "url": "fn/ldrc/org/getMobileWeekData",
+                        "params": {
+                            "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                            "type": "leader"
+                        }
+                    },
+                    {
+                        "tabname": "按领导",
+                        "type": "leader",
+                        "url": "/fn/ldrc/org/getMobileLeaders",
+                        "dataUrl": "fn/ldrc/org/getMobileWeekData",
+                        "params": {
+                            "MODULE_ID": "191104202027u8LzPuGjn5qwqvmn9B0",
+                            "type": "leader"
+                        }
+                    }
+                ]
+            },
+            "scheduleDetailUrl": "/commonSchedule/customs",
+            "scheduleList": "fn/scheduleList/queryMobileData",
+            "scheduleListpd": "fn/workSchedule/getPersonWeekData"
+        },
+        "squMenu": [
+            {
+                "menuID": "1",
+                "menuText": "待办中心",
+                "routeUrl": "/todocenter",
+                "type": "route",
+                "params": null,
+                "imgUrl": "./static/squMenu/menu1.png"
+            },
+            {
+                "menuID": "2",
+                "menuText": "会议中心",
+                "routeUrl": "/meetingCenter",
+                "type": "route",
+                "params": null,
+                "imgUrl": "./static/squMenu/hyzx.png"
+            },
+            {
+                "menuID": "3",
+                "menuText": "日程中心",
+                "routeUrl": "/scheduleCenter",
+                "type": "route",
+                "params": null,
+                "imgUrl": "./static/squMenu/rczx.png"
+            },
+            {
+                "menuID": "10",
+                "menuText": "应用中心",
+                "routeUrl": "/index/4",
+                "type": "route",
+                "params": null,
+                "imgUrl": "./static/squMenu/menu8.png"
+            }
+        ],
+        "todoCenter": [
+            {
+                "title": "待办",
+                "name": "gw",
+                "count": "",
+                "url": "fn/mobileToDoAndRead/getToDoAndReadList2",
+                "fileType": "gw",
+                "nosend": false,
+                "countParams": {
+                    "showTotal": true,
+                    "start": 1,
+                    "limit": 1,
+                    "fileType": "gw"
+                },
+                "params": {
+                    "showTotal": true,
+                    "fileType": "gw"
+                }
+            },
+            {
+                "title": "会议",
+                "name": "hy",
+                "count": "",
+                "url": "/fn/MeetingMobile/meetingTodo",
+                "countParams": {
+                    "start": 1,
+                    "limit": 15
+                },
+                "params": {}
+            },
+            {
+                "title": "督办",
+                "name": "db",
+                "count": "",
+                "url": "fn/list/201026214042aWU5wzx9LR0RYKLkne7/mobile/q?moduleId=201017121059rB2kYzyqg5PFnTChfGy",
+                "fileType": "ToOversee",
+                "countParams": {
+                    "showTotal": true,
+                    "start": 1,
+                    "limit": 1,
+                    "fileType": "ToOversee"
+                },
+                "params": {
+                    "fileType": "ToOversee",
+                    "showTotal": true
+                }
+            },
+            {
+                "title": "待阅",
+                "name": "dy",
+                "count": "",
+                "url": "fn/mobileToDoAndRead/getToDoAndReadList2",
+                "fileType": "ToRead",
+                "countParams": {
+                    "showTotal": true,
+                    "start": 1,
+                    "limit": 1,
+                    "fileType": "ToRead"
+                },
+                "params": {
+                    "fileType": "ToRead",
+                    "showTotal": true
+                }
+            },
+            {
+                "title": "待签收",
+                "name": "dqs",
+                "count": "",
+                "url": "/fn/list/20082313555438zby5yWOGo2grZPrkJ/mobile/q?moduleId=190313143112jfLuUxrc19Dchhv4BPU",
+                "countParams": {
+                    "page": 1,
+                    "limit": 1
+                },
+                "params": {}
+            },
+            {
+                "title": "信息传送",
+                "name": "xxcs",
+                "count": "",
+                "url": "/fn/list/1807271502471mZfA8mah6Q3fprnIVz/mobile/q?moduleId=180725205942uc2zjrqnTt5sg7ReWmV&formId=1807271502471mZfA8mah6Q3fprnIVz&receiveUserId=[userid]&isFirst=1",
+                "targetUrl": "/TabCommonForm/Note/0/180725205942uc2zjrqnTt5sg7ReWmV/[pk]",
+                "countParams": {},
+                "params": {}
+            },
+            {
+                "title": "已办",
+                "name": "yb",
+                "count": "",
+                "url": "/fn/list/20012015444389JJL1Af0XRDv0xWYmy/mobile/q?moduleId=190620203722hdlBjofE3g9kzT1h4ct",
+                "countParams": {
+                    "page": 1,
+                    "limit": 1
+                },
+                "params": {}
+            }
+        ]
+    },
+    "myInfo": {
+        "exitButton": {
+            "isShow": true,
+            "buttonName": "退出登录"
+        },
+        "menus": [
+            [
+                {
+                    "menuID": "5",
+                    "menuText": "委托设置",
+                    "routeUrl": "/entrustSetting",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconclipboard-account",
+                    "color": "#249AA7"
+                },
+                {
+                    "menuID": "13",
+                    "menuText": "自动登录",
+                    "routeUrl": "",
+                    "type": "switch",
+                    "model": "autoLogin",
+                    "params": null,
+                    "icon": "iconjiantouxiangshang",
+                    "color": "#F1594A"
+                }
+            ],
+            [
+                {
+                    "menuID": "9",
+                    "menuText": "修改个人信息",
+                    "routeUrl": "/commonForm/180427160129OpjvceEWZTBZ3ftTG4C/[userid]?method=edit&listId=MobileUserinfo&validateByList=1&showTitle=修改个人信息",
+                    "type": "route",
+                    "params": null,
+                    "icon": "icongerenshezhi",
+                    "color": "#3296fa"
+                },
+                {
+                    "menuID": "6",
+                    "menuText": "修改密码",
+                    "routeUrl": "/changePassWord",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconmima",
+                    "color": "#F8C830"
+                }
+            ],
+            [
+                {
+                    "menuID": "10",
+                    "menuText": "设置手势密码",
+                    "routeUrl": "/canvasGesture?type=set",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconcursor-pointer",
+                    "color": "#3296fa"
+                },
+                {
+                    "menuID": "11",
+                    "menuText": "清除手势密码",
+                    "routeUrl": "/canvasGesture?type=clear",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconclose-circle-outline",
+                    "color": "#F1594A"
+                },
+                {
+                    "menuID": "12",
+                    "menuText": "设置主题",
+                    "routeUrl": "/setTheme",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconsettings",
+                    "color": "#F8C830"
+                },
+                {
+                    "menuID": "13",
+                    "menuText": "设置字体大小",
+                    "routeUrl": "/setFontSizeNew",
+                    "type": "route",
+                    "params": null,
+                    "icon": "iconmagnify-plus",
+                    "color": "#249AA7"
+                }
+            ]
+        ]
+    },
+    "appSelect": {
+        "description": "该配置作用：应用中心是否启用我的菜单定制功能，false则不启用，也不显示，true启用正常逻辑;isHideTitle:只有一个一级菜单时是否隐藏一级标题",
+        "isShowMyMenus": false,
+        "isHideTitle": false,
+        "selectName": "",
+        "isRepeatShow": true,
+        "setUserShortcutDing": true,
+        "isShowTab": true
+    },
+    "appSwiper": {
+        "isShow": true,
+        "autoplay": 3000,
+        "isPercent": true,
+        "height": 30,
+        "percent": "390:200",
+        "hasPadding": false,
+        "imgUrls": [
+            "https://n.sinaimg.cn/gongyi/transform/116/w550h366/20210607/4994-kracxer0817763.jpg",
+            "./static/images/bg-mine.png",
+            "./static/images/bg-mine.png"
+        ],
+        "url": "",
+        "description": "该配置作用：percent:390:325(自动计算百分比，390为宽，325为高),picMaxWidth:750(轮播图片的最大高度),isShow:是否显示应用中心轮播头部，isPrecent:是否使用高度百分比，height：高度，autoplay:自动轮播速度，imgUrls:轮播图路径列表，url:后台获取轮播图接口"
+    },
+    "scheduleCenter": {
+        "isCommonList": true,
+        "commonListModuleId": "180719094152MnF6C2hEPtqIvhjJIxo"
+    },
+    "IMSetting": {
+        "IMoaServer": "",
+        "IMserverUrl": "",
+        "OATOIM": "",
+        "startChat": false,
+        "isShowForwardBtn": true,
+        "description": "移动端聊天相关配置，scoketServe：scoket地址，IMserverUrl：IM聊天后台接口地址，IMoaServer：IM获取OA数据接口地址,isShowForwardBtn:长按消息是否显示转发按钮"
+    },
+    "meetProjectconfig":{
+        "fileSameScreenFlag": true,
+        "BGTsingUpInfo": true,
+        "searchNoSource": true,
+        "description": "该对象为会议项目配置类。fileSameScreenFlag:开启会议pad同屏，BGTsingUpInfo:办公厅会议报名情况特殊样式,searchNoSource:会议室预定资源搜索选项开关"
+    },
+    "meetingConfig": {
+        "reserveMeeting": "fn/meeting/meetingRoomJson",
+        "reserveModuleId": "190111184257QgSNR8cW92akDpqeWMA",
+        "meetingManageUrl": "fn/newMobileMeeting/meetingInfo",
+        "meetingCountUrl": "fn/newMobileMeeting/meetingCount",
+        "meetingNoToDoUrl": "fn/meeting/getMeetingTZUNTODO",
+        "meetingToDoUrl": "fn/meeting/getMeetingTZTODO",
+        "attendMeetingUrl": "fn/mobilePDMeeting/attendMeeting",
+        "enableTopicTab": true,
+        "homePage": {
+            "menu": [
+                {
+                    "id": "yqsb",
+                    "name": "疫情申报",
+                    "img": "static/images/shandongyancao/conference/yqsb.png",
+                    "url": "/SDYCConferenceED/[edpk]",
+                    "badge": 0
+                },
+                {
+                    "id": "hwsc",
+                    "name": "会务手册",
+                    "img": "static/images/shandongyancao/conference/hwsc.png",
+                    "url": "",
+                    "badge": 0
+                },
+                {
+                    "id": "hyxq",
+                    "name": "会议详情",
+                    "img": "static/images/shandongyancao/conference/hyxq.png",
+                    "url": "/SDYCMeeting/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "gmxl",
+                    "name": "观摩线路",
+                    "img": "static/images/shandongyancao/conference/gmxl.png",
+                    "url": "/SDYCObserve/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "jyfx",
+                    "name": "经验分享",
+                    "img": "static/images/shandongyancao/conference/jyfx.png",
+                    "url": "/SDYCConferenceDir/[id]/jyfx",
+                    "badge": 0
+                },
+                {
+                    "id": "gdjj",
+                    "name": "各地简介",
+                    "img": "static/images/shandongyancao/conference/gdjj.png",
+                    "url": "/SDYCConferenceDir/[id]/gdjj",
+                    "badge": 0
+                },
+                {
+                    "id": "wdxx",
+                    "name": "我的消息",
+                    "img": "static/images/shandongyancao/conference/wdxx.png",
+                    "url": "/commonList/220718152156uxDabvTEdj3CrjMWxfN/220711092349sQmvEFDyhH0Wq9X9GPU?secQuery={\"fid\":\"[id]\"}",
+                    "badge": 0,
+                    "grant": 1,
+                    "urls": [
+                        {
+                            "role": 0,
+                            "url": "/commonList/220718152156uxDabvTEdj3CrjMWxfN/220711092349sQmvEFDyhH0Wq9X9GPU?secQuery={\"fid\":\"[id]\"}"
+                        },
+                        {
+                            "role": 1,
+                            "url": "/commonTabs/MyMessage?fid=[id]"
+                        }
+                    ]
+                },
+                {
+                    "id": "txl",
+                    "name": "通讯录",
+                    "img": "static/images/shandongyancao/conference/txl.png",
+                    "url": "/SDYCConnectUser/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "xcfb",
+                    "name": "现场发布",
+                    "img": "static/images/shandongyancao/conference/xcfb.png",
+                    "url": "/commonList/220718182657N3lhnJP2eL7kbSsfCFb/220718175134edWpHmHlMqQR3u1CVJn?secQuery={\"fid\":\"[id]\"}",
+                    "badge": 0
+                },
+                {
+                    "id": "xcxc",
+                    "name": "现场宣传",
+                    "img": "static/images/shandongyancao/conference/xcxc.png",
+                    "url": "/SDYCFriends/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "xxfb",
+                    "name": "消息发布",
+                    "img": "static/images/shandongyancao/conference/wdxx.png",
+                    "url": "/commonList/220711095407znPRHY7Iex85W1TM3B1/220711092349sQmvEFDyhH0Wq9X9GPU?secQuery={\"fid\":\"[id]\"}",
+                    "badge": 0
+                },
+                {
+                    "id": "tjfx",
+                    "name": "统计分析",
+                    "img": "static/images/shandongyancao/conference/tjfx.png",
+                    "url": "/commonList?fileType=hytjfx&fid=[id]",
+                    "badge": 0
+                }
+            ],
+            "padMenu": [
+                {
+                    "id": "hyqd",
+                    "name": "签到",
+                    "img": "static/images/platform/conference/qd.png",
+                    "url": "/meetingPad/index/signIn"
+                },
+                {
+                    "id": "tjfx",
+                    "name": "签到管理",
+                    "img": "static/images/meetingPad/qdgl.png",
+                    "url": "/meetingPad/index/signDetail"
+                },
+                {
+                    "id": "hyzl",
+                    "name": "会议资料",
+                    "img": "static/images/platform/conference/hyzl.png",
+                    "url": "/meetingPad/index/files"
+                },
+                {
+                    "id": "txl",
+                    "name": "通讯录",
+                    "img": "static/images/platform/conference/txl.png",
+                    "url": "/meetingPad/index/contacts"
+                },
+                {
+                    "id": "bwl",
+                    "name": "备忘录",
+                    "img": "static/images/platform/conference/bwl.png",
+                    "url": "/meetingPad/index/memo"
+                },
+                {
+                    "id": "hyxx",
+                    "name": "消息提醒",
+                    "img": "static/images/platform/conference/wdxx.png",
+                    "url": "/meetingPad/index/message"
+                },
+                {
+                    "id": "czzn",
+                    "name": "会务手册",
+                    "img": "static/images/platform/conference/hysc.png",
+                    "url": ""
+                }
+            ]
+        }
+    },
+    "platformMeetingConfig": {
+        "homePage": {
+            "menu": [
+                {
+                    "id": "jbxx",
+                    "name": "基本信息",
+                    "img": "static/images/platform/conference/jbxx_fx.png",
+                    "url": "/commonForm/210902110807b6V0jmvL06vdMmcRTMW/[id]?listId=210922093738avCyOytkXRvnRaXlSZQ&method=mobileViewForm&validateByList=1",
+                    "badge": 0
+                },
+                {
+                    "id": "hyyt",
+                    "name": "会议议题",
+                    "img": "static/images/platform/conference/hyyt_fx.png",
+                    "url": "/meetingTopics/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "hczw",
+                    "name": "会场座位",
+                    "img": "static/images/platform/conference/hczw_fx.png",
+                    "url": "/commonList?fileType=hczw&id=[id]&notLink=1",
+                    "badge": 0
+                },
+                {
+                    "id": "hyzl",
+                    "name": "会议资料",
+                    "img": "static/images/platform/conference/hyzl_fx.png",
+                    "url": "/conferenceDir/[id]/[id]/1",
+                    "badge": 0
+                },
+                {
+                    "id": "hyxx",
+                    "name": "我的消息",
+                    "img": "static/images/platform/conference/wdxx_fx.png",
+                    "url": "/commonList/220805144114MAufCqtIpiY9Rt8TkYx/220805142201Z2JRY83u6rPqYsQk1uk?secQuery={\"fid\":\"[id]\"}",
+                    "badge": 0,
+                    "grant": 1,
+                    "urls": [
+                        {
+                            "role": 0,
+                            "url": "/commonList/220805144114MAufCqtIpiY9Rt8TkYx/220805142201Z2JRY83u6rPqYsQk1uk?secQuery={\"fid\":\"[id]\"}"
+                        },
+                        {
+                            "role": 1,
+                            "url": "/commonTabs/platFormMyMessage?fid=[id]"
+                        }
+                    ]
+                },
+                {
+                    "id": "txl",
+                    "name": "通讯录",
+                    "img": "static/images/platform/conference/txl_fx.png",
+                    "url": "/connectUser/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "bwl",
+                    "name": "备忘录",
+                    "img": "static/images/platform/conference/bwl_fx.png",
+                    "url": "/commonList/220824182854XIvX8qp2dlqO8LQwBQ9/220120172125U35lYA3kpFwxWs3L9JX?secQuery={\"fid\":\"[id]\"}",
+                    "badge": 0
+                },
+                {
+                    "id": "czzn",
+                    "name": "操作指南",
+                    "img": "static/images/platform/conference/czzn_fx.png",
+                    "url": "",
+                    "badge": 0
+                },
+                {
+                    "id": "hyrc",
+                    "name": "会议议程",
+                    "img": "static/images/platform/conference/rcxq_fx.png",
+                    "url": "/scheduleDetails/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "tjfx",
+                    "name": "签到管理",
+                    "img": "static/images/platform/conference/qdgl_fx.png",
+                    "url": "/commonList?fileType=tjfx&id=[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "hyqd",
+                    "name": "签到",
+                    "img": "static/images/platform/conference/qd_fx.png",
+                    "url": "/meetIngSignIn/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "ytgl",
+                    "name": "议题管理",
+                    "img": "static/images/platform/conference/ytgl_fx.png",
+                    "url": "/commonList?fileType=ytgl&id=[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "fwhj",
+                    "name": "服务呼叫",
+                    "img": "static/images/platform/conference/fwhj_fx.png",
+                    "url": "/commonForm/2309261533084McuxrMrlgFwifxwlxT?fid=[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "fwyd",
+                    "name": "服务应答",
+                    "img": "static/images/platform/conference/fwyd_fx.png",
+                    "url": "/commonTabs/platFormMyService?fid=[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "kqtp",
+                    "name": "开启同屏",
+                    "img": "static/images/platform/conference/kqtp_fx.png",
+                    "url": "/meetIngSignIn/[id]",
+                    "badge": 0
+                },
+                {
+                    "id": "tpsq",
+                    "name": "同屏授权",
+                    "img": "static/images/platform/conference/tpsq_fx.png",
+                    "url": "/commonList?fileType=ytgl&id=[id]",
+                    "badge": 0
+                }
+            ]
+        }
+    },
+    "ddSetting": {
+        "ddCoprId": "1",
+        "ddAgentId": "328895816",
+        "dingdingType": "",
+        "wxAuth": true,
+        "Kingecode": "SxD/phFsuhBWZSmMVtSjKZmm/c/3zSMrkV2Bbj5tznSkEVZmTwJv0wwMmH/+p6wLiUHbjadYueX9v51H9GgnjUhmNW1xPkB++KQqSv/VKLDsR8V6RvNmv0xyTLOrQoGzAT81iKFYb1SZ/Zera1cjGwQSq79AcI/N/6DgBIfpnlwiEiP2am/4w4+38lfUELaNFry8HbpbpTqV4sqXN1WpeJ7CHHwcDBnMVj8djMthFaapMFm/i6swvGEQ2JoygFU3WwjiesetLVfeKeSCGUtNePS0yHIHpAAQZGOWuRW7fsWVFihhgv7gZfkpfJMSm/MmYngL2kv2tNxddviuwBCLi6BI6KYwFlcBYnKg15z7MpUMSvgYKdOaN6/3pxxzvYClZyZT2umSeN/3tBNrXvDACvANk6qiXn/OBCU3QRIhmiAc/5/+UjdElADYFbJfzSv3FG/UzC91FLbmrGTPA+OpMctCvrboxvznvW9K4CSNvk29q6P0lp+QMvtZ8FsQQ1fAzNTOulVyP8KCTl7pA3dliSJT+8sRyI5+wGBEgbNZscxmuzX8Oqtrw2uLfUnP9Bx7zeCBkqp0V3QDJtH3vo+lHuHR8z0bXnNyxWpWpFFdE88="
+    },
+    "previewSetting": {
+        "previewLocation": "",
+        "_previewLocation": "",
+        "previewType": ""
+    },
+    "specialList": {
+        "previewPage": []
+    },
+    "appTopMenu": {
+        "value": true,
+        "allowHideStatusTop": false,
+        "statusTopPath": [],
+        "filterRouter": [
+            "taskDetail",
+            "addTask",
+            "agentLogin",
+            "qixiangjuDingLogin",
+            "emergencyLogin",
+            "ssoToOther",
+            "LockPage",
+            "guide",
+            "canvasGesture",
+            "xzlogin",
+            "testLogin",
+            "autoLogintoUrl",
+            "Home",
+            "HandwrittenSign",
+            "chat",
+            "chatlogin",
+            "setting",
+            "setFontSize",
+            "setFontSizeNew",
+            "hljPadIndex",
+            "meetingPadWelcome",
+            "meetingPadLogin",
+            "meetingPadFront",
+            "meetingPadSearch",
+            "meetingPadAppcenter",
+            "meetingPadTopic",
+            "meetingPadFiles",
+            "meetingPadFilePreview",
+            "meetingPadMemo",
+            "meetingPadMemoEdit",
+            "meetingPadContacts",
+            "meetingPadSignIn",
+            "meetingPadMessage",
+            "meetingPadNotice",
+            "meetingPadNoticeDetail",
+            "meetingPadSignDetail",
+            "meetingPadPublish",
+            "meetingPadPublishEdit",
+            "meetingPadPersonal",
+            "meetingPadChangePwd",
+            "meetingPadSetFontSizePad",
+            "meetingPadEmpty",
+            "cloudDisk",
+            "outsideLink",
+            "diskFileList",
+            "fgwStaging",
+            "deptNews",
+            "fgwPadSMtodo",
+            "fgwPadSMdone",
+            "zhindex"
+        ],
+        "description": "该配置作用：移动端二级页面是否显示头部返回栏,true是显示，false是不显示，必须配合appFooter底部菜单配置功能一起使用，否则不起效果"
+    },
+    "appFooter": {
+        "isShow": true
+    },
+    "formTab": [
+        {
+            "name": "signForm",
+            "title": "签批单",
+            "enable": false
+        },
+        {
+            "name": "formTab",
+            "title": "基本信息",
+            "enable": true
+        },
+        {
+            "name": "DefaultList",
+            "title": "培训日程",
+            "enable": true,
+            "set": [
+                {
+                    "formId": "230522205021c1WC9AqLY5zhZjqtX1n",
+                    "title": "培训日程",
+                    "listId": "2305222103550ki4hWd8dguFN0FyVi1",
+                    "moduleId": "230522172818oQs4PlpI7gI3KethBCn",
+                    "params": {
+                        "fid": "[pk]",
+                        "notLink": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "pcForm",
+            "title": "pc表单",
+            "pcFormUrl": "http://192.168.1.140:8080/DreamWeb/ctrl/portal/index?tId=180125135009mnbVQ2sewkDKJZqA33i",
+            "enable": false
+        },
+        {
+            "name": "onlyOnefilePreview",
+            "title": "正文",
+            "enable": true,
+            "showModuleIds": [
+                "230504192223hNSFfFucFKid9ZUWQ37"
+            ]
+        },
+        {
+            "name": "moveStatus",
+            "title": "流转情况",
+            "enable": false
+        },
+        {
+            "name": "newMoveStatus",
+            "title": "流转情况",
+            "enable": true
+        },
+        {
+            "name": "relevantFile",
+            "title": "相关文件",
+            "enable": false,
+            "defaultSelectModuleIds": [
+                "180805175628RK7ixI1IyrjDuG4njD5"
+            ]
+        },
+        {
+            "name": "chatFrame",
+            "title": "聊天",
+            "enable": false
+        },
+        {
+            "name": "relationList",
+            "title": "关联文件",
+            "enable": false
+        },
+        {
+            "name": "instructionList",
+            "title": "批示",
+            "enable": true,
+            "showModuleIds": [
+                "220303113130omuV4PLAr9v5Th2d34D_2203051314047kwYcLZMsXvrCW4KwB2"
+            ]
+        },
+        {
+            "name": "readedList",
+            "title": "已读记录",
+            "enable": true,
+            "showModuleIds": [
+                "220303113130omuV4PLAr9v5Th2d34D_2203051314047kwYcLZMsXvrCW4KwB2"
+            ],
+            "showPrivileges": [
+                "办公厅领导"
+            ]
+        },
+        {
+            "name": "inspectionList",
+            "title": "巡检日志列表",
+            "enable": true,
+            "showModuleIds": [
+                "220510141612XXk0pQvr41LAnlBjFkm_22081914212618jJNrnxWguKCvhf85s"
+            ]
+        }
+    ],
+    "commonForm": {
+        "layout": "row",
+        "textlayout": "left",
+        "canEditFile": true,
+        "NoDownload": false,
+        "isShowHandwritingBtn": true,
+        "hideMoveStatus": [
+            "180805175628RK7ixI1IyrjDuG4njD5",
+            "180427160129OpjvceEWZTBZ3ftTG4C"
+        ],
+        "fontLevel": 3,
+        "xsfWPSofd": false,
+        "nativeWps": true,
+        "iSignature": {
+            "isEnable": false,
+            "keyCode": "SxD/phFsuhBWZSmMVtSjKZmm/c/3zSMrkV2Bbj5tznSkEVZmTwJv0wwMmH/+p6wLiUHbjadYueX9v51H9GgnjUhmNW1xPkB++KQqSv/VKLDsR8V6RvNmv0xyTLOrQoGzAT81iKFYb1SZ/Zera1cjGwQSq79AcI/N/6DgBIfpnlwiEiP2am/4w4+38lfUELaNh5C7n4Jtum06mWTdz23o7mFRwMCcXWoB3/cjdeWMXwfZ1d7Mu5rxq86C0yoIskpO3LsBnTq/iX+ep3TE/SoY8kSWf+4xV1W2D+MzPGfKCj26lZhbc0wZsYY7F8fGE4DHlE3IGgptZfqgNkP9FLygE0MFXMK4QXaTO8XI3XeXAZ/DRxGlM0Z1i9LBa4erv7apXqrZ7N8rlC14y2s4Oh5J5+EtQMm4WIhSHqFRZkU2A2yCDw8PZKEIbpaqdJMEuMRcucFAKPT377gbzSx9eH9NzfyNiKjbry9Ch/o2yRRV5LhJI9M1w26H+EvO7A/JnRx2IjNGplhhRsC3O5iPLwL7ckqsqM3gNkmtfAazbHIsQYJ+1R2uxcQpqlUzcvoObAbdXdMtkCnTkc1jEQ72pA6sShfwwaoglNI0mR8KGlaZlQs=",
+            "des": "是否开启金格手写签批"
+        },
+        "shuke": {
+            "isEnable": false,
+            "keyCode": "上海市一体化办公平台-com.shsrmzf.ssbzwyuat-20240123,6AFA64EB2E42E0D2756E295C8651AA85C7F259DF",
+            "screenshots": true,
+            "externalStorage": false,
+            "foldingScreen": "",
+            "penPad": "",
+            "project": "",
+            "buttonState": {
+                "signFontSize": true,
+                "rectWrite": true
+            },
+            "secretData": {
+                "signKey": "test_slt",
+                "signSecret": "ZHJlYW1vYV81QTIwMEI5NDhGREVCMjExRDc4ODVEMUI0RDJGOTc1NQ=="
+            },
+            "des": "是否开启数科手写签批"
+        },
+        "dianJu": {
+            "isEnable": false,
+            "des": "是否开启点聚手写签批"
+        },
+        "wdzt": {
+            "isEnable": false,
+            "trackRevisions": false,
+            "des": "是否开启文档中台在线预览和编辑"
+        },
+        "dreamSign": {
+            "signCurTabIndex": -1,
+            "isHideInstructor": false,
+            "isFileImgMargin": true,
+            "des": "dreamSign公司签批产品, signCurTabIndex:签批插件默认选中的tab(不选中:-1, 手写:1, 文字:2, 签名:3); isHideInstructor:是否隐藏批示人按钮, isFileImgMargin:图片预览是否展示边距（默认true）"
+        },
+        "LocalPdfPreview": true,
+        "LocalDocPreview": false,
+        "webViewPreview": false,
+        "tabPaneShowFile": false,
+        "yzyWps": false,
+        "btnToggleShowFile": false,
+        "bottomBtnsTiled": false,
+        "bigTitle": true,
+        "hideBigTitleDetail": true,
+        "canClickBigTitle": false,
+        "specialTitle": false,
+        "enclosureStyle": "",
+        "formPadding": "",
+        "hideFileRename": false,
+        "controlPadding": "",
+        "qixiangjuDetailModules": [],
+        "padLabelSpan": "4",
+        "isHideControlTreeNum": false,
+        "btnStyle": "blockTile",
+        "btnNum": 5,
+        "opinitonShowSign": false,
+        "hideOpinionSignPhoto": false,
+        "readonlyColor": "",
+        "controlLabelColor": "",
+        "toShareAndRead": false,
+        "isHiddenPhoneButton": false,
+        "isSelectProcessAsync": false,
+        "isshowPhoto": false,
+        "moveingDetailText": "进行中",
+        "hideOpinionVoice": true,
+        "description": "layout：表单布局方式(row左右两栏,column上下两栏)；textlayout：标题后面的文本布局方式（左对齐还是右对齐）；fontLevel：表单标题字体大小(1~5递增)；bottomBtnsTiled：底部按钮是否平铺展示；btnToggleShowFile：相关文件通过按钮切换文件；tabPaneShowFile：相关文件以列表形式展示文件；bigTitle：是否要大标题；enclosureStyle：附件样式 ‘simple’简单小图标‘complex’复杂大图标‘noIcon’无图标标题换行；formPadding：表单边距(0.2rem)；yzyWps：阳西粤政易wps；hideFileRename：隐藏文件重命名功能;controlPadding: 控件上下边距(默认0.2rem),qixiangjuDetailModules:气象局打开详情表单模块,padLabelSpan:pad表单标题宽度（默认4）,btnStyle:按钮样式‘iconTile’图标式平铺,NoDownload:禁止全局附件下载,toShareAndRead:分阅即阅毕,"
+    },
+    "commonList": {
+        "titleEllipsis": true,
+        "isFideFilterIcon": false,
+        "isFideReadStatusIcon": false,
+        "btnToggleShow": false,
+        "isBtnDrawerShow": true,
+        "isFooterBtnShow": true,
+        "description": "btnToggleShow：列表行中的按钮和图片是否平铺显示（true平铺，false上下），titleEllipsis: 列表标题两行省略，isFideFilterIcon：所有列表隐藏筛选图标，isFideReadStatusIcon：隐藏未读绿标,isBtnDrawerShow:列表是否启用抽屉按钮"
+    },
+    "listJson": [
+        {
+            "fileType": "scck",
+            "params": {},
+            "url": "fn/goodsrk/mobilelist"
+        },
+        {
+            "fileType": "gwhs",
+            "params": {},
+            "url": "fn/flow/mobileRecyclingListData"
+        },
+        {
+            "fileType": "draftBox",
+            "params": {
+                "type": "draft"
+            },
+            "url": "fn/mobilegzptcontroller/getDwb"
+        },
+        {
+            "fileType": "wdyb",
+            "params": {},
+            "url": "fn/mobilegzptcontroller/myWork"
+        },
+        {
+            "fileType": "jrhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=1&isall=all"
+        },
+        {
+            "fileType": "zrhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=2&isall=all"
+        },
+        {
+            "fileType": "mrhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=3&isall=all"
+        },
+        {
+            "fileType": "bzhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=4&isall=all"
+        },
+        {
+            "fileType": "xzhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=5&isall=all"
+        },
+        {
+            "fileType": "byhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=6&isall=all"
+        },
+        {
+            "fileType": "xyhy",
+            "params": {},
+            "url": "fn/meeting/tomeeting?type=7&isall=all"
+        },
+        {
+            "fileType": "grndsr",
+            "params": {
+                "type": 1
+            },
+            "url": "fn/salaryMobile/myAnnualSalary"
+        },
+        {
+            "fileType": "ndsrsb",
+            "params": {
+                "type": 2
+            },
+            "url": "fn/salaryMobile/myAnnualSalary"
+        },
+        {
+            "fileType": "getAllWork",
+            "params": {
+                "type": "all"
+            },
+            "url": "fn/mobilegzptcontroller/getDwb"
+        },
+        {
+            "fileType": "getToDo",
+            "params": {
+                "type": "todo"
+            },
+            "url": "fn/mobilegzptcontroller/getDwb"
+        },
+        {
+            "fileType": "swgl",
+            "params": {},
+            "url": "fn/receiveSendInternalController/mobileQueryData?sourceType=1-1"
+        },
+        {
+            "fileType": "fwgl",
+            "params": {},
+            "url": "fn/receiveSendInternalController/mobileQueryData?sourceType=2-1"
+        },
+        {
+            "fileType": "nbsw",
+            "params": {},
+            "url": "fn/receiveSendInternalController/mobileQueryData?sourceType=3-1"
+        },
+        {
+            "fileType": "wdhy",
+            "params": {},
+            "url": "fn/vedioMeeting/meetingsData"
+        },
+        {
+            "fileType": "hysp",
+            "params": {},
+            "url": "fn/vedioMeeting/queryVdeoList?meetingNumber=[meetingNumber]&hykssjValue=[hykssjValue]&hyjssjValue=[hyjssjValue]"
+        },
+        {
+            "fileType": "changeUser",
+            "params": {},
+            "url": "fn/api/para/getUserAccountList"
+        },
+        {
+            "fileType": "gwnew",
+            "params": {
+                "showTotal": true,
+                "fileType": "gw",
+                "needBtn": 0
+            },
+            "url": "fn/mobileToDoAndRead/getToDoAndReadList2"
+        },
+        {
+            "fileType": "zmxx",
+            "params": {},
+            "linkTo": {
+                "path": "/jiangsuyancaoNewsDetail",
+                "query": {
+                    "id": "id",
+                    "type": "type",
+                    "time": "time"
+                }
+            },
+            "url": "ctrl/news/listWithHeadTable?type=zmxx"
+        },
+        {
+            "fileType": "hygd",
+            "params": {},
+            "linkTo": {
+                "path": "/jiangsuyancaoNewsDetail",
+                "query": {
+                    "id": "id",
+                    "type": "type",
+                    "time": "time"
+                }
+            },
+            "description": "linkTo：点击列表项特殊跳转，path：跳转地址无则跳转表单, isFixedValue:传参query是否为固定值，false则query键值对代表从列表项中取哪个key值动态传入",
+            "url": "ctrl/news/commonList?type=hygd"
+        },
+        {
+            "fileType": "flfg",
+            "params": {},
+            "linkTo": {
+                "path": "/jiangsuyancaoNewsDetail",
+                "query": {
+                    "id": "id",
+                    "type": "type",
+                    "time": "time"
+                }
+            },
+            "url": "ctrl/news/commonList?type=flfg"
+        },
+        {
+            "fileType": "ybwj",
+            "params": {},
+            "url": "fn/personalcenter/mobileQueryData?sourceType=17"
+        },
+        {
+            "fileType": "yjcx",
+            "params": {},
+            "url": "fn/personalcenter/mobileQueryData?sourceType=7"
+        },
+        {
+            "fileType": "yywj",
+            "params": {},
+            "url": "fn/personalcenter/mobileQueryData?sourceType=6"
+        },
+        {
+            "fileType": "wtdb",
+            "params": {
+                "type": "1",
+                "moduleId": ""
+            },
+            "url": "fn/mobileDelegate/getList"
+        },
+        {
+            "fileType": "tzgg",
+            "params": {},
+            "url": "/fn/mobileNotice/getMobileData"
+        },
+        {
+            "fileType": "xxtx",
+            "params": {},
+            "url": "/fn/remind/queryMobileData"
+        },
+        {
+            "fileType": "hytz",
+            "params": {},
+            "url": "/fn/meetingNotice/getReceiveNotice"
+        },
+        {
+            "fileType": "hytz1",
+            "params": {},
+            "url": "/fn/meetingNotice/getReceiveNotice?queryHistoryHy="
+        },
+        {
+            "fileType": "hytz2",
+            "params": {},
+            "url": "/fn/meetingNotice/getReceiveNotice?queryHistoryHy=1"
+        },
+        {
+            "fileType": "JQXQ",
+            "params": {},
+            "url": "/fn/list/210401160540sv9XDdg5vqwcPhiFqA9/mobile/q?moduleId=210312194501NPk3RMbPuNCQ4wSDM2H&start=[start]&end=[end]&userId=[userId]"
+        },
+        {
+            "fileType": "dpxkz",
+            "params": {},
+            "url": "/fn/retailer/getMobileListData"
+        },
+        {
+            "fileType": "InnerTubeReview",
+            "params": {},
+            "url": "/fn/InnerTubeReview/getMobileListData"
+        },
+        {
+            "fileType": "xizangJJDB",
+            "params": {},
+            "url": "/fn/mobileInterfaceController/urgentToDo?urgents=2,3"
+        },
+        {
+            "fileType": "xizangTZGG",
+            "params": {},
+            "url": "/fn/mobileInterfaceController/notice"
+        },
+        {
+            "fileType": "gzrz",
+            "params": {},
+            "url": "fn/workLog/mobileWorkLogData"
+        },
+        {
+            "fileType": "sendDetailAll",
+            "params": {},
+            "url": "fn/workNotice/sendDetail?sourceId=[sourceId]"
+        },
+        {
+            "fileType": "sendDetailNoRead",
+            "params": {},
+            "url": "fn/workNotice/sendDetail?status=1&sourceId=[sourceId]"
+        },
+        {
+            "fileType": "sendDetailRead",
+            "params": {},
+            "url": "fn/workNotice/sendDetail?status=2&sourceId=[sourceId]"
+        },
+        {
+            "fileType": "xlzjckhz",
+            "params": {},
+            "url": "fn/calendar/mobileSummaryList?noticeID=[pk]"
+        },
+        {
+            "fileType": "hylb",
+            "params": {},
+            "url": "fn/conferenceMobile/meetingList",
+            "linkTo": {
+                "path": "/conferenceIndex",
+                "query": {
+                    "id": "id"
+                }
+            }
+        },
+        {
+            "fileType": "tjfx",
+            "params": {},
+            "url": "fn/conferenceMobile/getStatistics?meetingId=[id]",
+            "linkTo": {
+                "path": "/meetIngSignManage",
+                "query": {
+                    "id": "id"
+                }
+            }
+        },
+        {
+            "fileType": "hczw",
+            "params": {},
+            "url": "fn/conferenceMobile/getUserMeetingSeat?meetingId=[id]"
+        },
+        {
+            "fileType": "zbjh",
+            "params": {},
+            "url": "/fn/personalList/getMobileData"
+        },
+        {
+            "fileType": "ytgl",
+            "params": {},
+            "url": "fn/conferenceMobile/allMeetingTopics?meetingId=[id]"
+        },
+        {
+            "fileType": "BGTToRead",
+            "params": {
+                "showTotal": true,
+                "fileType": "ToRead"
+            },
+            "url": "fn/mobileToDoAndRead/getToDoAndReadList2"
+        },
+        {
+            "fileType": "BGTToDo",
+            "params": {
+                "showTotal": true,
+                "fileType": "gw"
+            },
+            "url": "fn/mobileToDoAndRead/getToDoAndReadList2"
+        }
+    ],
+    "commonTabs": {
+        "BGTrsfb": {
+            "remark": "人事发布",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "badgeUrl": "",
+                    "name": "通知",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230811140344YFC4psKAKP0hvUNqtGm",
+                    "listId": "230811140345XmbU5StKpFdjvVgkEya",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "公示",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230822145029cLlG4XKn04xVBfs0SZu",
+                    "listId": "230822145029rdY9Jm1bnClsLOM6n4j",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "任免",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230831201922tFcKdAimbLtjC4x7wum",
+                    "listId": "230912125337hYcXjyzO97hrOmUHysJ",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "简报",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230821184317V3fsL1A9gRCoxLBOcmB",
+                    "listId": "230821184318Px6eXehxK4uvya8zn34",
+                    "params": {}
+                }
+            ]
+        },
+        "BGTbj": {
+            "remark": "办件",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "待办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "BGTToDo"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge",
+                    "count": ""
+                },
+                {
+                    "name": "已办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "ybwj"
+                    },
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "BGTyj": {
+            "remark": "阅件",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "待阅",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "BGTToRead"
+                    },
+                    "badgeUrl": "fn/mobileToRead/getToReadBadge",
+                    "count": ""
+                },
+                {
+                    "name": "已阅",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "BGTyywj"
+                    },
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "BGTjgdj": {
+            "remark": "机关党建",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "badgeUrl": "",
+                    "name": "工作提示",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230807142227X4NNSm29K4OiSHTfNbS",
+                    "listId": "230807152543sDSn2i4iEJlrKveh7ny",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "工作通知",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230807154119EmLr0eijHMj6TfrSgFE",
+                    "listId": "230807154120OK4glwPu7WFu02QrlN1",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "简报",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "2308071550272MhD68kVWBRlhQmf4XH",
+                    "listId": "230807155027I3Ig60rTnwbvjQszdRY",
+                    "params": {}
+                }
+            ]
+        },
+        "BGTzdxzjc": {
+            "remark": "法律事务",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "badgeUrl": "",
+                    "name": "目录发布",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230713141027VLsSAvOLsGjgeyTzyS5",
+                    "listId": "230720142426TE5xmOEMTh1eqdfISaH",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "目录调整",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230713141027VLsSAvOLsGjgeyTzyS5",
+                    "listId": "230720142440zvdqNk3zMbeccSM8j7k",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "年度考核",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230713141027VLsSAvOLsGjgeyTzyS5",
+                    "listId": "2307201424524HkU828bOJ9iBPrISIk",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "审查意见书",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230713141027VLsSAvOLsGjgeyTzyS5",
+                    "listId": "230714093658h9OwC5gyvaMpnUM4hQt",
+                    "params": {}
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "年度审查通报",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230713141027VLsSAvOLsGjgeyTzyS5",
+                    "listId": "23071811044009PnZpNcupgyyA0AtzV",
+                    "params": {}
+                }
+            ]
+        },
+        "jjjc": {
+            "remark": "纪检监察",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "badgeUrl": "",
+                    "name": "党纪法规",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230808110321mpJAK6elfUSBgkKFafI",
+                    "listId": "230808162503V3MexJNK2zZyB8OMD2l",
+                    "params": {
+                        "type": 1
+                    }
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "警示教育",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230808110321mpJAK6elfUSBgkKFafI",
+                    "listId": "230808162503V3MexJNK2zZyB8OMD2l",
+                    "params": {
+                        "type": 2
+                    }
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "提示提醒",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230808110321mpJAK6elfUSBgkKFafI",
+                    "listId": "230808162503V3MexJNK2zZyB8OMD2l",
+                    "params": {
+                        "type": 3
+                    }
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "政治监督",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "230808110321mpJAK6elfUSBgkKFafI",
+                    "listId": "230808162503V3MexJNK2zZyB8OMD2l",
+                    "params": {
+                        "type": 4
+                    }
+                }
+            ]
+        },
+        "JGJgwcx": {
+            "remark": "公文查询",
+            "showSearchBox": false,
+            "url": "ctrl/tempLwSearch/getTabs",
+            "tabslist": []
+        },
+        "kwgl": {
+            "remark": "信息刊物",
+            "showSearchBox": false,
+            "url": "ctrl/editor/getMobilePublicationDataList",
+            "tabslist": []
+        },
+        "Wdsc": {
+            "remark": "我的素材",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "badgeUrl": "",
+                    "name": "未采用",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "201230104729NVc4Ecw28SzntMvQ9B0",
+                    "listId": "230530141637oMR9uaH4yLkJUO5mr40",
+                    "params": {
+                        "TGCB_STATUS": 0
+                    }
+                },
+                {
+                    "badgeUrl": "",
+                    "name": "已采用",
+                    "goRoute": "defaultList",
+                    "icon": "",
+                    "count": "",
+                    "moduleId": "201230104729NVc4Ecw28SzntMvQ9B0",
+                    "listId": "230530143822myfxkZibai9kLqPFc1D",
+                    "params": {
+                        "TGCB_STATUS": 1
+                    }
+                }
+            ]
+        },
+        "rzdj": {
+            "remark": "入住登记",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "未安排",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "230523193026YN6zNqa48jnA9f8AqVT",
+                    "listId": "230523201409cafOsGFjAwctCNMJDds",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已安排",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230523195650wi1cAJX7q18JRpeqzK9",
+                    "listId": "230524065240UOksNam4UzvibjIhcgx",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "gwcx": {
+            "remark": "公文查询",
+            "showSearchBox": true,
+            "tabslist": [
+                {
+                    "name": "综合",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "showSearchBox": false
+                    },
+                    "moduleId": "200826154812jQpt0dBmNzZXaNnLhTR",
+                    "listId": "230510222750vEz8RYThyQ0LkTRtU0v",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "发文",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "showSearchBox": false
+                    },
+                    "moduleId": "200826154812jQpt0dBmNzZXaNnLhTR",
+                    "listId": "230505175806JjcacbzqQcEua5BtoDW",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "收文",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "showSearchBox": false
+                    },
+                    "moduleId": "200826154812jQpt0dBmNzZXaNnLhTR",
+                    "listId": "2305051757478jXNcGeqdXAVrEoDqHQ",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "签报",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "showSearchBox": false
+                    },
+                    "moduleId": "200826154812jQpt0dBmNzZXaNnLhTR",
+                    "listId": "230505175825azNrn169RUTeUiosuly",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "文档",
+                    "icon": "",
+                    "goRoute": "diskFile",
+                    "url": "",
+                    "params": {
+                        "showSearchBox": false
+                    },
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "MeetingPlanSelect": {
+            "remark": "会议计划填报查看",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "未发布",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "200814142508hwEBmTaZuPv2HAfn10F",
+                    "listId": "210618135515Csb9rce6jein0tw73D1",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已发布",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "200814142508hwEBmTaZuPv2HAfn10F",
+                    "listId": "210722094631hrOY0T9ai5491DMs13U",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "ygtz": {
+            "remark": "约稿通知",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "本单位约稿",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "201231145248wvyDv7FqQmoLKle5oPk",
+                    "listId": "201231153246WGRUaj9d09KK2PsQ8qj",
+                    "count": ""
+                },
+                {
+                    "name": "跨单位约稿",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "201231145248wvyDv7FqQmoLKle5oPk",
+                    "listId": "221109095155yHzRW23MJJ9vTF7ssHF",
+                    "count": ""
+                }
+            ]
+        },
+        "pxbm": {
+            "remark": "培训报名",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "培训列表",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "230522171545bNl8qz65h9uLwBKLDnp",
+                    "listId": "2305222056335EqHs4NmDfgd3FW92zp",
+                    "count": ""
+                },
+                {
+                    "name": "我报名的",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "230522171545bNl8qz65h9uLwBKLDnp",
+                    "listId": "230522211432DO71QQApWVd4HrcLjFp",
+                    "count": ""
+                }
+            ]
+        },
+        "xxcb": {
+            "remark": "信息采编",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "本单位投稿",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "tglb": 1
+                    },
+                    "moduleId": "201230104729NVc4Ecw28SzntMvQ9B0",
+                    "listId": "220209175525XSvhciTkQFyLI0b3qsm",
+                    "count": ""
+                },
+                {
+                    "name": "跨单位投稿",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "tglb": 2
+                    },
+                    "moduleId": "201230104729NVc4Ecw28SzntMvQ9B0",
+                    "listId": "220209175525XSvhciTkQFyLI0b3qsm",
+                    "count": ""
+                }
+            ]
+        },
+        "ServiceManagement": {
+            "remark": "会议服务管理",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "当日会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "230529205514EHRIJkn9yOuLdErgyda",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "明日会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "2305292113563LWpsqaXUEsRv1RuLbc",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "周会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "230529211408Uwulns3YkaaxSLnNIod",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "下周会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "230529211426qpnuvQf2GtbgQe3EuEv",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "本月会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "230529211437k5KlSRO2oofta5L0GKH",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "全部会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "190121161348OthBI4s3sEhvfuDJ5FD",
+                    "listId": "2305292114482Xe8KcWgCn4mvV7LXfV",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "IMTask": {
+            "remark": "我的任务",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "我负责的",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                        "listId": "230104111519KOat570Iy1Su66nn2Hy",
+                        "taskmanTaskStatus": -1
+                    },
+                    "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                    "listId": "230104111519KOat570Iy1Su66nn2Hy",
+                    "count": ""
+                },
+                {
+                    "name": "我协同的",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                        "listId": "230104184338ZwNDxjqxIISy9QssfYH",
+                        "taskmanProgressState": -1
+                    },
+                    "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                    "listId": "230104184338ZwNDxjqxIISy9QssfYH",
+                    "count": ""
+                },
+                {
+                    "name": "我创建的",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                        "listId": "230104190407O4yLN9mcY9IHRF2VU58",
+                        "taskmanTaskStatus": -1
+                    },
+                    "moduleId": "230103192045EncoYZoaQ9Zee0afJmh",
+                    "listId": "230104190407O4yLN9mcY9IHRF2VU58",
+                    "count": ""
+                }
+            ]
+        },
+        "cunjuTodo": {
+            "remark": "待办中心",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "hytz1"
+                    },
+                    "badgeUrl": "/fn/meetingNotice/getReceiveNoticeBadge",
+                    "count": ""
+                },
+                {
+                    "name": "督办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw",
+                        "moduleIds": "210723164628N6ZfKTUlQtwXLTT7Mrg"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge?moduleIds=210723164628N6ZfKTUlQtwXLTT7Mrg",
+                    "count": ""
+                }
+            ]
+        },
+        "CZJWorkerTodoCenter": {
+            "remark": "待办中心",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "收文",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw",
+                        "moduleIds": "2305262001457EcjMOO9fUw7XxwWltG,2308231138389KSL1Ygm42N243MFyv4"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge?moduleIds=2305262001457EcjMOO9fUw7XxwWltG,2308231138389KSL1Ygm42N243MFyv4",
+                    "count": ""
+                },
+                {
+                    "name": "发文",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw",
+                        "moduleIds": "230526200223gswVshIefURwZbXu8m6,2308231705236aH6ytLmUx7AFxX9jFA"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge?moduleIds=230526200223gswVshIefURwZbXu8m6,2308231705236aH6ytLmUx7AFxX9jFA",
+                    "count": ""
+                }
+            ]
+        },
+        "BGTWorkerTodoCenter": {
+            "remark": "待办中心",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "待办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "BGTToDo"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge",
+                    "count": ""
+                },
+                {
+                    "name": "负责",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "230615204717BOIcAlJDLc1vTDLVPTY",
+                    "listId": "2306152050110bHyBnOzSgbOGBHpEAf",
+                    "badgeUrl": "/fn/list/2306152050110bHyBnOzSgbOGBHpEAf/mobileBadge/q?moduleId=230615204717BOIcAlJDLc1vTDLVPTY",
+                    "count": ""
+                },
+                {
+                    "name": "待阅",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "BGTToRead"
+                    },
+                    "badgeUrl": "fn/mobileToRead/getToReadBadge",
+                    "count": ""
+                },
+                {
+                    "name": "会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "hytz1"
+                    },
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "督办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw",
+                        "moduleIds": "210723164628N6ZfKTUlQtwXLTT7Mrg"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge?moduleIds=210723164628N6ZfKTUlQtwXLTT7Mrg",
+                    "count": ""
+                }
+            ]
+        },
+        "workerTodoCenter": {
+            "remark": "待办中心",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "待办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge",
+                    "count": ""
+                },
+                {
+                    "name": "负责",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {},
+                    "moduleId": "230615204717BOIcAlJDLc1vTDLVPTY",
+                    "listId": "231214144623aHBnXZsV6xZKnmnEa49",
+                    "badgeUrl": "/fn/list/231214144623aHBnXZsV6xZKnmnEa49/mobileBadge/q?moduleId=230615204717BOIcAlJDLc1vTDLVPTY",
+                    "count": ""
+                },
+                {
+                    "name": "待阅",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "ToRead"
+                    },
+                    "badgeUrl": "fn/mobileToRead/getToReadBadge",
+                    "count": ""
+                },
+                {
+                    "name": "会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "hytz1"
+                    },
+                    "badgeUrl": "/fn/meetingNotice/getReceiveNoticeBadge",
+                    "count": ""
+                },
+                {
+                    "name": "督办",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "gw",
+                        "moduleIds": "210723164628N6ZfKTUlQtwXLTT7Mrg"
+                    },
+                    "badgeUrl": "fn/mobileToDo/getToDoBadge?moduleIds=210723164628N6ZfKTUlQtwXLTT7Mrg",
+                    "count": ""
+                }
+            ]
+        },
+        "xmxx": {
+            "remark": "项目信息",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "基本信息",
+                    "icon": "",
+                    "goRoute": "commonForm",
+                    "url": "",
+                    "params": {
+                        "moduleId": "[moduleId]",
+                        "pk": "[pk]",
+                        "formId": "220325153002mKMGgs9tzxMyabN2AdI"
+                    },
+                    "moduleId": "",
+                    "listId": "",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "操作记录",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "220518105358gKONpNnVhEnL8SEgmIz",
+                        "listId": "220518140457O2Yb4RJrnHSkzIweQQc",
+                        "fid": "[pk]"
+                    },
+                    "moduleId": "220518105358gKONpNnVhEnL8SEgmIz",
+                    "listId": "220518140457O2Yb4RJrnHSkzIweQQc",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "JGGL": {
+            "remark": "机构管理",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "表单",
+                    "icon": "",
+                    "goRoute": "commonForm",
+                    "url": "",
+                    "params": {
+                        "moduleId": "[moduleId]",
+                        "pk": "[pk]"
+                    },
+                    "moduleId": "",
+                    "listId": "",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "人员信息",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "pk": "[pk]"
+                    },
+                    "moduleId": "180427160129OpjvceEWZTBZ3ftTG4C",
+                    "listId": "220328211449vS7Sst0K0b4jS1AEcc0",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "Gwbltab": {
+            "remark": "公文办理",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "待办文件",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                        "listId": "200715133358e5tbXUcpReGaKZUoo9D"
+                    },
+                    "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                    "listId": "200715133358e5tbXUcpReGaKZUoo9D",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "在办文件",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                        "listId": "201207190145kZf8P2gqVpAuDJaqLoU"
+                    },
+                    "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                    "listId": "201207190145kZf8P2gqVpAuDJaqLoU",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "办结文件",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                        "listId": "201207190200U27e91gjXNdQiF3iftM"
+                    },
+                    "moduleId": "200715104703uowNRLyY9jeo5chSWDT",
+                    "listId": "201207190200U27e91gjXNdQiF3iftM",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "zcfg": {
+            "remark": "政策法规",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "法律法规",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "flfg",
+                        "showTotal": true
+                    }
+                },
+                {
+                    "name": "行业规定",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fileType": "hygd",
+                        "showTotal": true
+                    }
+                }
+            ]
+        },
+        "MeetingSignDetail": {
+            "remark": "报名情况",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "未报名",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "pk": "[pk]"
+                    },
+                    "moduleId": "190124141646LItUeOALbpPENBwTyMm",
+                    "listId": "210817162152KvXmd4snEzwQrSpDath",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已报名",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "pk": "[pk]"
+                    },
+                    "moduleId": "190124141646LItUeOALbpPENBwTyMm",
+                    "listId": "210817162131oiC3Yfcn1vsdDB9g6MS",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "MailListDetail": {
+            "remark": "会议通讯录",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "单位内",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "pk": "[pk]",
+                        "uTicket": "H/DgcZ1vXwKe9Fv77z07B2hB9ZDAC4DjGZPPgCxl4JW1JI20Vty928sgZWU4tKKD"
+                    },
+                    "moduleId": "200818094934bpzal3slpmavUZZBfj8",
+                    "listId": "210630152956gAVRjQZK5ahHb4Hvg2G",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "单位外",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "pk": "[pk]",
+                        "uTicket": "H/DgcZ1vXwKe9Fv77z07B2hB9ZDAC4DjGZPPgCxl4JW1JI20Vty928sgZWU4tKKD"
+                    },
+                    "moduleId": "210812175755YL1w4jjIh65pNqDaSBh",
+                    "listId": "210812175757ButsoHgEfB7zGXq5xW9",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "workNotice": {
+            "remark": "发送详情",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "全部",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "fileType": "sendDetailAll"
+                    },
+                    "moduleId": "",
+                    "listId": "",
+                    "badgeUrl": "fn/workNotice/sendDetail?sourceId=[sourceId]",
+                    "count": ""
+                },
+                {
+                    "name": "未读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "fileType": "sendDetailNoRead"
+                    },
+                    "moduleId": "",
+                    "listId": "",
+                    "badgeUrl": "fn/workNotice/sendDetail?status=1&sourceId=[sourceId]",
+                    "count": ""
+                },
+                {
+                    "name": "已读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "fileType": "sendDetailRead"
+                    },
+                    "moduleId": "",
+                    "listId": "",
+                    "badgeUrl": "fn/workNotice/sendDetail?status=2&sourceId=[sourceId]",
+                    "count": ""
+                }
+            ]
+        },
+        "NoticeReadDetail": {
+            "remark": "阅读情况",
+            "showSearchBox": true,
+            "tabslist": [
+                {
+                    "name": "未读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "listId": "mobileAppeal",
+                        "method": "form1aview"
+                    },
+                    "moduleId": "210126191041vdODVr3y3mtv7JTFkoL",
+                    "listId": "210127101225XJQqtudB1CbLO6v7SpV",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "listId": "mobileAppeal",
+                        "method": "form1aview"
+                    },
+                    "moduleId": "210126191041vdODVr3y3mtv7JTFkoL",
+                    "listId": "210127101225XJQqtudB1CbLO6v7SpV",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "Note": {
+            "remark": "便签模块",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "收笺箱",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                        "listId": "1807271502471mZfA8mah6Q3fprnIVz",
+                        "formId": "1807271502471mZfA8mah6Q3fprnIVz",
+                        "receiveUserId": "[userid]"
+                    },
+                    "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                    "listId": "1807271502471mZfA8mah6Q3fprnIVz",
+                    "badgeUrl": "fn/mobileNote/getBadge?type=5",
+                    "count": ""
+                },
+                {
+                    "name": "发笺箱",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                        "formId": "180727104749mEj2tlzumG5xILtyWoR",
+                        "status": 1,
+                        "actionType": 1,
+                        "userId": "[userid]"
+                    },
+                    "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                    "listId": "180727104749mEj2tlzumG5xILtyWoR",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "草稿箱",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                        "formId": "180726211007WCqjA6vmt7HaNaInl7U",
+                        "userId": "[userid]",
+                        "actionType": 1,
+                        "status": 0
+                    },
+                    "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                    "listId": "180726211007WCqjA6vmt7HaNaInl7U",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "ydqk": {
+            "remark": "阅读情况",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "已读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "readStatus": 2
+                    },
+                    "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                    "listId": "210423151800FXouvt2ipVa7ThULFW0",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "未读",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "params": {
+                        "readStatus": 1
+                    },
+                    "moduleId": "180725205942uc2zjrqnTt5sg7ReWmV",
+                    "listId": "210423150510KJZ4RMHTkKmAvSUJ0zc",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "yqsh": {
+            "remark": "要情审核",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "未审核",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "moduleId": "220303113130omuV4PLAr9v5Th2d34D",
+                    "listId": "220504172211PIZtuATCRe3LJ6wNZou",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已审核",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "moduleId": "220303113130omuV4PLAr9v5Th2d34D",
+                    "listId": "220608141541mShKdqVaDwPfADWRWtn",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "receiveNotice": {
+            "remark": "会议通知",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "近期会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "badgeUrl": "",
+                    "count": "",
+                    "url": "fn/meetingNotice/getReceiveNotice",
+                    "params": {
+                        "fileType": "hytz1",
+                        "queryHistoryHy": ""
+                    }
+                },
+                {
+                    "name": "历史会议",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "badgeUrl": "",
+                    "count": "",
+                    "url": "fn/meetingNotice/getReceiveNotice",
+                    "params": {
+                        "fileType": "hytz2",
+                        "queryHistoryHy": "1"
+                    }
+                }
+            ]
+        },
+        "topicsManage": {
+            "remark": "议题库",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "未上会",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "210607181937YJxUC5fve4y7q3SH5hJ",
+                    "listId": "2106151719576rXrVeOGa8DYi9M6uAK",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "已上会",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "210607181937YJxUC5fve4y7q3SH5hJ",
+                    "listId": "2106160955490n4TexoHLfCFXs6cK4W",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "作废",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "210607181937YJxUC5fve4y7q3SH5hJ",
+                    "listId": "2106161108118lL1OEwX1vmSfjceIiw",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "platFormMyMessage": {
+            "remark": "我的消息",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "我的消息",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "220805142201Z2JRY83u6rPqYsQk1uk",
+                    "listId": "220805144114MAufCqtIpiY9Rt8TkYx",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "消息发布",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "220805142201Z2JRY83u6rPqYsQk1uk",
+                    "listId": "220826142508yHIzy5CKkruQlb9qsxq",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "leaderHistoryList": {
+            "remark": "市领导外出",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "当前信息",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230714192942m9qe3ZqE13KsKDwf7H5",
+                    "listId": "230817153241vEjAFcKSRzaSH8TKNxw",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "历史信息",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230714192942m9qe3ZqE13KsKDwf7H5",
+                    "listId": "230831142539hSmeVAaJUN8Six4XJEc",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "specialReport": {
+            "remark": "简报专报",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "情况专报",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230712145236S7R21irfewOGYUHMyns",
+                    "listId": "230714111942zjFAnLzl8cAVAVQu6bx",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "信息稿件",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230722103809i9EN8dVCwKP4gykKGWF",
+                    "listId": "230722103812ihYbzfMCLWtDEwLB75l",
+                    "badgeUrl": "",
+                    "count": ""
+                },
+                {
+                    "name": "简报专报",
+                    "icon": "",
+                    "goRoute": "defaultList",
+                    "url": "",
+                    "params": {
+                        "fid": "[fid]"
+                    },
+                    "moduleId": "230712161554yCgBokkad0da14Hnc7q",
+                    "listId": "230716173202Q2kiEx3U4iPAf4MhYSc",
+                    "badgeUrl": "",
+                    "count": ""
+                }
+            ]
+        },
+        "platFormMyService": {
+          "remark": "服务应答",
+          "showSearchBox": false,
+          "tabslist": [
+            {
+              "badgeUrl": "",
+              "name": "待服务",
+              "goRoute": "defaultList",
+              "icon": "",
+              "count": "",
+              "moduleId": "2309261533084McuxrMrlgFwifxwlxT",
+              "listId": "230926170441EO3noarPadOi7EDv1qj",
+              "params": {}
+            },
+            {
+              "badgeUrl": "",
+              "name": "已服务",
+              "goRoute": "defaultList",
+              "icon": "",
+              "count": "",
+              "moduleId": "2309261533084McuxrMrlgFwifxwlxT",
+              "listId": "230926172544fiuoIx5QNSssbCU8FYg",
+              "params": {}
+            }
+          ]
+        }
+    },
+    "mailList": {
+        "showAllOrg": false,
+        "mailDetailShow": [
+            {
+                "ifShow": true,
+                "prop": "userName",
+                "text": "姓名"
+            },
+            {
+                "ifShow": true,
+                "prop": "orgName",
+                "text": "部门"
+            },
+            {
+                "ifShow": true,
+                "prop": "mobile",
+                "text": "手机"
+            },
+            {
+                "ifShow": true,
+                "prop": "tel",
+                "text": "电话"
+            },
+            {
+                "ifShow": true,
+                "prop": "email",
+                "text": "邮箱"
+            }
+        ],
+        "mailDetailShowDescribe": "每个对象的所在数组的位置即页面展示位置,text:展示的文字,prop:所展示的属性名,ifShow:是否展示,showAllOrg:默认显示所有组织"
+    },
+    "addressList": {
+        "tabs": [
+            {
+                "tabName": "组织",
+                "type": "dept",
+                "url": "fn/contacts/deptandusers",
+                "searchUrl": "/fn/contacts/users",
+                "params": {
+                    "orgId": "deptId"
+                },
+                "isShowCount": true
+            },
+            {
+                "tabName": "个人",
+                "type": "indexList",
+                "url": "fn/contacts/groupandusers",
+                "searchUrl": "/fn/contacts/personalcontactusers",
+                "params": {}
+            }
+        ],
+        "isFideMobile": false,
+        "showPersonFirst": true,
+        "description": "showPersonFirst:true机构下人员显示在部门前面,tabName:标签名,type:控制渲染的组件,url:请求数据的地址,params:请求数据携带的参数,orgId:root_dept_id所在的一级部门、deptId所在科室,isShowCount:是否显示部门下人数"
+    },
+    "autoLogin": false,
+    "commonFlow": {
+      "nodeDisplayType": "",
+        "opinionTempDirection": "column-reverse",
+        "openOpinionPopupBeforeSend": true,
+        "hiddenSaveDing": true,
+        "defaultSendSms": false,
+        "needHandWrite": false,
+        "yozoHandWrite": true,
+        "nodeNeedSignBtn": false,
+        "sendNeedDefaultUser": true,
+        "isDefaultShowDetail": false,
+        "isDefaultShowOpinition": true,
+        "opinionImgWidth": "50%",
+        "sendBtnSetting": {
+            "cancelName": "保存",
+            "submitName": "发送"
+        },
+        "opinionBtnSetting": {
+            "cancelName": "保存",
+            "submitName": "发送"
+        },
+        "JG_HandWrite_Setting": {
+            "image_height": "6.7",
+            "image_width": "10",
+            "canvas_width": 600,
+            "canvas_height": 200,
+            "noCutting": true,
+            "lineSize": 4,
+            "buttonText": "签批"
+        },
+        "isShowDelHandWrite":true,
+        "showOpinitonText":true,
+        "showUrgingBtn":false,
+        "showCopyOpinionBtn":false,
+        "showOpinionAndBtn":false,
+        "description": "hiddenSaveDing:隐藏存盯盘按钮,isDefaultShowOpinition:流程发送默认显示意见,defaultSendSms:流程发送时是否默认选中发送短信,sendNeedDefaultUser:流程发送时是否需要默认显示三个待发人员，needHandWrite:是否开启手写签批功能,yozoHandWrite:开启后如果是代办文件并且有签批文件就显示签批tab页,nodeNeedSignBtn:当前节点未签名时发送弹层上是否显示签名按钮,isDefaultShowDetail:流转情况默认显示详细,opinionImgWidth:手写签批意见图片宽度默认为50%;showOpinitonText:是否在发送的时候意见签批是否显示文字,showCopyOpinionBtn:是否显示复制意见按钮,showOpinionAndBtn:是否意见输入控件及按钮一同显示在底部"
+    },
+    "formChat": {
+        "chatLocation": "http://chat.cnmaker.top:8014/DreamUUMS/webim/index.html"
+    },
+    "EnableBuriedPoint": {
+        "value": false,
+        "description": "该配置作用：浙政钉是是否启用应用信息采集功能，value值true启用，false不启用",
+        "itemSetting": [
+            {
+                "appRouter": "Home",
+                "sappId": "7962",
+                "sappName": "ZJSWDXOA_XXCS",
+                "config": {
+                    "bid": "ZJSWDXOA_XXCS_zzdpro",
+                    "signkey": "1234567890abcdef",
+                    "gateway": "https://wpk-gate.zjzwfw.gov.cn",
+                    "description": "config为稳定性监控的配置"
+                },
+                "description": "首页"
+            },
+            {
+                "appRouter": "customTabs",
+                "sappId": "7962",
+                "sappName": "ZJSWDXOA_XXCS",
+                "config": {
+                    "bid": "ZJSWDXOA_XXCS_zzdpro",
+                    "signkey": "1234567890abcdef",
+                    "gateway": "https://wpk-gate.zjzwfw.gov.cn",
+                    "description": "config为稳定性监控的配置"
+                },
+                "description": "信息传送"
+            },
+            {
+                "appRouter": "gw",
+                "sappId": "7962",
+                "sappName": "ZJSWDXOA_XXCS",
+                "config": {
+                    "bid": "ZJSWDXOA_XXCS_zzdpro",
+                    "signkey": "1234567890abcdef",
+                    "gateway": "https://wpk-gate.zjzwfw.gov.cn",
+                    "description": "config为稳定性监控的配置"
+                },
+                "description": "该节点配置是匹配commonlist的套用fileType=gw的统一列表，appRouter值为fileType后面的参数值"
+            },
+            {
+                "appRouter": "201120145030q3v5FmamoqB2YUM4Ute",
+                "sappId": "7962",
+                "sappName": "ZJSWDXOA_XXCS",
+                "config": {
+                    "bid": "ZJSWDXOA_XXCS_zzdpro",
+                    "signkey": "1234567890abcdef",
+                    "gateway": "https://wpk-gate.zjzwfw.gov.cn",
+                    "description": "config为稳定性监控的配置"
+                },
+                "description": "该节点配置是匹配commonlist的统一列表，appRouter值为listId值"
+            }
+        ]
+    },
+    "projectName": "shGovYth",
+    "isLog": true,
+    "waterMark": {
+        "allSite": true,
+        "ruters": [
+            "commonForm",
+            "commonList"
+        ],
+        "description": "移动水印配置,allSite:值如果是true 代表所有页面都有水印，如果是false则根据ruters中的路由名称来判断是否需要水印"
+    },
+    "listTitleIcon": {
+        "自": "#FF8F00",
+        "description": "列表图标颜色，key为显示的值，value为颜色"
+    },
+    "otherNoAuthRoutes": [
+        "prepeoplecongress",
+        "peoplecongress"
+    ],
+    "noTokenHeader": false,
+    "collapseList": {
+        "sjbb": {
+            "title": "数据报表",
+            "description": "折叠列表,第一级title为头部标题",
+            "children": [
+                {
+                    "title": "经济运行报表",
+                    "defaultOpen": true,
+                    "children": [
+                        {
+                            "title": "1、全国卷烟销售情况表",
+                            "linkTo": "/commonTabs/qgjydxxse"
+                        },
+                        {
+                            "title": "2、全省卷烟销售情况表",
+                            "linkTo": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "tableTabs": {
+        "qgjydxxse": {
+            "remark": "全国分地区卷烟单箱销售额情况表",
+            "showSearchBox": false,
+            "tabslist": [
+                {
+                    "name": "单箱销售额(万箱)",
+                    "icon": "",
+                    "goRoute": "jiangsuyancaoTable",
+                    "url": "",
+                    "params": {
+                        "fileType": "qgjydxxse0"
+                    }
+                },
+                {
+                    "name": "单箱销售额(万箱)",
+                    "icon": "",
+                    "goRoute": "jiangsuyancaoTable",
+                    "url": "",
+                    "params": {
+                        "fileType": "qgjydxxse1"
+                    }
+                },
+                {
+                    "name": "单箱销售额(万箱)",
+                    "icon": "",
+                    "goRoute": "jiangsuyancaoTable",
+                    "url": "",
+                    "params": {
+                        "fileType": "qgjydxxse2"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+加载项目组全局的表单特殊Css
+2023年04月20日@luy
+
+如果在config.json中配置projectName，
+在static\css目录下面就要有对应的文件夹和form.css文件，
+如果没有也不影响，在浏览器f12里面会有404报错，
+如果想解决这个报错就添加文件夹和form.css文件即可

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[47601],{4673:function(e,n,i){i.r(n);i={link:function(e,n,i,u,c){u.$router.replace({path:"/conferenceIndex",query:{id:c.id}})}};n.default=i}}]);

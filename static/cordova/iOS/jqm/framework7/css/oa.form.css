@@ -1,0 +1,39 @@
+.content{margin-top: 5px;margin-bottom: 5px;}
+.title{ text-align: center;}
+.item-input #itput{margin-bottom: 1px;}
+
+
+/*只读*/
+.asf-not-editable,
+.asf-readonly{width:70%; word-break:break-all;}
+.asterisk{color: red;}
+/* 高亮 */
+.choice{min-width: 74px;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0.1)}
+/*错误提示框*/
+.valid_warn_container{color: red; font-size: 13px;position: absolute; bottom: 0px;left: 33%;/* background: url(../img/error.png)no-repeat left;padding-left: 23px; */}
+.item-content{position: relative;}
+
+/* 用户选择,代码选择 */
+#DS_Panel_14,#DS_Panel_15{width:96%;}
+
+/*多选框右对齐*/
+.asf-radio{ margin-left: 29%;margin-top: -70px; }
+.asf-checkbox{margin-left: 29%;margin-top: -48px;}
+.list-block .item-media+.item-inner{margin-left: 0px;}
+
+/*去除多选框底线*/
+ .list-block .asf-inner:after{display: none;}
+ .list-block .asf-innerr:after{display: none;}
+.asf-innerr{border-bottom: 1px solid #F2F2F2}
+
+/*底部和顶部线*/
+ .asf-style{border-bottom: 1px solid #F2F2F2;margin-left: 18px;}
+
+/*控件*/
+.asf-switch-open{margin-left: 50px;margin-top:-5px;}
+.list-block .item-text{color:rgba(0,0,0,.65);font-size:16px}
+/* 字体 */
+.content-block-title{color:rgba(0,0,0,.65);font-size:16px}
+.list-block .item-input{margin-bottom: 0px;}
+

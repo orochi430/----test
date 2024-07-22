@@ -1,0 +1,321 @@
+//时间选择组件
+@import "mixin";
+@import "themes";
+
+.week-slider {
+  width: 100%;
+  height: 126px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  background-color: #fff;
+  margin-top: 10px;
+
+  .slider-title {
+    color: #000000;
+    @include font_4;
+    text-align: center;
+    margin-bottom: 12.5px;
+    height: 16px;
+    line-height: 16px;
+
+    .title-icon-active {
+      color: #000000;
+      font-size: var(--font_size_3);
+    }
+
+    .title-icon-unactive {
+      color: #999999;
+      font-size: var(--font_size_3);
+    }
+  }
+
+  .slider-content {
+    min-height: 84px;
+    width: 100%;
+
+    .date-box {
+      width: 100%;
+      height: 100%;
+
+      .lang-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0px 16.5px;
+        // @include font_5;
+        font-size: var(--font_size_3);
+        color: #333;
+
+        color: $fontColor_main;
+
+        .day-of-week {
+          text-align: center;
+
+          .not-current-month {
+            color: #c9c9c9;
+
+            .lunar-calendar {
+              color: #c9c9c9;
+            }
+          }
+
+          // flex-grow: 1;
+          .day-title {
+            color: #999999;
+            @include font_4;
+          }
+
+          .day-date {
+            // background-color: #fff;
+            // color: #000000;
+            // width: 44px;
+            height: 0;
+            padding: 0 10px 100%;
+            border-radius: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5px;
+            width: 36px;
+
+            &.holiday {
+              color: red;
+            }
+
+            &.active {
+              color: #fff;
+              @include background-theme("normal");
+            }
+
+
+            span:first-of-type {
+              width: 100%;
+              padding-top: 50%;
+            }
+
+            .day-dot {
+              border-radius: 50%;
+              width: 4px;
+              height: 4px;
+              display: inline-block;
+              position: absolute;
+              // margin-top: 2px;
+              // bottom: 16px;
+              bottom: 5px;
+
+              &.has-sch {
+                @include background-theme("normal");
+              }
+            }
+          }
+
+          .lunar-calendar {
+            font-size: 0.2rem;
+            color: #666;
+            vertical-align: top;
+
+          }
+
+          .not-current-month .holiday {
+            color: #c9c9c9;
+          }
+
+          .holiday {
+            color: red;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+//通用列表样式
+.ds_funList {
+  position: relative;
+  margin-top: 10px;
+  min-height: calc(100vh - 117px);
+
+  .marginBottom {
+    margin-bottom: 50px;
+  }
+
+  .van-pull-refresh__track {
+    height: 100%;
+  }
+
+  .list_wrap {
+    @include font_4;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fontcolor {
+    color: #666;
+  }
+
+  .item_box {
+    padding: 10px 15px;
+    background: #fff;
+    // box-shadow: 0px 10px 15px 11px #F1F1F1;
+    // border-radius: 5px;
+  }
+
+  .item {
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 16px 12px 17px 12px;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .nodata {
+    @include font_6;
+    text-align: center;
+    background: #fff;
+    padding: 18px;
+  }
+
+  .homeworklist_item {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .item_content {
+    width: 100%;
+  }
+
+  .teacheval_itemContent {
+    width: 80%;
+
+    .time {
+      margin-bottom: 4px;
+
+      span {
+        margin-left: 6.8px;
+      }
+    }
+  }
+
+  .state {
+    margin-bottom: 5px;
+  }
+
+  .title {
+    color: #333333;
+    margin-bottom: 4px;
+    line-height: 24px;
+    word-break: break-word;
+    // margin-left: -11px;
+    position: relative;
+
+    .point {
+      background: #75C74D;
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+  }
+
+  .info_box {
+    @include font_6;
+    border-left: 5px solid #ddd;
+    padding-left: 8px;
+    @include border-color-theme("normal");
+
+    >div:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .item_btn_area {
+    padding-top: 21px;
+    position: relative;
+  }
+
+  .vacate_item_btn_area {
+    padding-top: 0;
+  }
+
+  .homework_item_btn_area {
+    padding-bottom: 25px;
+    position: relative;
+  }
+
+  .item_btn {
+    min-width: 50px;
+    height: 24px;
+    background: #e32416;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    @include font_4;
+  }
+
+  .single_word {
+    font-size: 25px;
+    color: #e32416;
+    letter-spacing: 0;
+    line-height: 25px;
+    border-bottom: 0.07rem double #e32416;
+
+    span {
+      font-size: var(--font_size_3);
+      font-weight: normal;
+    }
+  }
+
+  .item-text-only {
+    color: #e32416;
+    background-color: #fff;
+  }
+
+  .left_day {
+    position: absolute;
+    width: auto;
+    text-align: center;
+    color: #e32416;
+    top: 0;
+    right: 0;
+  }
+
+  .homewrok_leftday {
+    position: absolute;
+    @include font_4;
+    width: auto;
+    text-align: center;
+    color: #e32416;
+    bottom: 0;
+    right: 0;
+    word-break: keep-all;
+  }
+
+  .firstItem {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .lastItem {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}

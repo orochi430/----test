@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[12973],{64044:function(n,e,i){i.r(e);var u=i(25108),i={initHandle:function(n){n.alwaysShowStatus=!0},link:function(n,e,i,t,a){u.log(4,a),a["UNIFY-DATA-0021"]?wx.invoke("openUrl",{type:0,url:a["UNIFY-DATA-0021"]},function(n){n.err_msg}):dsf.layer.toast("无跳转地址")}};e.default=i}}]);

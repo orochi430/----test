@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[53049],{49456:function(e,u,r){r.r(u);r={createRow:function(e,u){var r=(u.$route.query.secQuery?JSON.parse(u.$route.query.secQuery):u.$route.query).fid,a=u.$route.params.moduleId||u.params.moduleId;u.$router.push({path:"/commonForm/".concat(a),query:{fid:r}})}};u.default=r}}]);

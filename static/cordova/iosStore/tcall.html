@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=yes, width=device-width">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+    <script type="text/javascript" charset="utf-8">
+   
+        function login(){
+            $TCall.login({
+                "appId":"1400602791",
+                "userId":"1154",
+                "userSig":"eJyrVgrxCdZLrSjILEpVsrIwMzEw0AELlaUWKVkpGekZKEH4xSnZiQUFmSlKVoZANWYGRuaWhhCZzJTUvJLMtEywBkNDUxOYjsx0oIClS3BmWH56kI9zuXmBkX*Wo2dZiF9WUKRzVbqrk2Vedo5rtnepf2p2oHayLVRjSWYu0C2GZuZmJiZGJiaGtQBabi-W"},function(arg){
+                //返回了
+                alert("返回了");
+            },function(arg){
+            });
+        }
+        function singleCall(){
+            var param = {
+                userId:"jsk001",
+                mediaType:"video",
+            }
+            //mediaType：通话类型，video 视频，audio 音频
+            $TCall.singleCall(param,function(success){
+                alert(JSON.stringify(success))
+            },function(error){
+                alert(error)
+            });
+        }
+
+        function groupCall(){
+            var param = {
+                groupId:"123456",
+                userIds:["1","2","3"],
+                mediaType:"audio",
+            }
+
+            $TCall.groupCall(param,function(success){
+                alert(JSON.stringify(success))
+            },function(error){
+                alert(error)
+            });
+        }
+
+        function setSelfInfo(){
+            var param = {
+                nickname:"bob",
+                avatar:"xxxx",
+            }
+
+            $TCall.setSelfInfo(param,function(success){
+                alert(JSON.stringify(success))
+            },function(error){
+                alert(error)
+            });
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+<div class="conbor">
+    <div class="consj">
+        腾讯音视频
+        <br/>
+        <div class="btn bg_1" onclick="login();">登录</div>
+        <div class="btn bg_2" onclick="singleCall();">单聊</div>
+        <div class="btn bg_3" onclick="groupCall();">群聊</div>
+        <div class="btn bg_4" onclick="setSelfInfo();">设置个人信息</div>
+    </div>
+</div>
+<div class="btn bg_1" onclick = "goHome();">返回</div>
+<script type = "text/javascript">
+    function goHome()
+    {
+        window.location.href = "index.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" charset="utf-8" src="merge.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+<script type="text/javascript" charset="utf-8">
+	//debugger;
+    document.addEventListener("deviceready", onDeviceReady, false);
+    ///
+    function onDeviceReady() {
+        
+
+    }
+function getDeviceInfo()
+{
+    //alert('onDeviceReady');
+    //alert('platform:' + device.platform);
+    //alert('version:' + device.version);
+    //alert('uuid:' + device.uuid);
+    //alert('model:' + device.model);
+    var element = document.getElementById('device');
+    element.innerHTML = 'platform: ' + device.platform  + '<br />' +
+    'version: '  + device.version  + '<br />' +
+    'uuid: '     + device.uuid     + '<br />' +
+    'model: '    + device.model    + '<br />' +
+    'nettype: '     + device.netType     + '<br />' +
+    'wifiname: '     + device.wifiName     + '<br />' +
+    'wifiBSSID: '     + device.wifiBSSID     + '<br />' +
+
+    'ip: '     + device.IP     + '<br />' ;
+}
+    function encrypt(){
+      //proName：疫情防控查询项目特有判断，其他项目可不传
+      //encryptKey：需要加密的值
+      $iaction.encrypt({"proName":"YQFKCX","encryptKey":"asdqwerf"},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+    function encrypt2(){
+      //proName：疫情防控查询项目特有判断，其他项目可不传
+      //encryptKey：需要加密的值
+      $iaction.encrypt({"proName":"YQFKCX","encryptKey":""},function(s){
+                   alert(s);
+        },function(e){
+                   alert(e);
+        });
+    }
+</script>
+  </head>
+  <body>
+
+    <br/>
+    <br/>
+    <p id="device">设备信息...</p>
+    <div class="btn bg_1" onclick = "getDeviceInfo();">getDeviceInfo获得设备信息</div>
+    <div class="btn bg_1" onclick = "encrypt();">加密md5</div>
+    <div class="btn bg_1" onclick = "encrypt2();">加密md5测控</div>
+
+    <div class="btn bg_1" onclick = "goHome();">返回</div>
+    <script type = "text/javascript">
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+    </script>
+  </body>
+</html>

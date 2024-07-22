@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[62308],{71246:function(e,i,n){n.r(i);n(90541);n={link:function(e,i,n,u,r){"yqfk"==r.id?u.$router.push({name:"commontabs",params:{key:"fytjfx"},query:{fid:u.$route.query.fid}}):u.$router.push({name:"SDYCSignDetail",params:{id:r.id},query:{fid:u.$route.query.fid}})}};i.default=n}}]);

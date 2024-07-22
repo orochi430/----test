@@ -1,0 +1,12 @@
+.people-list {
+    width: 100%;
+    height: 100%;
+    .data-list {
+        width: 100%;
+        height: 100%;
+    }
+    .name-class {
+        color: #333333;
+        @include font_4;
+    }
+}

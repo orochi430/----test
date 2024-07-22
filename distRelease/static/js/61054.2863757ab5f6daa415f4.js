@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[61054],{35605:function(e,n,t){t.r(n);t={link:function(e,n,t,a,i){a.$router.push({path:"/commonTabs/zsfy",query:{moduleId:n,listId:e,pk:t,validateByList:1,method:a.params.method}})}};n.default=t}}]);

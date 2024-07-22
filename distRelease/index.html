@@ -1,0 +1,102 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1.5,minimum-scale=0.5,user-scalable=no"><script>if (navigator.userAgent.includes("mobileIM")) {
+        //只有IM移动端端需要动态引入native.js
+        document.write("<script src='./static/js/IM_native.js'><\/script>")
+      }</script><script defer=defer>function strToObj(url) {
+        if (!url) return {}
+        let obj = {}
+        let arr = url.split("&")
+        if (arr.length > 0) {
+          arr.forEach(item => {
+            let index = item.indexOf("=")
+            let key = item.substr(0, index)
+            let value = item.substr(index + 1)
+            obj[key] = value || ""
+          })
+        }
+        return obj
+      }
+      window.H5sessionId = strToObj(location.search.split("?")[1]).H5sessionId
+      if (window.H5sessionId) {
+        window.resource_observer = []
+        window.log_text = ""
+        window.LOG_DESCRIPTION = {
+          "fn/common/getConfig": { text: "静态资源加载结束：", type: "startTime", isEnd: false },
+          "fn/mobileAuth/getUserDataByToken": { text: "单点登录结束：", type: "responseEnd", isEnd: false },
+          "fn/mobileAttachment/getFormAttachment": { text: "表单接口请求结束：", type: "responseEnd", isEnd: true },
+          "fn/mobileToDoAndRead/getToDoAndReadList2": { text: "列表接口请求结束", type: "responseEnd", isEnd: true },
+          "fn/meetingNoticeSfb/getReceiveNotice": { text: "列表接口请求结束", type: "responseEnd", isEnd: true },
+          "fn/list": { text: "列表接口请求结束", type: "responseEnd", isEnd: true }
+        }
+        window.resourcePerformanceObserver = new PerformanceObserver(list => {
+          for (const entry of list.getEntries()) {
+            // console.groupCollapsed(entry.name)
+            // console.log(entry)
+            // console.groupEnd(entry.name)
+            window.resource_observer.push({
+              name: entry.name,
+              startTime: Math.floor(entry.startTime),
+              duration: Math.floor(entry.duration),
+              transferSize: Math.round(entry.transferSize / 1024 * 100) / 100,
+              deliveryType: entry.deliveryType
+            })
+            let node = Object.keys(window.LOG_DESCRIPTION).find(key => entry.name.indexOf(key) > -1)
+            if (node) {
+              window.log_text = window.log_text + window.LOG_DESCRIPTION[node].text + Math.floor(entry[window.LOG_DESCRIPTION[node].type]) + ","
+              if (window.LOG_DESCRIPTION[node].isEnd) {
+                window.resourcePerformanceObserver.disconnect()
+                dsf.http
+                  .post("fn/shgovlog/save", {
+                    h5sessionId: window.H5sessionId,
+                    accessTime: Math.floor(entry[window.LOG_DESCRIPTION[node].type]),
+                    remark: window.log_text + `\nlocation：${location.href},` + `\nuserAgent：${navigator.userAgent}`,
+                    remark1: JSON.stringify(window.resource_observer)
+                  })
+                  .finally(res => {
+                  })
+              }
+            }
+          }
+        })
+        resourcePerformanceObserver.observe({ entryTypes: ["resource", "navigation"] })
+      }</script><script defer=defer src="./static/js/initialization.js?2024-03-22 18:20"></script><title></title><style>.init-div {
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        margin-top: -20px;
+        top: 50%;
+        left: 0;
+        font-size: 16px;
+        color: #7f7a7a;
+        text-align: center;
+        display: none;
+      }
+
+      .init-div1 {
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        margin-top: -50px;
+        top: 50%;
+        left: 0;
+        font-size: 16px;
+        color: #7f7a7a;
+        text-align: center;
+      }
+
+      .init-imgdiv {
+        position: absolute;
+        top: 35vh;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        display: none;
+        float: left;
+      }
+
+      .init-img {
+        width: 30vw !important;
+        max-width: 150px !important;
+        margin: 0px auto !important;
+      }</style><script defer=defer src=./static/js/app.ec57ec201211c41405d5.js?6e7760807e08b05a0df9></script><link href=./static/css/app.5b5b034b1348d7c2591b.css?6e7760807e08b05a0df9 rel=stylesheet></head><body><div class=init-imgdiv><img class=init-img src=""></div><div class=init-div>正在初始化...</div><div id=app></div><van-number-keyboard safe-area-inset-bottom></van-number-keyboard><div id=appVersion style="text-align: center; color: #5f5f5f; font-size: 14px"></div></body></html>

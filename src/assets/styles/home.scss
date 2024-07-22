@@ -1,0 +1,148 @@
+// 首页
+
+.van-notice-bar {
+  padding-left: 0;
+  @include font_3;
+  height: 0.6rem;
+}
+.notice-bar {
+  padding: 12px 0;
+
+  .van-card__thumb {
+    width: 90px;
+    height: 67px;
+    img {
+      border-radius: 0;
+    }
+  }
+  .notic_content {
+    border-radius: 4px;
+    .right {
+      width: 20%;
+      border-right: 2px solid #DDDDDD;
+      text-align: center;
+      height: 108px;
+      .today{
+        @include font_4;
+        color: #333;
+      }
+      .next {
+        @include font_6;
+        color: #666;
+      }
+    }
+    .left {
+      width: 70%;
+      padding-left: 5%;
+      padding-right: 5%;
+      @include font_4;
+      line-height: 37.5px;
+      .point {
+        background: #75C74D;
+        width: 7px;
+        height: 7px;
+        display: inline-block;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+
+//首页信息面板
+.dsf-info-panel {
+  position: relative;
+  // width: 347px;
+  box-sizing: border-box;
+  padding: 0 11px 10px;
+  margin: 0 auto 0px;
+  // box-shadow: 0 10px 15px 11px #f1f1f1;
+  border-radius: 0.1rem;
+  background-color: #fff;
+  overflow: hidden;
+  .van-hairline--top-bottom::after {
+    border: none;
+  }
+  
+  .dsf-info-panel-title {
+    position: absolute;
+    top: 0;
+    left: 11px;
+    width: 50px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
+    @include font_2;
+    line-height: 40px;
+    color: $fontColor_main;
+    .dsf-info-panel-title-line {
+      width: 5px;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      bottom:10px;
+      @include background-theme("normal");
+    }
+    .dsf-right-icon {
+      @include font-theme('normal',true)
+    }
+  }
+  .dsf-info-panel-title-box {
+    display: flex;
+    flex-direction: row;
+    .dsf-info-panel-title {
+      flex: 1;
+      left: 0;
+      width: auto;
+      position: relative;
+    }
+    .dsf-info-panel-more {
+      position: relative;
+      width: 30px;
+      height: 20px;
+      line-height: 20px;
+      z-index: 1;
+      right: 0;
+      flex: 0 0 30px;
+    }
+  }
+  .dsf-info-panel-more {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 11px;
+    width: 25px;
+    text-align:right;
+    margin-right:-3px;
+    @include font-theme("normal");
+    @include font_7;
+    line-height:25px;
+    vertical-align: middle;
+    color: $fontColor_sub;
+  }
+  .van-tabs {
+    overflow: hidden;
+  }
+  .van-tab {
+    color: $fontColor;
+    flex: 0 0 42px !important;
+    margin: 0;
+    padding: 0;
+    @include font_4;
+    line-height: 20px !important;
+  }
+  .van-tab__text{
+    @include font_4(false,true);
+  }
+  .van-tabs__wrap {
+    position: absolute;
+    left: 50px;
+    top: 9px;
+    right: 25px;
+    height: 25px;
+  }
+  .van-tabs__content {
+    margin-top: 35px;
+  }
+}

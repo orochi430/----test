@@ -1,0 +1,224 @@
+//公共字体
+$fontFamily:FZBIAOYSJW, "Microsoft YaHei";
+
+$themes:( // 已改造使用css变量，不再使用该处$themes主题色 2022-12-8
+  red-theme:(
+     //一级色
+    main:#c62f26,
+    //常规色
+    normal:#b50009,
+    //次要按钮鼠标背景色
+    button_auxiliary_bgcolor:#fff,
+    //次要按钮鼠标边框色
+    button_auxiliary_bordercolor:#C9C9C9,
+     //次要按钮鼠标悬浮颜色
+    button_auxiliary_fontcolor:#5F5F5F,
+    //次要按钮鼠标悬浮颜色
+    button_auxiliary_hover_fontcolor:#5F5F5F,
+    // 导航激活背景色
+    nav_active_bgColor:#E63B2E
+  ),
+  blue-theme:(
+    //一级色
+    main:#0089FF,
+    //常规色，辅色
+    normal:#3296fa,
+     //次要按钮鼠标背景色
+    button_auxiliary_bgcolor:#fff,
+     //次要按钮鼠标边框色
+    button_auxiliary_bordercolor:#C9C9C9,
+      //次要按钮鼠标悬浮颜色
+    button_auxiliary_fontcolor:#5F5F5F,
+     //次要按钮鼠标悬浮颜色
+    button_auxiliary_hover_fontcolor:#5F5F5F,
+     // 导航激活背景色
+    nav_active_bgColor:#3296FA,
+  ),
+  green-theme:(
+    //一级色
+    main:#189a5a,
+    //常规色
+    normal:#4daf7b,
+     //次要按钮鼠标背景色
+    button_auxiliary_bgcolor:#fff,
+     //次要按钮鼠标边框色
+    button_auxiliary_bordercolor:#C9C9C9,
+      //次要按钮鼠标悬浮颜色
+    button_auxiliary_fontcolor:#5F5F5F,
+     //次要按钮鼠标悬浮颜色
+    button_auxiliary_hover_fontcolor:#5F5F5F,
+    // 导航激活背景色
+    nav_active_bgColor:#4daf7b
+  ),
+  anHui-theme:(
+     //一级色
+    main:#E32416,
+    //常规色
+    normal:#e32416,
+    //次要按钮鼠标背景色
+    button_auxiliary_bgcolor:#fff,
+    //次要按钮鼠标边框色
+    button_auxiliary_bordercolor:#C9C9C9,
+     //次要按钮鼠标悬浮颜色
+    button_auxiliary_fontcolor:#5F5F5F,
+    //次要按钮鼠标悬浮颜色
+    button_auxiliary_hover_fontcolor:#5F5F5F
+  ),
+  darkBlue-theme:(
+  	main:#1E72DE,
+  	//常规色
+  	normal:#0051c2,
+  	 //次要按钮鼠标背景色
+  	button_auxiliary_bgcolor:#fff,
+  	 //次要按钮鼠标边框色
+  	button_auxiliary_bordercolor:#C9C9C9,
+  	  //次要按钮鼠标悬浮颜色
+  	button_auxiliary_fontcolor:#5F5F5F,
+  	 //次要按钮鼠标悬浮颜色
+  	button_auxiliary_hover_fontcolor:#5F5F5F,
+  	// 导航激活背景色
+  	nav_active_bgColor:#3376FF
+  ),
+	gov-theme:(
+	  //一级色
+	  main:#2271b3,
+	  //常规色，辅色
+	  normal:#2271b3,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#3296FA,
+	),
+  ycgreen-theme:(
+	  //一级色
+	  main:#026a52,
+	  //常规色，辅色
+	  normal:#026a52,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#026a52,
+	),
+  xzblue-theme:(
+	  //一级色
+	  main:#3875F6,
+	  //常规色，辅色
+	  normal:#3875F6,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#3875F6,
+	),
+  npcred-theme:(
+	  //一级色
+	  main:#C30E12,
+	  //常规色，辅色
+	  normal:#C30E12,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#C30E12,
+	),
+  npcorange-theme:(
+	  //一级色
+	  main:#ED5403,
+	  //常规色，辅色
+	  normal:#ED5403,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#ED5403,
+	),
+  npcpurple-theme:(
+	  //一级色
+	  main:#5447B5,
+	  //常规色，辅色
+	  normal:#5447B5,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#5447B5,
+	),
+  npcblue-theme:(
+	  //一级色
+	  main:#087FE3,
+	  //常规色，辅色
+	  normal:#087FE3,
+	   //次要按钮鼠标背景色
+	  button_auxiliary_bgcolor:#fff,
+	   //次要按钮鼠标边框色
+	  button_auxiliary_bordercolor:#C9C9C9,
+	    //次要按钮鼠标悬浮颜色
+	  button_auxiliary_fontcolor:#5F5F5F,
+	   //次要按钮鼠标悬浮颜色
+	  button_auxiliary_hover_fontcolor:#5F5F5F,
+	   // 导航激活背景色
+	  nav_active_bgColor:#087FE3,
+	)
+);
+
+  //文字1-一级font_2、二级font_4(,true)、主标题font_5(,true)、正文font_5
+$fontColor_main:#333;
+  //文字2-副标font_7、次要文字
+$fontColor_sub:#666;
+  //文字3-底部导航栏文字信息
+$fontColor:#999;
+
+  //分隔
+$separate_color:#dddddd;
+  //底色
+$bg_color:#f6f6f6;
+  //模块色
+$module_color:#fff;
+
+//状态色
+  //完成
+$complete:#00e573;
+  //警告
+$warn:#f29b38;
+  //错误
+$error:#ff5252;
+
+//列表分割线
+$listBorderColor:#f5f5f5;
+
+
+:export {
+  theme: #{$themes};
+}

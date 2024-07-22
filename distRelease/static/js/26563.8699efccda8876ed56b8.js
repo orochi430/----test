@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[26563],{63754:function(n,e,i){i.r(e);i={init:function(n){n.$route.query.infoId&&dsf.http.post("ctrl/InnerTubeReview/clearTodoAdd",{infoId:n.$route.query.infoId}).then(function(n){})}};e.default=i}}]);

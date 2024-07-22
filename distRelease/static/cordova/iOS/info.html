@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+<!--        <script type="text/javascript" charset="utf-8" src="native.js"></script>-->
+<script type="text/javascript" src="merge.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+    <script type="text/javascript" charset="utf-8">
+	    document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			alert("onDeviceReady");
+			xsf.getDeviceInfo(function(info){
+				alert("info:" + info)
+				alert(info.WORK_DIR)
+				alert(info.TEMP_DIR)
+			});
+			//xsf.getDeviceId();
+		    //xsf.alert(device.version);
+		    //xsf.set("UID","11111");
+		    xsfStore.get("SCHEME_URL",function(uid){
+		    	alert("2");
+		    });
+		    //xsf.open("http://www.baidu.com");
+		    //xsf.playVideo("http://www.baidu.com");
+		    //xsf.openApp("com.ue.oa.activity.SplashActivity",{key1:'key1',key2:'key2'});
+		    //xsf.startService("com.ue.oa.activity",{key1:'key1',key2:'key2'});
+		    //var device = new Device();
+		    //alert("device:" + device);
+		    //Device.getInfo(function(s){
+		    //alert("s:" + s);
+		    //});
+		    //alert("device:" + Device);
+		    //alert("device:" + Device.uuid);
+		}
+    function goHome()
+    {
+        window.location.href = "index.html";
+    }
+    function getVPN_USER_LOGNAME()
+    {
+        xsfStore.get("VPN_USER_LOGNAME",success,error);
+    }
+    function setVPN_SET_STATE_TRUE()
+    {
+        xsfStore.set("SHOW_VPN_SETTING", "true",success,error);
+    }
+    function setVPN_SET_STATE_FALSE()
+    {
+        xsfStore.set("SHOW_VPN_SETTING", "false",success,error);
+    }
+    function success(success)
+    {
+        alert(success);
+    }
+    function error(error)
+    {
+        alert(error);
+    }
+    </script>
+  </head>
+  <body>
+    <br/>
+    <br/>
+    <div class="btn bg_1" onclick="getVPN_USER_LOGNAME();">获取VPN用户名xsf.get("VPN_USER_LOGNAME", function(result){},function(error){});</div>
+    <div class="btn bg_2" onclick="getVPN_USER_PASSWORD();">获取VPN用户名xsf.get("VPN_USER_PASSWORD", function(result){},function(error){});</div>
+    <div class="btn bg_3" onclick="setVPN_SET_STATE_TRUE();">设置弹出VPN设置界面xsf.set("SHOW_VPN_SETTING", "true" , function (result) {
+        },function (error) {
+        alert(error);
+        }
+        );</div>
+    
+    <div class="btn bg_3" onclick="setVPN_SET_STATE_FALSE();">设置不弹出VPN设置界面xsf.set("SHOW_VPN_SETTING", "false" , function (result) {
+    },function (error) {
+    alert(error);
+    }
+    );</div>
+    <div class="btn bg_1" onclick = "goHome();">返回</div><br/>
+  </body>
+</html>

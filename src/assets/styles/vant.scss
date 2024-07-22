@@ -1,0 +1,276 @@
+//覆盖的全局vant相关主题样式
+.van-button--theme {
+  @include background-theme('normal', true);
+  color: #fff;
+}
+
+.van-button--theme_main {
+  @include background-theme('main', true);
+  color: #fff;
+}
+
+.van-tabs__line {
+  @include background-theme('normal', true)
+}
+
+.van-tab {
+  color: $fontColor;
+  // @include font_4;
+  font-size: var(--font_size_2);
+  color: #333;
+  line-height: 44px;
+  ::v-deep .van-info {
+    background-color: #FF3300;
+    height: 16px;
+    line-height: 16px;
+  }
+}
+
+.van-tab.van-tab--active {
+  @include font-theme('normal', true);
+}
+
+.van-swipe {
+  height: 100%;
+}
+
+#app .van-tabbar-item__icon {
+  margin-bottom: 0;
+
+  img {
+    width: 24px;
+    height: 24px
+  }
+}
+
+#app .van-tabbar-item {
+  color: $fontColor;
+  @include font_5;
+  line-height: initial;
+
+  .iconfont {
+    font-size: 22px;
+  }
+}
+
+#app .van-tabbar-item--active {
+  @include font-theme('normal')
+}
+
+#nprogress .bar {
+  @include background-theme('normal', true);
+  height: 5px !important;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  @include bar-box-shadow('normal', true);
+  @include border-alpha-theme(1px, solid, 'normal', 0.4, true)
+}
+
+#nprogress .spinner-icon {
+  @include border-top-theme('normal', true);
+  @include border-left-theme('normal', true);
+}
+
+.dsf-treeselect-sidepopup {
+
+  .van-sidebar-item__text,
+  .van-tree-select__item {
+    // font-family: FZBIAOYSJW;
+    // color: #4b4b4b;
+
+    color: $fontColor_main;
+    font-weight: normal;
+  }
+}
+
+.van-tree-select__item--active {
+  @include font-theme('normal');
+}
+
+.van-sidebar-item--select {
+  @include border-color-theme('normal')
+}
+
+//报名提交dialog
+.signCustom {
+  border-radius: 0;
+
+  .van-button--large {
+    line-height: normal;
+  }
+
+  .van-dialog__confirm,
+  .van-dialog__confirm:active {
+    color: #FFFFFF !important;
+    background: #FF6A00;
+  }
+}
+
+//我的 考试 列表dialog
+.exashade {
+  border-radius: 0;
+
+  .van-dialog__message {
+    padding-top: 44px;
+    padding-bottom: 44px;
+    @include font_3;
+  }
+
+  .van-button--large {
+    line-height: 45px;
+  }
+
+  .van-dialog__confirm,
+  .freeStyle .van-dialog__confirm:active {
+    color: #FFFFFF !important;
+    background: #FF6A00;
+  }
+}
+
+.van-dialog__footer {
+  .van-dialog__confirm {
+    @include font-theme('normal');
+  }
+}
+
+.van-toast {
+  z-index: 3000 !important;
+}
+
+.van-checkbox__icon--checked .van-icon {
+  @include background-theme('normal');
+  @include border-color-theme('normal');
+}
+
+.van-radio__icon--checked .van-icon {
+  @include background-theme('normal');
+  @include border-color-theme('normal');
+}
+
+.van-search {
+  .van-cell {
+    padding: 4px 8px 4px 0 !important;
+  }
+
+  input {
+    @include font_6;
+    line-height: 24px;
+  }
+
+  .van-field__left-icon {
+    @include font_6;
+    line-height: 24px;
+  }
+}
+
+.van-field {
+  font-size: var(--font_size_3);
+  .van-field__body {
+    line-height: inherit;
+  }
+}
+
+.van-button--primary,
+.van-button--info {
+  @include background-theme('normal');
+  @include border-color-theme('normal');
+}
+
+.van-button--default {
+  @include font-theme('normal');
+  @include border-color-theme('normal');
+  // color: #333
+}
+
+.van-picker-column__item--selected {
+  @include font-theme('normal');
+}
+
+.van-calendar__selected-day {
+  @include background-theme('normal');
+}
+
+.van-calendar__confirm {
+  @include background-theme('normal');
+  @include border-theme(1px, solid, 'normal')
+}
+
+.van-image-preview {
+  .van-image__img {
+    height: 100% !important;
+  }
+}
+
+.van-tabbar-item--active {
+  @include font-theme('normal');
+}
+
+.van-calendar__day--start {
+  @include background-theme('normal');
+}
+
+.van-calendar__day--end {
+  @include background-theme('normal');
+}
+
+.van-calendar__day--middle {
+  @include font-theme('normal');
+}
+
+.van-nav-bar__left {
+  @include font-theme('normal');
+  .van-icon,
+  .van-nav-bar__text {
+    @include font-theme('normal');
+  }
+}
+
+.van-nav-bar__right {
+
+  .van-icon,
+  .van-nav-bar__text {
+    @include font-theme('normal');
+  }
+}
+
+.van-tag--primary {
+  @include background-theme('normal');
+}
+
+.van-switch--on {
+  @include background-theme('normal');
+}
+
+.van-cell {
+  font-size: var(--font_size_3);
+
+  &::after {
+    border-bottom: 0;
+  }
+
+  .van-cell__title,
+  .van-cell__value {
+    line-height: inherit;
+  }
+}
+
+.van-tag__close {
+  margin-left: 0.28rem;
+}
+
+.van-calendar__day--start-end {
+  @include background-theme('normal');
+  flex-direction: column;
+
+  .van-calendar__bottom-info {
+    position: static;
+  }
+}
+.van-dialog {
+  max-width: 90%;
+}
+.van-dropdown-menu__title--active, .van-dropdown-item__option--active {
+  color: var(--normal);
+}

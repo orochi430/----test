@@ -1,0 +1,40 @@
+.layout_box > .van-col > .controlTextarea > .van-cell > .van-field__control {
+  font-size: 20px !important;
+  line-height: 27px !important;
+}
+.layout_box
+  .van-col
+  .controlTextarea
+  .van-cell
+  .van-cell__value
+  .van-field__body
+  textarea {
+  font-size: 20px !important;
+  text-align: justify !important;
+  border: 2px solid var(--normal) !important;
+}
+.controlEditOpinion .layout_box .input-box .van-cell {
+  border: 2px solid var(--normal) !important;
+}
+.formLayout .layout_box .control_label {
+  font-weight: 600 !important;
+}
+.opintionPopup
+  .container
+  .ideal-box
+  ._file_input
+  .input-box
+  ._file
+  .van-field__body
+  textarea {
+  height: 1rem;
+}
+/* 自定义模板，楷体样式 */
+.controlOpinionView .opinionBox .opinionBoxConKT {
+  font-size: 22px !important;
+}
+/* 自定义模板，方正楷体样式 */
+.controlOpinionView .opinionBox .opinionBoxConFZKT {
+  font-size: 24px !important;
+  font-family: "SX_FZKT";
+}

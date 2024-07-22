@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../scripts/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="file:///android_asset/cordova/android/cordova.js"></script>
+    <script>
+			function down(){
+			    var param = {
+			    downUrl:"http://192.168.0.191:8080/DreamMobile/fn/file/download?infoId=200428094241ePJbUhxLiWitrytnChe&fileId=200428094257hdjBpWRRjY5xplHqqVO&fileName=7%E6%9C%88%E7%AC%AC%E4%BA%8C%E5%91%A8-Android.doc&nrType=0&moduleId=1905221039374Z6qIC3OEJKpTb62Gyl&x-auth-token=190522100422RB29YgnFKWvaB4TTknV-01e81515fb07462fa570baeee87290f9",
+saveUrl:"http://192.168.0.191:8080/DreamMobile/fn/mobileOffice/upload?fileId=200428094257hdjBpWRRjY5xplHqqVO&moduleId=1905221039374Z6qIC3OEJKpTb62Gyl&pnId=167905a6dfe345a0b0c652cc7000922a&nodeName=分发&fileType=0&infoId=200428094241ePJbUhxLiWitrytnChe&extension=doc&x-auth-token=190522100422RB29YgnFKWvaB4TTknV-01e81515fb07462fa570baeee87290f9",
+			    fileName:"test03.doc",
+			    openWithWPS:true,
+			    uploadFile:true,
+			    openMode:"ReadOnly"
+			    }
+			    $WPS.downAndOpen(param,function(){
+			        alert("下载成功");
+			    },function(){
+			        alert("下载失败");
+			    });
+			}
+
+			function upload(){
+			var param = {
+			    url:"http://192.168.0.191:8080/DreamMobile/fn/mobileOffice/upload?fileId=200428094257hdjBpWRRjY5xplHqqVO&moduleId=1905221039374Z6qIC3OEJKpTb62Gyl&pnId=167905a6dfe345a0b0c652cc7000922a&nodeName=分发&fileType=0&infoId=200428094241ePJbUhxLiWitrytnChe&extension=doc&x-auth-token=190522100422RB29YgnFKWvaB4TTknV-01e81515fb07462fa570baeee87290f9",
+
+			}
+			    $WPS.upload(param,null,null);
+			}
+
+			function openFile(){
+			    var param = {
+			        fileName:"test03.doc"
+			    };
+			    $WPS.openFile(param,null,null);
+
+			}
+    </script>
+</head>
+<body>
+
+<button onclick="down();">下载打开</button>
+<br><br>
+<button onclick="upload();">文件上传</button>
+<br><br>
+<button onclick="openFile();">打开文件</button>
+</body>
+</html>

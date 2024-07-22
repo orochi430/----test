@@ -1,0 +1,318 @@
+.form-frame {
+    background: #FFFFFF;
+    span label {
+        line-height: 24px;
+    }
+    span,
+    input,
+    textarea,
+    div.van-uploader__input-wrapper {
+        // font-family: "Alibaba-PuHuiTi-Regular";
+        font-size: 15px;
+    }
+    input,
+    textarea {
+        line-height: 24px;
+    }
+    .van-cell {
+        border-top: 10px solid #f2f2f2;
+    }
+    .form-contain {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 60px;
+        z-index: 2;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-bottom: 50px;
+    }
+    .form-footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1.2rem;
+        z-index: 0;
+        box-sizing: border-box;
+        padding-top: 7px;
+        border-top: 1px solid #ebebeb;
+        background: #FFFFFF;
+        .ds-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100% !important;
+            span {
+                text-align: center;
+            }
+        }
+    }
+    .van-radio {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .dofile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .add-file {
+        width: 50px;
+        height: 50px;
+        background: #f2f2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        i {
+            font-size: var(--font_size_0);
+            color: #666666;
+        }
+    }
+    .upload-btn {
+        @include font-theme("normal");
+    }
+    .van-dropdown-menu {
+        width: 100%;
+        text-align: right;
+    }
+    .van-dropdown-menu__bar {
+        box-shadow: none;
+        height: 30px;
+    }
+    .van-dropdown-menu__item {
+        justify-content: flex-end;
+    }
+}
+
+.upload-files {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 0 15px;
+    span {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        padding: 0 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .file-list {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ebebeb;
+        .iconfile {
+            font-size: 30px;
+            color: #999999 !important;
+        }
+        .van-icon {
+            font-size: 15px;
+        }
+    }
+}
+
+.dofile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.receipt {
+    .sendbtn {
+        height: 40px;
+        margin: 2px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font_size_2);
+        color: #FFFFFF;
+        background: #1989fa;
+    }
+    .select-user {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        background: #FFFFFF;
+        * {
+            font-size: var(--font_size_3);
+        }
+    }
+    .ds-button-right {
+        box-sizing: border-box;
+        padding: 0 15px;
+        margin: 0;
+    }
+    .van-cell__title {
+        width: 35% !important;
+    }
+    .van-cell__value {
+        width: 65%;
+    }
+    .textr {
+        width: 100%;
+        height: 48px !important;
+        text-align: right;
+        outline: none;
+        display: block;
+    }
+    .files {
+        flex-direction: column;
+        .van-cell__value {
+            width: 100% !important;
+        }
+    }
+}
+
+.files {
+    flex-direction: column;
+    .van-cell__value {
+        width: 100% !important;
+        textarea {
+            width: 100%;
+            height: 72px;
+        }
+    }
+}
+
+.receipt-readonly {
+    word-break: break-all;
+    .van-cell__title {
+        @include font_5;
+        color: #999;
+        width: 1.3rem;
+        flex: inherit;
+        padding-right: 0.32rem;
+        padding-left: 0;
+        margin-left: 0;
+        // text-align: right;
+    }
+    .van-cell__value {
+        @include font_5;
+        color: #333333;
+        text-align: left;
+    }
+    .file-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        border-bottom: 1px solid #ebebeb;
+        .iconfile {
+            font-size: 30px;
+            color: #999999;
+        }
+        span {
+            text-align: left;
+            border-bottom: 1px solid #ebebeb;
+            @include font_6;
+            padding: 5px 0;
+        }
+    }
+}
+
+.MeetingReadonly {
+    * {
+        // font-family: "Alibaba-PuHuiTi-Regular";
+    }
+    .notice-msg {
+        margin: 20px;
+        background: #FFFFFF;
+        box-sizing: border-box;
+        padding: 15px;
+        .notice-msg-title {
+            width: 100%;
+            text-align: center;
+            @include font_2;
+            padding: 10px 0;
+        }
+        .notice-touser,
+        .notice-contain {
+            @include font_5;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .notice-contain {
+            text-indent: 2em;
+            line-height: 24px;
+        }
+        .notice-footer {
+            display: flex;
+            flex-direction: column;
+            line-height: 24px;
+            align-items: flex-end;
+            span {
+                color: #666666;
+            }
+        }
+    }
+}
+
+.ds-meeting-book {
+    textarea {
+        text-align: right;
+    }
+}
+
+.per_list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .p_list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        top: 0;
+        z-index: 2;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        p {
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+                @include font_5;
+            }
+            span.active {
+                color: #1989fa;
+            }
+            i {
+                font-size: var(--font_size_0);
+            }
+        }
+    }
+    .s_button {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1.2rem;
+        border-top: 1px solid #ebebeb;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        padding: 0 20px;
+        button {
+            margin-left: 20px;
+        }
+    }
+}

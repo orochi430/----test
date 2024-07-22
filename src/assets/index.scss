@@ -1,0 +1,46 @@
+// @import "./font/font.css";
+:root {
+  --main: #3296fa;
+  --normal:#3296fa;
+  --light: #96c9fc;
+  --lightdark: #96c9fc;
+  --dark: #0b7ff4;
+  --darklight: #0b7ff4;
+  --button_auxiliary_bgcolor:#fff;
+  --button_auxiliary_bordercolor:#C9C9C9;
+  --button_auxiliary_fontcolor:#5F5F5F;
+  --button_auxiliary_hover_fontcolor:#5F5F5F;
+  --nav_active_bgColor:#3296fa;
+}
+.large-font-size {
+  --font_size_0: 0.4rem;
+  --font_size_1: 0.34rem;
+  --font_size_2: 0.32rem;
+  --font_size_3: 0.28rem;
+  --font_size_4: 0.24rem;
+}
+.middle-font-size {
+  --font_size_0: 0.36rem;
+  --font_size_1: 0.30rem;
+  --font_size_2: 0.28rem;
+  --font_size_3: 0.26rem;
+  --font_size_4: 0.24rem;
+}
+@import "./icon/iconfont.css";
+@import "./styles/reset.css";
+@import "./styles/themes.scss";
+@import "./styles/mixin.scss";
+@import "./styles/vant.scss";
+@import "./styles/common.scss";
+// @import "./styles/home.scss";
+@import "./styles/schedule.scss";
+// @import "./styles/forms.scss";
+@import "./styles/meetingdetail.scss";
+@import "./styles/meetingcrew.scss";
+@import "./styles/peoplelist.scss";
+@import "./styles/wf.scss";
+@import "./styles/readonlyforms.scss";
+@import "./styles/formlayout.scss";
+@import "./styles/meetingCenter.scss";
+@import "./styles/matericalfont.css";
+@import "./styles/icon.css";

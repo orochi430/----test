@@ -1,0 +1,275 @@
+.ds-workflow {
+  &.ds-moving-situation {
+    // max-height: calc(100% - 30px);
+    // height:98%;
+    // overflow-y: auto;
+    @include background-theme("button_auxiliary_bgcolor");
+    margin: 13px 0 15px;
+    border:1px solid transparent;
+
+    ._btn {
+      padding: 11px 14px 11px 0;
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      right: 0;
+      // background: #fff;
+      z-index: 9;
+      width: 100%;
+
+      span {
+        border: 1px solid #e2e4e5;
+        // @include font_6(true);
+        padding: 3px 9px;
+        &:first-child {
+          border-radius: 30px 0 0 30px;
+        }
+        &:last-child {
+          border-radius: 0 30px 30px 0;
+        }
+      }
+
+      ._active {
+        @include background-theme("normal");
+        @include border-color-theme("normal");
+        color: #fff;
+      }
+    }
+
+    .ds-moving-situation-simple {
+      margin-top: 54px;
+
+      ._header {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+
+        ._huanjie {
+          display: flex;
+          align-items: center;
+
+          i {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            margin-right: 10px;
+          }
+
+          span {
+            @include font_6(true);
+          }
+        }
+
+        ._finish {
+          i {
+            @include border-color-theme("normal");
+          }
+        }
+
+        ._current {
+          i {
+            @include border-color-theme("normal");
+            @include background-theme("normal");
+          }
+        }
+
+        ._not_faqi {
+          i {
+            border-color: #c4c4c4;
+            background: #c4c4c4;
+          }
+        }
+      }
+
+      ._content {
+        display: flex;
+        flex-flow: column;
+        position: relative;
+        padding: 0.74rem 1rem;
+        ._item {
+          display: flex;
+          align-items: center;
+          padding-bottom: 43px;
+          position: relative;
+          align-items: baseline;
+          &:last-child{
+            padding-bottom: 0;
+          }
+
+          ._title {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            @include border-theme(2px,solid,normal);
+            text-align: center;
+            // line-height: 16px;
+            @include font-theme('normal');
+            margin-right: 10px;
+            flex: none;
+          }
+
+          ._con {
+            @include font_4;
+            color: $fontColor_main;
+            word-break: break-all;
+          }
+
+          &:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            @include border-theme(1px,dashed,normal);
+            top: 0.5rem;
+            bottom: 0.05rem;
+            left: 0.21rem;
+            opacity: 0.5;
+          }
+        }
+
+        ._active {
+          ._title {
+            @include background-theme("normal");
+            @include border-color-theme("normal");
+            color: #FFFFFF !important;
+          }
+          &::before{
+            border-color: #c4c4c4 !important;
+          }
+
+          ._con {
+            @include font-theme('normal');
+          }
+        }
+
+        ._not_faqi {
+          ._title {
+            background: #C4C4C4 !important;
+            border-color: #C4C4C4 !important;
+            color: #FFFFFF !important;
+          }
+
+          ._con {
+            color: #C4C4C4 !important;
+          }
+
+          &::before{
+            border-color: #c4c4c4 !important;
+          }
+        }
+      }
+    }
+
+    .moving-situation-details {
+      margin-top: 54px;
+
+      ._content {
+        ._item {
+          display: flex;
+          align-items: center;
+          padding-bottom: 45px;
+          margin: 0 25px;
+          position: relative;
+
+          ._head {
+            margin-right: 15px;
+            position: relative;
+            align-self: baseline;
+            img {
+              width: 40px;
+              height: 40px;
+              max-width: 40px;
+              border-radius: 50%;
+              background: #ccc;
+            }
+            .van-icon {
+              position: absolute;
+              bottom: -3px;
+              right: -3px;
+            }
+            span {
+              display: inline-block;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background: #c4c4c4;
+            }
+
+            .finish {
+              background: url("./imgs/workflow/finish.png");
+              background-size: 100% 100%;
+            }
+
+            .wait {
+              background: url("./imgs/workflow/wait.png");
+              background-size: 100% 100%;
+            }
+          }
+
+          ._con {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            ._titles {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              ._time {
+                color: #999;
+                flex: none;
+                margin-left: 0.3rem;
+              }
+            }
+
+            ._name {
+              color: #5f81a3;
+            }
+
+            ._detail {
+              color: #666666;
+            }
+          }
+
+          &:not(:last-child)::before{
+            content: '';
+            position: absolute;
+            top: 0.85rem;
+            bottom: 0.05rem;
+            left: 0.4rem;
+            opacity: 0.5;
+            border: 1px solid #c4c4c4;
+          }
+        }
+      }
+    }
+  }
+
+  &_dialog{
+    z-index: 99999;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .header{
+      border-bottom: 0.3rem solid #f3f3f3;
+      @include font_4(true,true);
+    }
+    .footer{
+      background: #fff;
+      border-top: 0.3rem solid #f3f3f3;
+      padding: 0.35rem 0.29rem;
+      button{
+        @include font_4(true)
+      }
+    }
+    .content{
+      background: #fff;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}

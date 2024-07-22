@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[94989],{8550:function(e,u,n){n.r(u);n(90541);n={link:function(e,u,n,r,t){r.$set(t,"B.C-HWXT-HYXX-USER-0002.text","已读");t=(r.$route.query.secQuery?JSON.parse(r.$route.query.secQuery):r.$route.query).fid;r.$router.push({path:"/conference/notice",query:{moduleId:u,pk:n,fid:t}})}};u.default=n}}]);

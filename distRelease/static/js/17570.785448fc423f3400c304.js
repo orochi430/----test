@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[17570],{17570:function(e,n,t){t.r(n),t.d(n,{default:function(){return u}});var n={name:"reportGo",created:function(){this.$router.replace({path:"/dblist",query:this.$route.query})}},u=(0,t(51900).Z)(n,function(){return(0,this._self._c)("div")},[],!1,null,null,null).exports}}]);

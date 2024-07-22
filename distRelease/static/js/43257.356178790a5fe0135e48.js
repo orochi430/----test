@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[43257],{47334:function(n,e,a){a.r(e);var i=a(90541),t=a(25108),a={handle:function(n,e){},initHandle:function(n,e,a){t.log(777777777777),i.Z.http.get("fn/supervise/approval/read",{pk:n.main.A0001.value}).then(function(n){n.data})}};e.default=a}}]);

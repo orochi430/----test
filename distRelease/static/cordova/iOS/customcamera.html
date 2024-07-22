@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custome Camera</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+            <script type="text/javascript" src="merge.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+                <script type="text/javascript" charset="utf-8">
+                    
+                    var pictureSource;
+                    var destinationType;
+                    var mediaType;
+                    document.addEventListener("deviceready",onDeviceReady,false);
+                   
+                function onDeviceReady() {
+                        pictureSource = Camera.PictureSourceType;
+                        destinationType = Camera.DestinationType;
+                        mediaType = Camera.MediaType;
+                    }
+              
+              
+               //使用的是原生camera插件内容
+                function getPhoto(source) {
+                    xsfCamera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                                         destinationType: destinationType.FILE_URI,
+                                         sourceType:source,mediaType:mediaType.ALLMEDIA});
+                }
+              
+              //sourceData,mediaType
+                function onPhotoURISuccess(options) {
+                    var type = options.mediaType ;
+                    var sourceURI = options.sourceData;
+                    
+                    if(type == "VIDEO"){
+                        
+                        var myVideo = document.getElementById('testvideo');
+                         myVideo.src = sourceURI;
+                    }
+                    
+                    if(type == "PICTURE"){
+                        
+                        var largeImage = document.getElementById('largeImage');
+                        largeImage.style.display = 'block';
+                        largeImage.src = sourceURI;
+                        
+                    }
+                    
+                   
+                }
+                
+               //自定义相机
+               function customeCamera(source) {
+                    CFCamera.takeCustomeCamera(onPhotoDataSuccess, onFail, {quality: 50,
+                                         destinationType: destinationType.DATA_URL,
+                                         sourceType:source,mediaType:mediaType.ALLMEDIA});
+                }
+               
+            
+               //sourceData,mediaType
+               function onPhotoDataSuccess(options) {
+                   var type = options.mediaType ;
+                    var sourceURI = options.sourceData;
+                   
+                   if(type == "VIDEO"){
+                        var myVideo = document.getElementById('testvideo');
+                        myVideo.src = sourceURI
+                        //myVideo.src = "data:video/quicktime;base64," +sourceURI
+                   }
+                   if(type == "PICTURE"){
+                       
+                       var smallImage = document.getElementById('smallImage');
+                       smallImage.style.display = 'block';
+                       smallImage.src = "data:image/jpeg;base64," + sourceURI;
+                       
+                   }
+               }
+
+               
+               function onFail(message) {
+                    alert('失败: ' + message);
+                }
+                
+               
+               
+              function goHome()
+                {
+                    window.location.href = "index.html";
+                }
+            
+            </script>
+      </head>
+       <body>
+        <br>
+        <br>
+        <br>
+        <div class = "btn bg_1" onclick = "customeCamera(pictureSource.CAMERA);">拍照</div>
+        <br/>
+        <div class = "btn bg_2" onclick = "getPhoto(pictureSource.PHOTOLIBRARY);">从相册获取照片</div>
+        <br/>
+       
+        <br/>
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+        <img style="display:none;" id="largeImage" src="" />
+        <video  width="320" height="240" autoplay  controls id = "testvideo">
+            <source  type="video/mp4">
+            <source  type="video/mov">
+        </video>
+        <div class="btn bg_1" onclick = "goHome();">返回</div>
+        
+       
+     </body>
+</html>

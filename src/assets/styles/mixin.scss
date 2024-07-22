@@ -1,0 +1,525 @@
+/**
+  $k：可传递的值在themes.scss中$themes下的主体中
+  $important：是否添加！important
+ */
+
+//设置字体颜色
+@mixin font-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+        // .#{$themename} & {
+            @if $important {
+                color: var(--#{$k}) !important;
+            }
+            @else {
+                color: var(--#{$k});
+            }
+        // }
+    // }
+}
+
+//设置边框以及颜色
+@mixin border-theme($borderWidth, $borderStyle, $k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+        // .#{$themename} & {
+            @if $important {
+                border: $borderWidth $borderStyle var(--#{$k}) !important;
+            }
+            @else {
+                border: $borderWidth $borderStyle var(--#{$k});
+            }
+        // }
+    // }
+}
+
+//设置边框颜色
+@mixin border-color-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+        // .#{$themename} & {
+            @if $important {
+                border-color: var(--#{$k}) !important;
+            }
+            @else {
+                border-color: var(--#{$k});
+            }
+        // }
+    // }
+}
+
+@mixin border-right-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                border-right-color: var(--#{$k}) !important;
+            }
+            @else {
+                border-right-color: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+@mixin border-left-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                border-left-color: var(--#{$k}) !important;
+            }
+            @else {
+                border-left-color: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+@mixin border-bottom-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                border-bottom-color: var(--#{$k}) !important;
+            }
+            @else {
+                border-bottom-color: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+@mixin border-top-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                border-top-color: var(--#{$k}) !important;
+            }
+            @else {
+                border-top-color: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+//设置背景色
+@mixin background-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                background-color: var(--#{$k}) !important;
+            }
+            @else {
+                background-color: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+//设置阴影
+@mixin box-shadow($x, $y, $width, $k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                box-shadow: $x $y $width var(--#{$k}) !important;
+            }
+            @else {
+                box-shadow: $x $y $width var(--#{$k});
+            }
+    //     }
+    // }
+}
+// 设置背景渐变色
+@mixin linear-background-theme($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                background: linear-gradient(270deg, var(--#{$k}) 0%, var(--light) 100%) !important;
+            }
+            @else {
+                background: linear-gradient(270deg, var(--#{$k}) 0%, var(--light) 100%);
+            }
+    //     }
+    // }
+}
+// 设置任意角度背景渐变色
+@mixin randomLinear-background-theme($k, $deg, $color, $percent: 100%, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                background: linear-gradient($deg, var(--#{$k}) 0%, $color $percent) !important;
+            }
+            @else {
+                background: linear-gradient($deg, var(--#{$k}) 0%, $color $percent);
+            }
+    //     }
+    // }
+}
+// 设置任意角度背景渐变色
+@mixin randomLinear-background-theme2($k, $deg, $percent: 0%, $important: false) {
+    @if $important {
+        background: linear-gradient($deg, var(--#{$k}) $percent, var(--darklight) 100%) !important;
+    }
+    @else {
+        background: linear-gradient($deg, var(--#{$k}) $percent, var(--darklight) 100%);
+    }
+}
+@mixin lighter-background-theme($k, $important: false, $percent: 40%) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                background-color: var(--light) !important;
+            }
+            @else {
+                background-color: var(--light);
+            }
+    //     }
+    // }
+}
+@mixin opacity-background-theme($k, $important: false, $opacity: .12) {
+    @each $themename,
+    $theme in $themes {
+        .#{$themename} & {
+            $color: map-get($map: $theme, $key: $k);
+            $red: red($color);
+            $green: green($color);
+            $blue: blue($color);
+            @if $important {
+                background-color: rgba($red, $green, $blue, $opacity) !important;
+            }
+            @else {
+                background-color: rgba($red, $green, $blue, $opacity);
+            }
+        }
+    }
+
+}
+//禁止x轴滑动
+@mixin no_scroll_x {
+    overflow-x: hidden;
+}
+
+//单行溢出省略
+@mixin ellipsis {
+    overflow: hidden !important;
+    margin-top: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+//文字加粗
+@mixin bold {
+    // font-family: FZTYSJW;
+    font-weight:600;
+}
+
+@mixin nowrap {
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+//图标大小
+@mixin icon_0 {
+    display: inline-block;
+    font-size: 22px !important;
+    width: 22px;
+    height: 22px;
+}
+
+@mixin icon_1 {
+    display: inline-block;
+    font-size: var(--font_size_2) !important;
+    height: 16px;
+    display: inline-block;
+}
+
+@mixin icon_2 {
+    display: inline-block;
+    font-size: var(--font_size_4) !important;
+}
+
+@mixin icon_3 {
+    display: inline-block;
+    font-size: 9px !important;
+}
+
+@mixin icon_4 {
+    display: inline-block;
+    font-size: 8px !important;
+}
+
+@mixin icon_5 {
+    display: inline-block;
+    font-size: 7px !important;
+}
+
+@mixin icon_6 {
+    display: inline-block;
+    font-size: 6px !important;
+}
+
+@mixin font_0($important: false) {
+    // 用于页面大数字
+    $size: var(--font_size_0);
+    $height: 1.35em;
+    // $family: 'Alibaba-PuHuiTi-Bold';
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+@mixin font_1($important: false) {
+    // 一级标题
+    // $size: 19px;
+		$size: 0.38rem;
+    $height: 1.42em;
+    // $family: 'Alibaba-PuHuiTi-Bold';
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+@mixin font_2($important: false) {
+    // 系统头部文字、大按钮文字
+    // $size: 18px;
+		$size: 0.36rem;
+    $height: 1.44em;
+    // $family: 'Alibaba-PuHuiTi-Medium';
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+@mixin font_3($important: false, $bold: false) {
+    // $size: 17px;
+		$size: var(--font_size_1);
+    $height: 1.53em;
+    // $family: 'Alibaba-PuHuiTi-Regular';
+    // $family_bold: 'Alibaba-PuHuiTi-Medium';
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        @if $bold {
+            font-weight: 700;
+            //   font-family: $family_bold !important;
+        }
+        @else {
+            //   font-family: $family !important;
+        }
+    }
+    @else {
+        font-size: $size;
+        @if $bold {
+            font-weight: 700;
+            // 二级标题、按钮文字、内页tab栏
+            //   font-family: $family_bold;
+        }
+        @else {
+            // 个人设置、个人信息、表单
+            //   font-family: $family;
+        }
+    }
+}
+
+@mixin font_4($important: false, $bold: false) {
+    // 主标题
+    // $size: 16px;
+		$size: var(--font_size_2);
+    $height: 1.5em;
+    //   $family: "Alibaba-PuHuiTi-Regular";
+    //   $family_bold: "Alibaba-PuHuiTi-Medium";
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        @if $bold {
+            font-weight: 700;
+            //   font-family: $family_bold !important;
+        }
+        @else {
+            //   font-family: $family !important;
+        }
+    }
+    @else {
+        font-size: $size;
+        @if $bold {
+            font-weight: 700;
+            // 图文列表
+            //   font-family: $family_bold;
+        }
+        @else {
+            // 内页正文、列表文字、公告文字
+            //   font-family: $family;
+        }
+    }
+}
+
+@mixin font_5($important: false) {
+    // 系统底部导航栏文字
+		// $size: 15px;
+		$size: 0.3rem;
+    $height: 1.27em;
+    // $family: "Alibaba-PuHuiTi-Regular";
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+@mixin font_6($important: false) {
+    //(副标题) 次要按钮文字、标签中显示、输入搜索框文字、更多
+    // $size: 14px;
+		$size: var(--font_size_3);
+    $height: 1.29em;
+    // $family: "Alibaba-PuHuiTi-Regular";
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+@mixin font_7($important: false) {
+    // 特小号字体
+    // $size: 12px;
+		$size: var(--font_size_4);
+    $height: 1.33em;
+    // $family: "Alibaba-PuHuiTi-Regular";
+    line-height: $height;
+    @if $important {
+        font-size: $size !important;
+        // font-family: $family !important;
+    }
+    @else {
+        font-size: $size;
+        // font-family: $family;
+    }
+}
+
+//清除浮动
+@mixin afterClear {
+    clear: both;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    line-height: 0px;
+    visibility: hidden;
+}
+
+//滚动条定义
+@mixin scroll {
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #f5f5f5;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background-color: #f5f5f5;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+//！！！唯一，设置progress阴影
+@mixin bar-box-shadow($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+        // .#{$themename} & {
+            @if $important {
+                box-shadow: 0 0 10px var(--#{$k}), 0 0 5px var(--#{$k}) !important;
+            }
+            @else {
+                box-shadow: 0 0 10px var(--#{$k}), 0 0 5px var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+// svg内部颜色
+@mixin svg-color($k, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                stroke: var(--#{$k}) !important;
+            }
+            @else {
+                stroke: var(--#{$k});
+            }
+    //     }
+    // }
+}
+
+//设置边框以及颜色(颜色透明度)
+@mixin border-alpha-theme( $borderWidth, $borderStyle, $k, $alpha: 1, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                border: $borderWidth $borderStyle rgba(var(--#{$k}), $alpha) !important;
+            }
+            @else {
+                border: $borderWidth $borderStyle rgba(var(--#{$k}), $alpha);
+            }
+    //     }
+    // }
+}
+
+//设置背景色(颜色透明度)
+@mixin background-alpha-theme($k, $alpha: 1, $important: false) {
+    // @each $themename,
+    // $theme in $themes {
+    //     .#{$themename} & {
+            @if $important {
+                background-color: rgba(var(--#{$k}), $alpha) !important;
+            }
+            @else {
+                background-color: rgba(var(--#{$k}), $alpha);
+            }
+    //     }
+    // }
+}
+@mixin multi-ellipsis($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

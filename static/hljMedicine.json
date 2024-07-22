@@ -1,0 +1,209 @@
+{
+    "swiperSelect":[1,2,3,4,5,6,7],
+    "tab_list": [
+        {
+            "name": "医保服务站",
+            "img": "static/images/hljMedicine/index_service.png",
+            "active_name": "service"
+        },
+        {
+            "name": "医保学院",
+            "img": "static/images/hljMedicine/index_school.png",
+            "active_name": "school"
+        },
+        {
+            "name": "我的",
+            "img": "static/images/hljMedicine/index_mine.png",
+            "active_name": "mine"
+        }
+    ],
+    "tab_active": "service",
+    "school_url": "http://116.236.111.158:22222/inc/sso/accept?phone=[mobile]&name=[logName]&trustMark=everyone&clientType=1&targetUrl=http://116.236.111.158:22222/inc/mobile-index.html?appid=nc.page.app.manager#/mobile/nc/page/app/home/mobile-index",
+    "index_list": [
+        [
+            [{
+                "name": "知识库查询",
+                "img": "static/images/hljMedicine/index_icon1.png",
+                "subname": "平台在手随心查",
+                "button": "查看",
+                "type": 1,
+                "router": "/hljPadKnowledgeBase",
+                "width": "40%"
+            }],
+            [{
+                "name": "智能问答",
+                "img": "static/images/hljMedicine/index_icon2.png",
+                "subname": "平台在手随心查",
+                "button": "查看",
+                "type": 2,
+                "router": "http://116.236.111.158:22222/DreamWeb/p2345/chatPad/znwd.html?accessCode=acc202208221855005954&vccId=999983&channelId=chwebweb&token=1",
+                "width": "40%"
+            }],
+            [
+                {
+                    "name": "通知公告",
+                    "img": "static/images/hljMedicine/index_icon11.png",
+                    "badge_url": "fn/mobileNotice/getBadge",
+                    "badge": 0,
+                    "type": 1,
+                    "router": "/commonList?fileType=tzgg&title=通知公告",
+                    "width": "26%",
+                    "height": "48%"
+                },
+                {
+                    "name": "任务中心",
+                    "img": "static/images/hljMedicine/index_icon11.png",
+                    "badge_url": "fn/mobileToDo/getToDoBadge ",
+                    "badge": 0,
+                    "type": 1,
+                    "router": "/commonList?fileType=gw&needBtn=0",
+                    "height": "48%"
+                }
+            ]
+        ],
+        [
+            [{
+                "name": "宣传播放",
+                "img": "static/images/hljMedicine/index_icon3.png",
+                "type": 3,
+                "router": "",
+                "operate":"showSwiper"
+            }],
+            [{
+                "name": "服务地图",
+                "img": "static/images/hljMedicine/index_icon4.png",
+                "type": 2,
+                "router": "http://116.236.111.158:22222/DreamWeb/p2345/map/txmap.html?style=3&coordinate=[latitude],[longitude]"
+            }],
+            [{
+                "name": "我要办",
+                "img": "static/images/hljMedicine/index_icon5.png",
+                "badge_url": "",
+                "badge": 0,
+                "type": 2,
+                "router": "http://ggfw.hljybj.org.cn/hallSt/web/hallEnter/#/Index",
+                "confirm": "登录办理结束后，请务必退出登录，以免泄露个人信息"
+            }],
+            [{
+                "name": "我要查",
+                "img": "static/images/hljMedicine/index_icon6.png",
+                "badge_url": "",
+                "badge": 0,
+                "type": 2,
+                "router": "http://ggfw.hljybj.org.cn/hallSt/web/hallEnter/#/Index",
+                "confirm": "登录办理结束后，请务必退出登录，以免泄露个人信息"
+            }]
+        ],
+        [
+            [{
+                "name": "签到/签退",
+                "img": "static/images/hljMedicine/index_icon7.png",
+                "type": 3,
+                "operate": "showPopup"
+            }],
+            [{
+                "name": "服务周报",
+                "img": "static/images/hljMedicine/index_icon8.png",
+                "type": 1,
+                "router": "/commonList/220906114836PNGLa1HJ0YLIY0U2etW/2209061139451jES6zpiL2ioNjigVQx"
+            }],
+            [{
+                "name": "制度查询",
+                "img": "static/images/hljMedicine/index_icon9.png",
+                "type": 1,
+                "router": "/diskFile"
+            }],
+            [{
+                "name": "人员信息",
+                "img": "static/images/hljMedicine/index_icon10.png",
+                "type": 1,
+                "router": "/commonList/220823103852k7DaJ6FVCFDqnobN8za/220823094908Mcahgtr04pKx6qGI1ec?notLink=1"
+            }]
+        ]
+    ],
+    "citydata": {
+        "top": [
+            {
+                "num": "5868666605",
+                "name": "黑龙江省本级医保"
+            },
+            {
+                "num": "5868666605",
+                "name": "黑龙江铁路医保"
+            },
+            {
+                "num": "5868666605",
+                "name": "大庆油田医保"
+            }
+        ],
+        "middle": {
+            "row1": [
+                {
+                    "num": "",
+                    "name": "哈尔滨市"
+                },
+                {
+                    "num": "",
+                    "name": "齐齐哈尔市"
+                },
+                {
+                    "num": "",
+                    "name": "牡丹江市"
+                },
+                {
+                    "num": "",
+                    "name": "佳木斯市"
+                }
+            ],
+            "row2": [
+                {
+                    "num": "",
+                    "name": "大庆市"
+                },
+                {
+                    "num": "",
+                    "name": "鸡西市"
+                },
+                {
+                    "num": "",
+                    "name": "双鸭山市"
+                },
+                {
+                    "num": "",
+                    "name": "伊春市"
+                }
+            ],
+            "row3": [
+                {
+                    "num": "",
+                    "name": "七台河市"
+                },
+                {
+                    "num": "",
+                    "name": "鹤岗市"
+                },
+                {
+                    "num": "",
+                    "name": "黑河市"
+                },
+                {
+                    "num": "",
+                    "name": "绥化市"
+                }
+            ]
+        },
+        "foot": [
+            {
+                "num": "",
+                "name": "大兴安岭地区"
+            }
+        ]
+    },
+    "sipConfig": {
+        "serverIP": "111.40.46.35",
+        "serverPort": "5049",
+        "dn": "jd000001",
+        "password": "!Q@W#E$R",
+        "xPath": "sbc"
+    }
+}

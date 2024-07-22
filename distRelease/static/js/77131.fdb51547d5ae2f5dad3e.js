@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[77131],{77131:function(n,e,t){t.r(e),t.d(e,{default:function(){return u}});var e={name:"OpenSchedule",created:function(){dsf.video.start([])}},u=(0,t(51900).Z)(e,function(){return(0,this._self._c)("div",{staticClass:"df-open-schedule"})},[],!1,null,null,null).exports}}]);

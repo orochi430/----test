@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[47279],{2179:function(n,e,t){t.r(e);t={link:function(n,e,t,i,u){i.$router.push({path:"/commonForm/".concat(e,"/").concat(t),query:{listId:n,method:1==u["C-NOTICE-0020.value"]?"viewNgr":"edit"}})}};e.default=t}}]);

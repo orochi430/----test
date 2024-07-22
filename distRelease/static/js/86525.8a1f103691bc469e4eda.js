@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[86525],{25191:function(n,e,t){t.r(e);t={initHandle:function(n,e,t){-1<n.main["C-FW-0022"].text.indexOf("局")?e.controls.find(function(n){return"C-FW-0037"==n.metaId}).label="政府信息公开属性":e.controls.find(function(n){return"C-FW-0037"==n.metaId}).label="民主公开属性"}};e.default=t}}]);

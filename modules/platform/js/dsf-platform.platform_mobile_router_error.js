@@ -1,0 +1,8 @@
+/*!
+ * Name: @dsf/cli-platform
+ * Version: 5.17.0-alpha.5
+ * Description: 平台基础包
+ * BuildTime: 2024/6/19 17:49:40
+*/
+(("undefined"!==typeof self?self:this)["webpackJsonpplatform"]=("undefined"!==typeof self?self:this)["webpackJsonpplatform"]||[]).push([[27],{990:function(t,e,n){"use strict";n.r(e);var i=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("van-empty",{staticClass:"ds-error401",staticStyle:{"background-color":"#fff"},scopedSlots:t._u([{key:"image",fn:function(){return[n("van-image",{attrs:{src:"/static/img/platform/error-401.png",width:"100%",height:"auto"}})]},proxy:!0}])},[[n("p",{staticClass:"sub-title sub-title1"},[t._v("您的会话已过期，请重新登录")]),n("p",{staticClass:"sub-title sub-title2"},[t._v("将在"+t._s(t.finalTtime)+"秒后自动跳转")])]],2)},l=[],a={name:"Error",data:function(){return{finalTtime:5,interval:null}},mounted:function(){var t=this;this.interval=setInterval((function(){t.finalTtime--,t.finalTtime<=0&&(clearInterval(t.interval),t.interval=null,location.replace(dsf.url.getMobileLogin()))}),1e3)},methods:{loginOut:function(){var t=this;dsf.layer.confirm("您确定要退出吗?").then((function(){t.$webAPI.loginOut().then((function(t){t.success})).catch((function(t){})).finally((function(){dsf.clearLoginInfo()}))})).catch((function(){}))}},beforeRouteUpdate:function(t,e,n){this.show=!("/"==t.path),n()},beforeDestroy:function(){clearInterval(this.interval)}},s=a,r=n(0),o=Object(r["a"])(s,i,l,!1,null,null,null);e["default"]=o.exports}}]);
+//# sourceMappingURL=../../../smap/platform/dsf-platform.platform_mobile_router_error.js.map

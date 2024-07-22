@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+        <script type="text/javascript" src="merge.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+
+
+
+
+        function saveimage(){
+            var options = {
+                "content":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599037559996&di=12191bb5c7f5d81b823063d2abfb33b0&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D3571592872%2C3353494284%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1200%26h%3D1290",
+            };
+            xsfImageDownloadAndSave.save(options,testSuccess, testFailed);
+            
+        }
+        function testSuccess(msg) {
+            alert(msg);
+        }
+        function testFailed(msg) {
+            alert('failed: ' + msg);
+        }
+        
+        function goHome()
+        {
+            xsfImageDownloadAndSave.remove(testSuccess, testFailed);
+            window.location.href = "index.html";
+        }
+        </script>
+        
+    </head>
+    
+    <body>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="btn bg_5" onclick="saveimage();">666</div><br/>
+
+        <div class="btn bg_1" onclick="goHome();">返回</div><br/>
+
+    </body>
+    
+    
+</html>
+

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[35626],{85406:function(n,t,a){a.r(t);a={link:function(n,t,a,e,u){e.$router.push({path:"/taskDetail/".concat(a)})},createRow:function(n,t){t.$router.push({path:"/addTask/null"})}};t.default=a}}]);

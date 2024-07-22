@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+        <script type="text/javascript" src="merge.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+<!--    title  百度-->
+<!--    platform  WEIXIN  平台-->
+<!--      type 0 是连接类型-->
+<!--     content就是url-->
+<!--}-->
+     function share(){
+         var options = {
+             "type":0,
+             "title":"baidu",
+             "content":"http://www.baidu.com",
+             "platform" :"weixin"
+         };
+         xsfUmSahre.share(options,testSuccess, testFailed);
+
+     }
+     
+        function testSuccess(msg) {
+            alert(msg);
+        }
+        function testFailed(msg) {
+            alert('failed: ' + msg);
+        }
+        
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+        </script>
+        
+    </head>
+    
+    <body>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="btn bg_5" onclick="share();">share</div><br/>
+        <div class="btn bg_1" onclick="goHome();">返回</div><br/>
+
+    </body>
+    
+    
+</html>
+

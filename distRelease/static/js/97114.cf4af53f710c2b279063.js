@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[97114],{39383:function(n,e,a){a.r(e);a(90541),a(88561);a={link:function(n,e,a,i,t){i.$router.push({path:"/salaryDetailCQCZ/".concat(a),query:{listId:n}})}};e.default=a}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxianzhengding=self.webpackChunkxianzhengding||[]).push([[16269],{26808:function(e,n,t){t.r(n);t={link:function(e,n,t,o,a){o.$router.push({path:"/commonForm/".concat(a.moduleId,"/").concat(a.infoId),query:{type:"wtdb",todoId:a.todoId,agencyType:a.ttype,agencyUserId:a.tuserId,agencyUserName:a.tuserName}})}};n.default=t}}]);

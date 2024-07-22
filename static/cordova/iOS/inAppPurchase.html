@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style_box_demo.css">
+        <script type="text/javascript" src="merge.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            
+        function successFunction(success){
+                alert(success);
+            }
+        
+        function failFunction(error){
+                 alert(error);
+        }
+        
+        
+        function purchaseProduct() {
+            Purchase.inAppPurchaseProduct(successFunction,failFunction,"com.dreamsoft.boxDx.product02");
+        }
+        
+        function goHome()
+        {
+            window.location.href = "index.html";
+        }
+           
+        </script>
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <div class = "btn bg_5" onclick="purchaseProduct();">购买</div><br/>
+        <div class = "btn bg_1" onclick = "goHome();">返回</div><br/>
+        
+    </body>
+</html>
