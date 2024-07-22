@@ -77,6 +77,14 @@ export default new Router({
       component: () =>
         import("@/components/project/yanshi/attendanceStatistics.vue")
   },{
+    path: "/testCom",
+      name: "testCom",
+      meta: {
+        title: "考勤统计",
+      },
+      component: () =>
+        import("@/components/testCom.vue")
+  },{
     path: "/applicationDetail/:pk?",
       name: "applicationDetail",
       meta: {
